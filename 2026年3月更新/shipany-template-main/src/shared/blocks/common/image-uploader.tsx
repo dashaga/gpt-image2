@@ -27,6 +27,9 @@ interface ImageUploaderProps {
   className?: string;
   defaultPreviews?: string[];
   onChange?: (items: ImageUploaderValue[]) => void;
+  largeDropZone?: boolean;
+  dropZoneTitle?: string;
+  dropZoneSub?: string;
 }
 
 interface UploadItem extends ImageUploaderValue {
@@ -73,6 +76,9 @@ export function ImageUploader({
   className,
   defaultPreviews,
   onChange,
+  largeDropZone = false,
+  dropZoneTitle,
+  dropZoneSub,
 }: ImageUploaderProps) {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const isInitializedRef = useRef(false);
@@ -489,83 +495,181 @@ export function ImageUploader({
         </div>
       )}
 
-      <div
-        className={cn(
-          'flex flex-wrap gap-4',
-          allowMultiple ? 'flex-wrap' : 'flex-nowrap'
-        )}
-      >
-        {items.map((item) => (
-          <div
-            key={item.id}
-            className="group border-border bg-muted/50 hover:border-border hover:bg-muted relative overflow-hidden rounded-xl border p-1 shadow-sm transition"
-          >
-            <div className="relative overflow-hidden rounded-lg">
-              <img
-                src={item.preview}
-                alt="Reference"
-                className="h-32 w-32 rounded-lg object-cover"
-              />
-              {item.size && (
-                <span className="bg-background text-muted-foreground absolute bottom-2 left-2 rounded-md px-2 py-1 text-[10px] font-medium">
-                  {formatBytes(item.size)}
-                </span>
-              )}
-              {item.status !== 'uploading' && (
-                <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/35 opacity-0 transition-opacity group-focus-within:opacity-100 group-hover:opacity-100">
-                  <Button
-                    type="button"
-                    size="icon"
-                    variant="secondary"
-                    className="bg-background/50 text-foreground hover:bg-background/50 h-10 w-10 rounded-full shadow-sm backdrop-blur focus-visible:ring-2 focus-visible:ring-white/70"
-                    onClick={() => openReplacePicker(item.id)}
-                    aria-label="Upload a new image to replace"
-                  >
-                    <IconRefresh className="h-5 w-5" />
-                  </Button>
-                </div>
-              )}
-              {item.status === 'uploading' && (
-                <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/60 text-xs font-medium text-white">
-                  Uploading...
-                </div>
-              )}
-              {item.status === 'error' && (
-                <div className="absolute inset-0 z-10 flex items-center justify-center bg-red-500/70 text-xs font-medium text-white">
-                  Failed
-                </div>
-              )}
-              <Button
-                size="icon"
-                variant="destructive"
-                className="absolute top-2 right-2 z-20 h-7 w-7"
-                onClick={() => handleRemove(item.id)}
-                aria-label="Remove image"
-              >
-                <IconX className="h-4 w-4" />
-              </Button>
+      {largeDropZone ? (
+        /* ── Always-visible outer dashed border ─────────────────────── */
+        <div
+          className="w-full transition-colors"
+          style={{
+            border: '2px dashed #6366F1',
+            borderRadius: '16px',
+            padding: '16px',
+            background: 'transparent',
+            cursor: items.length === 0 ? 'pointer' : 'default',
+          }}
+          onClick={items.length === 0 ? openFilePicker : undefined}
+        >
+          {items.length === 0 ? (
+            /* Empty state */
+            <div className="flex flex-col items-center justify-center gap-3 py-6">
+              <IconUpload className="h-7 w-7" style={{ color: '#6366F1' }} />
+              <span className="text-sm font-semibold" style={{ color: '#6366F1' }}>
+                {dropZoneTitle ?? 'Upload images'}
+              </span>
+              <span className="text-muted-foreground text-xs">
+                {dropZoneSub ?? `JPG, PNG, WebP — max ${maxSizeMB}MB each`}
+              </span>
             </div>
-          </div>
-        ))}
+          ) : (
+            /* Has images: horizontal row of thumbnails + add-button */
+            <div className="flex flex-row flex-nowrap gap-2 overflow-x-auto">
+              {items.map((item) => (
+                <div
+                  key={item.id}
+                  className="group border-border bg-muted/50 hover:border-border hover:bg-muted relative flex-shrink-0 overflow-hidden rounded-xl border p-1 shadow-sm transition"
+                >
+                  <div className="relative overflow-hidden rounded-lg">
+                    <img
+                      src={item.preview}
+                      alt="Reference"
+                      className="h-20 w-20 rounded-lg object-cover"
+                    />
+                    {item.size && (
+                      <span className="bg-background text-muted-foreground absolute bottom-2 left-2 rounded-md px-2 py-1 text-[10px] font-medium">
+                        {formatBytes(item.size)}
+                      </span>
+                    )}
+                    {item.status !== 'uploading' && (
+                      <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/35 opacity-0 transition-opacity group-focus-within:opacity-100 group-hover:opacity-100">
+                        <Button
+                          type="button"
+                          size="icon"
+                          variant="secondary"
+                          className="bg-background/50 text-foreground hover:bg-background/50 h-10 w-10 rounded-full shadow-sm backdrop-blur focus-visible:ring-2 focus-visible:ring-white/70"
+                          onClick={() => openReplacePicker(item.id)}
+                          aria-label="Upload a new image to replace"
+                        >
+                          <IconRefresh className="h-5 w-5" />
+                        </Button>
+                      </div>
+                    )}
+                    {item.status === 'uploading' && (
+                      <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/60 text-xs font-medium text-white">
+                        Uploading...
+                      </div>
+                    )}
+                    {item.status === 'error' && (
+                      <div className="absolute inset-0 z-10 flex items-center justify-center bg-red-500/70 text-xs font-medium text-white">
+                        Failed
+                      </div>
+                    )}
+                    <Button
+                      size="icon"
+                      variant="destructive"
+                      className="absolute top-1 right-1 z-20 h-5 w-5 opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+                      onClick={() => handleRemove(item.id)}
+                      aria-label="Remove image"
+                    >
+                      <IconX className="h-3 w-3" />
+                    </Button>
+                  </div>
+                </div>
+              ))}
 
-        {items.length < maxCount && (
-          <div className="group border-border bg-muted/50 hover:border-border hover:bg-muted relative overflow-hidden rounded-xl border border-dashed p-1 shadow-sm transition">
-            <div className="relative overflow-hidden rounded-lg">
-              <button
-                type="button"
-                className="flex h-32 w-32 flex-col items-center justify-center gap-2"
-                onClick={openFilePicker}
-              >
-                <div className="border-border flex h-10 w-10 items-center justify-center rounded-full border border-dashed">
-                  <IconUpload className="h-5 w-5" />
-                </div>
-                <span className="text-xs font-medium">Upload</span>
-                <span className="text-primary text-xs">Max {maxSizeMB}MB</span>
-              </button>
+              {items.length < maxCount && (
+                <button
+                  type="button"
+                  className="flex-shrink-0 flex flex-col items-center justify-center gap-1"
+                  style={{
+                    width: '80px',
+                    height: '80px',
+                    border: '1.5px dashed #6366F1',
+                    borderRadius: '12px',
+                  }}
+                  onClick={openFilePicker}
+                >
+                  <IconUpload style={{ width: '22px', height: '22px', color: '#6366F1' }} />
+                  <span className="text-xs font-medium" style={{ color: '#6366F1' }}>Upload</span>
+                  <span className="text-[10px]" style={{ color: '#6366F1' }}>Max {maxSizeMB}MB</span>
+                </button>
+              )}
             </div>
-          </div>
-        )}
-      </div>
+          )}
+        </div>
+      ) : (
+        /* ── Non-large-drop-zone: original layout ────────────────────── */
+        <div className="flex flex-row flex-nowrap gap-2 overflow-x-auto">
+          {items.map((item) => (
+            <div
+              key={item.id}
+              className="group border-border bg-muted/50 hover:border-border hover:bg-muted relative overflow-hidden rounded-xl border p-1 shadow-sm transition"
+            >
+              <div className="relative overflow-hidden rounded-lg">
+                <img
+                  src={item.preview}
+                  alt="Reference"
+                  className="h-20 w-20 rounded-lg object-cover"
+                />
+                {item.size && (
+                  <span className="bg-background text-muted-foreground absolute bottom-2 left-2 rounded-md px-2 py-1 text-[10px] font-medium">
+                    {formatBytes(item.size)}
+                  </span>
+                )}
+                {item.status !== 'uploading' && (
+                  <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/35 opacity-0 transition-opacity group-focus-within:opacity-100 group-hover:opacity-100">
+                    <Button
+                      type="button"
+                      size="icon"
+                      variant="secondary"
+                      className="bg-background/50 text-foreground hover:bg-background/50 h-10 w-10 rounded-full shadow-sm backdrop-blur focus-visible:ring-2 focus-visible:ring-white/70"
+                      onClick={() => openReplacePicker(item.id)}
+                      aria-label="Upload a new image to replace"
+                    >
+                      <IconRefresh className="h-5 w-5" />
+                    </Button>
+                  </div>
+                )}
+                {item.status === 'uploading' && (
+                  <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/60 text-xs font-medium text-white">
+                    Uploading...
+                  </div>
+                )}
+                {item.status === 'error' && (
+                  <div className="absolute inset-0 z-10 flex items-center justify-center bg-red-500/70 text-xs font-medium text-white">
+                    Failed
+                  </div>
+                )}
+                <Button
+                  size="icon"
+                  variant="destructive"
+                  className="absolute top-1 right-1 z-20 h-5 w-5 opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+                  onClick={() => handleRemove(item.id)}
+                  aria-label="Remove image"
+                >
+                  <IconX className="h-3 w-3" />
+                </Button>
+              </div>
+            </div>
+          ))}
+
+          {items.length < maxCount && (
+            <div className="group border-border bg-muted/50 hover:border-border hover:bg-muted relative overflow-hidden rounded-xl border border-dashed p-1 shadow-sm transition">
+              <div className="relative overflow-hidden rounded-lg">
+                <button
+                  type="button"
+                  className="flex h-20 w-20 flex-col items-center justify-center gap-1"
+                  onClick={openFilePicker}
+                >
+                  <div className="border-border flex h-10 w-10 items-center justify-center rounded-full border border-dashed">
+                    <IconUpload className="h-5 w-5" />
+                  </div>
+                  <span className="text-xs font-medium">Upload</span>
+                  <span className="text-primary text-xs">Max {maxSizeMB}MB</span>
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+      )}
 
       {!title && (
         <div className="text-muted-foreground text-xs">{emptyHint}</div>

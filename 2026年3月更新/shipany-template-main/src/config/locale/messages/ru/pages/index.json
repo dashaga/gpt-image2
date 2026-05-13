@@ -1,0 +1,63 @@
+{
+  "page": {
+    "show_sections": ["hero","creation_workbench","features_cards","pricing_plans"],
+    "sections": {
+      "hero": {
+        "id": "hero",
+        "title": "GPT Image 2",
+        "description": "<span class='block text-2xl md:text-3xl font-medium text-foreground mb-6'>Меньше запросов, лучше результаты.</span>GPT Image 2 — самая продвинутая модель генерации изображений с ИИ — добивайтесь потрясающих результатов с простыми запросами. Будь то генерация из текста или редактирование изображений, она обладает исключительным пониманием намерений и композиции.",
+        "buttons": [
+          {"title": "Попробовать GPT Image 2","icon": "Zap","url": "/ai/gpt-image-2","target": "_self","variant": "default"},
+          {"title": "Посмотреть примеры GPT Image 2","icon": "Sparkles","url": "/showcases","target": "_self","variant": "outline"}
+        ],
+        "show_avatars": false,"show_award": false,
+        "stats": [
+          {"value": "10K+","label": "Авторов"},
+          {"value": "4K","label": "Ультра HD вывод"},
+          {"value": "99%","label": "Точность"}
+        ],
+        "background_image": {"src": "/imgs/bg/tree.jpg","alt": "hero"}
+      },
+      "creation_workbench": {
+        "id": "creation-workbench","block": "creation-workbench",
+        "label": "Творческая студия",
+        "title": "Начните создавать с ИИ прямо сейчас",
+        "description": "Выберите модель, введите запрос и создайте профессиональные изображения в один клик."
+      },
+      "features_cards": {
+        "id": "features-cards","block": "features-cards",
+        "label": "Ключевые возможности",
+        "title": "Что умеет GPT Image 2",
+        "description": "Нативная мультимодальная архитектура с глубоким пониманием сложных запросов",
+        "items": [
+          {"icon": "Type","title": "Идеальный рендеринг текста","description": "Чёткие, читаемые логотипы и афиши мероприятий — текст встраивается прямо в изображение, без постобработки"},
+          {"icon": "LayoutGrid","title": "Пространственный контроль макета","description": "Точно управляйте положением каждого элемента с полным пониманием перекрытий и перспективы"},
+          {"icon": "Layers","title": "Редактирование на уровне объектов","description": "Редактируйте отдельный элемент, не нарушая окружающее освещение — точный контроль над каждой деталью"},
+          {"icon": "Sparkles","title": "Высококачественный вывод","description": "Глубокое понимание физики естественного света и отражательной способности материалов — на уровне профессиональной студии"}
+        ]
+      },
+      "pricing_plans": {
+        "id": "pricing-plans","block": "pricing-custom",
+        "label": "Цены",
+        "title": "Простые и прозрачные цены",
+        "description": "Выберите план, подходящий для вашего рабочего процесса",
+        "groups": [
+          {"name": "one-time","title": "Оплата по факту","is_featured": true},
+          {"name": "monthly","title": "Ежемесячно"},
+          {"name": "yearly","title": "Ежегодно","label": "Экономия 20%"}
+        ],
+        "items": [
+          {"group": "one-time","product_id": "credits_starter","interval": "one-time","title": "Стартовый пакет","description": "500 кредитов ≈ 125 изображений","currency": "USD","amount": 2999,"price": "$29.99","button": {"title": "Купить сейчас"},"features": ["500 кредитов","~125 изображений","Без срока действия","Все способы оплаты"]},
+          {"group": "one-time","product_id": "credits_creator","interval": "one-time","is_featured": true,"label": "Самый популярный","title": "Пакет Создателя","description": "2000 кредитов ≈ 500 изображений","currency": "USD","amount": 9999,"price": "$99.99","button": {"title": "Купить сейчас"},"features": ["2000 кредитов","~500 изображений","Без срока действия","Все способы оплаты","Приоритетная очередь"]},
+          {"group": "one-time","product_id": "credits_pro","interval": "one-time","title": "Про пакет","description": "7000 кредитов ≈ 1750 изображений","currency": "USD","amount": 22900,"price": "$229","button": {"title": "Купить сейчас"},"features": ["7000 кредитов","~1750 изображений","Без срока действия","Все способы оплаты","Приоритетная очередь","Персональная поддержка"]},
+          {"group": "monthly","product_id": "plan_basic_monthly","interval": "month","title": "Базовый","description": "Для отдельных авторов","currency": "USD","amount": 990,"price": "$9.9","unit": "/мес","button": {"title": "Подписаться"},"features": ["200 кредитов/мес","Стандартная скорость","Базовые стили","Поддержка по почте"]},
+          {"group": "monthly","product_id": "plan_pro_monthly","interval": "month","is_featured": true,"label": "Самый популярный","title": "Про","description": "Для профессиональных авторов","currency": "USD","amount": 2900,"price": "$29","unit": "/мес","button": {"title": "Подписаться"},"features": ["800 кредитов/мес","Приоритетная скорость","Все стили","Редактирование изображений","Приоритетная поддержка"]},
+          {"group": "monthly","product_id": "plan_flagship_monthly","interval": "month","title": "Флагман","description": "Для команд и предприятий","currency": "USD","amount": 7900,"price": "$79","unit": "/мес","button": {"title": "Подписаться"},"features": ["3000 кредитов/мес","Максимальная скорость","Все стили","Редактирование изображений","Доступ к API","Персональная поддержка"]},
+          {"group": "yearly","product_id": "plan_basic_yearly","interval": "year","title": "Базовый","description": "Для отдельных авторов","currency": "USD","amount": 9480,"price": "$7.9","unit": "/мес · оплата ежегодно","button": {"title": "Подписаться"},"features": ["200 кредитов/мес","Стандартная скорость","Базовые стили","Поддержка по почте"]},
+          {"group": "yearly","product_id": "plan_pro_yearly","interval": "year","is_featured": true,"label": "Самый популярный","title": "Про","description": "Для профессиональных авторов","currency": "USD","amount": 27600,"price": "$23","unit": "/мес · оплата ежегодно","button": {"title": "Подписаться"},"features": ["800 кредитов/мес","Приоритетная скорость","Все стили","Редактирование изображений","Приоритетная поддержка"]},
+          {"group": "yearly","product_id": "plan_flagship_yearly","interval": "year","title": "Флагман","description": "Для команд и предприятий","currency": "USD","amount": 75600,"price": "$63","unit": "/мес · оплата ежегодно","button": {"title": "Подписаться"},"features": ["3000 кредитов/мес","Максимальная скорость","Все стили","Редактирование изображений","Доступ к API","Персональная поддержка"]}
+        ]
+      }
+    }
+  }
+}

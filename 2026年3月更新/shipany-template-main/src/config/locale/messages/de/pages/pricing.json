@@ -1,0 +1,124 @@
+{
+  "metadata": {
+    "title": "Preise",
+    "description": "Wähle den Plan, der am besten zu deinen Bildgenerierungsanforderungen passt"
+  },
+  "page": {
+    "title": "GPT Image 2 Preise",
+    "sections": {
+      "pricing": {
+        "id": "pricing"
+      }
+    }
+  },
+  "messages": {
+    "current_plan": "Aktueller Plan",
+    "processing": "Wird verarbeitet"
+  },
+  "custom": {
+    "header_title": "Einfache, transparente Preise",
+    "header_tagline": "Dem Vertrauen von über 10.000 Kreativen weltweit",
+    "tab_monthly": "Monatlich",
+    "tab_yearly": "Jährlich",
+    "tab_yearly_badge": "50% sparen",
+    "tab_credits": "Credits",
+    "tab_credits_badge": "50% Rabatt",
+    "cancel_hint": "Jederzeit kündbar. Keine versteckten Gebühren.",
+    "includes_label": "Enthält",
+    "buy_now": "Jetzt kaufen",
+    "subscribe_now": "Jetzt abonnieren",
+    "wechat_alipay": "WeChat/Alipay",
+    "payment_failed": "Zahlung fehlgeschlagen? Hier klicken",
+    "stripe_error": "Stripe-Zahlung fehlgeschlagen: ",
+    "credit_packs": [
+      {
+        "name": "Starter-Paket",
+        "subtitle": "Mehrbenutzerfähig",
+        "discount_tag": "50% Rabatt",
+        "description": "GPT Image 2 günstig ausprobieren",
+        "features": ["500 Credits ≈ 125 Bilder", "Credits verfallen nie", "Alle Premium-Funktionen freigeschaltet"],
+        "promo": "🔥 Ideal für Einsteiger!",
+        "note": "Keine versteckten Gebühren. Abo jederzeit kündbar."
+      },
+      {
+        "name": "Creator-Paket",
+        "subtitle": "Mehrbenutzerfähig",
+        "discount_tag": "50% Rabatt",
+        "description": "Die beste Wahl für professionelle Kreative",
+        "features": ["2000 Credits ≈ 500 Bilder", "Credits verfallen nie", "Alle Premium-Funktionen freigeschaltet"],
+        "promo": "🔥 Bestes Preis-Leistungs-Verhältnis!",
+        "note": "Keine versteckten Gebühren. Abo jederzeit kündbar.",
+        "featured_label": "Beliebteste"
+      },
+      {
+        "name": "Pro-Paket",
+        "subtitle": "",
+        "discount_tag": "50% Rabatt",
+        "description": "Studio-Qualität, Mengenrabatte verfügbar",
+        "features": ["7000 Credits ≈ 1750 Bilder", "Credits verfallen nie", "Alle Premium-Funktionen freigeschaltet", "Pro-Jahresplan-Vorteile", "Prioritätssupport", "Professionelle Bildgenerierung"],
+        "promo": "🔥 Empfohlen für Studios",
+        "note": "Keine versteckten Gebühren. Abo jederzeit kündbar."
+      }
+    ],
+    "monthly_plans": [
+      {
+        "name": "Basic",
+        "subtitle": "Für Einzelkreative",
+        "price_suffix": "/Monat",
+        "description": "Einfacher Einstieg, flexible monatliche Abrechnung",
+        "features": ["100 Bilder/Monat", "Text-zu-Bild", "Bildbearbeitung", "Jederzeit kündbar"],
+        "note": "Keine versteckten Gebühren. Jederzeit kündbar."
+      },
+      {
+        "name": "Pro",
+        "subtitle": "Für professionelle Kreative",
+        "price_suffix": "/Monat",
+        "description": "Mehr Produktivität, Prioritätswarteschlange",
+        "features": ["500 Bilder/Monat", "Text-zu-Bild + Bearbeitung", "Prioritätswarteschlange", "2K/4K HD-Ausgabe", "Jederzeit kündbar"],
+        "note": "Keine versteckten Gebühren. Jederzeit kündbar.",
+        "featured_label": "Beliebteste"
+      },
+      {
+        "name": "Flagship",
+        "subtitle": "Für Teams und Unternehmen",
+        "price_suffix": "/Monat",
+        "description": "Unbegrenzte Kapazität, Enterprise-SLA",
+        "features": ["Unbegrenzte Kapazität", "Alle Funktionen", "Dedizierter Support", "API-Zugang", "Jederzeit kündbar"],
+        "note": "Keine versteckten Gebühren. Jederzeit kündbar."
+      }
+    ],
+    "yearly_plans": [
+      {
+        "name": "Basic",
+        "subtitle": "Für Einzelkreative",
+        "price_suffix": "/Monat",
+        "saving_tag": "20% sparen",
+        "yearly_note": "Jährlich $94.8 · spare $24",
+        "description": "Einfacher Einstieg, mehr sparen mit Jahresabrechnung",
+        "features": ["100 Bilder/Monat", "Text-zu-Bild", "Bildbearbeitung", "Jederzeit kündbar"],
+        "note": "Keine versteckten Gebühren. Jederzeit kündbar."
+      },
+      {
+        "name": "Pro",
+        "subtitle": "Für professionelle Kreative",
+        "price_suffix": "/Monat",
+        "saving_tag": "20% sparen",
+        "yearly_note": "Jährlich $276 · spare $72",
+        "description": "Bestes Jahresangebot für Power-Creator",
+        "features": ["500 Bilder/Monat", "Text-zu-Bild + Bearbeitung", "Prioritätswarteschlange", "2K/4K HD-Ausgabe", "Jederzeit kündbar"],
+        "note": "Keine versteckten Gebühren. Jederzeit kündbar.",
+        "featured_label": "Beliebteste"
+      },
+      {
+        "name": "Flagship",
+        "subtitle": "Für Teams und Unternehmen",
+        "price_suffix": "/Monat",
+        "saving_tag": "20% sparen",
+        "yearly_note": "Jährlich $756 · spare $192",
+        "description": "Unbegrenzte Kapazität, Enterprise-SLA",
+        "features": ["Unbegrenzte Kapazität", "Alle Funktionen", "Dedizierter Support", "API-Zugang", "Jederzeit kündbar"],
+        "note": "Keine versteckten Gebühren. Jederzeit kündbar."
+      }
+    ]
+  }
+}

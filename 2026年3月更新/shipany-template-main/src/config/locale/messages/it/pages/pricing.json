@@ -1,0 +1,124 @@
+{
+  "metadata": {
+    "title": "Prezzi",
+    "description": "Scegli il piano più adatto alle tue esigenze di generazione immagini"
+  },
+  "page": {
+    "title": "Prezzi GPT Image 2",
+    "sections": {
+      "pricing": {
+        "id": "pricing"
+      }
+    }
+  },
+  "messages": {
+    "current_plan": "Piano Attuale",
+    "processing": "Elaborazione in corso"
+  },
+  "custom": {
+    "header_title": "Prezzi semplici e trasparenti",
+    "header_tagline": "La scelta di oltre 10.000 creator in tutto il mondo",
+    "tab_monthly": "Mensile",
+    "tab_yearly": "Annuale",
+    "tab_yearly_badge": "Risparmia 50%",
+    "tab_credits": "Crediti",
+    "tab_credits_badge": "50% di sconto",
+    "cancel_hint": "Disdici quando vuoi. Nessun costo nascosto.",
+    "includes_label": "Include",
+    "buy_now": "Acquista ora",
+    "subscribe_now": "Abbonati",
+    "wechat_alipay": "WeChat/Alipay",
+    "payment_failed": "Pagamento fallito? Clicca qui",
+    "stripe_error": "Pagamento Stripe fallito: ",
+    "credit_packs": [
+      {
+        "name": "Pacchetto Starter",
+        "subtitle": "Supporto multi-utente",
+        "discount_tag": "50% di sconto",
+        "description": "Prova GPT Image 2 a un prezzo conveniente",
+        "features": ["500 crediti ≈ 125 immagini", "Crediti senza scadenza", "Tutte le funzioni premium sbloccate"],
+        "promo": "🔥 Ideale per chi inizia!",
+        "note": "Nessun costo nascosto. Abbonamento disdicibie in qualsiasi momento."
+      },
+      {
+        "name": "Pacchetto Creator",
+        "subtitle": "Supporto multi-utente",
+        "discount_tag": "50% di sconto",
+        "description": "La scelta migliore per i creator professionisti",
+        "features": ["2000 crediti ≈ 500 immagini", "Crediti senza scadenza", "Tutte le funzioni premium sbloccate"],
+        "promo": "🔥 Il miglior rapporto qualità-prezzo!",
+        "note": "Nessun costo nascosto. Abbonamento disdicibie in qualsiasi momento.",
+        "featured_label": "Più Popolare"
+      },
+      {
+        "name": "Pacchetto Pro",
+        "subtitle": "",
+        "discount_tag": "50% di sconto",
+        "description": "Qualità da studio, acquisti in volume disponibili",
+        "features": ["7000 crediti ≈ 1750 immagini", "Crediti senza scadenza", "Tutte le funzioni premium sbloccate", "Vantaggi del piano annuale Pro", "Supporto prioritario", "Qualità di generazione professionale"],
+        "promo": "🔥 Consigliato per gli studi",
+        "note": "Nessun costo nascosto. Abbonamento disdicibie in qualsiasi momento."
+      }
+    ],
+    "monthly_plans": [
+      {
+        "name": "Base",
+        "subtitle": "Per creator individuali",
+        "price_suffix": "/mese",
+        "description": "Inizio facile, fatturazione mensile flessibile",
+        "features": ["100 immagini/mese", "Testo in immagine", "Modifica immagini", "Disdici quando vuoi"],
+        "note": "Nessun costo nascosto. Disdici quando vuoi."
+      },
+      {
+        "name": "Pro",
+        "subtitle": "Per creator professionisti",
+        "price_suffix": "/mese",
+        "description": "Più produttività, coda di elaborazione prioritaria",
+        "features": ["500 immagini/mese", "Testo in immagine + modifica", "Coda prioritaria", "Output HD 2K/4K", "Disdici quando vuoi"],
+        "note": "Nessun costo nascosto. Disdici quando vuoi.",
+        "featured_label": "Più Popolare"
+      },
+      {
+        "name": "Flagship",
+        "subtitle": "Per team e aziende",
+        "price_suffix": "/mese",
+        "description": "Quota illimitata, SLA enterprise",
+        "features": ["Quota illimitata", "Tutte le funzioni", "Supporto dedicato", "Accesso API", "Disdici quando vuoi"],
+        "note": "Nessun costo nascosto. Disdici quando vuoi."
+      }
+    ],
+    "yearly_plans": [
+      {
+        "name": "Base",
+        "subtitle": "Per creator individuali",
+        "price_suffix": "/mese",
+        "saving_tag": "Risparmia 20%",
+        "yearly_note": "Fatturato $94.8/anno · risparmia $24",
+        "description": "Inizio facile, risparmia di più con la fatturazione annuale",
+        "features": ["100 immagini/mese", "Testo in immagine", "Modifica immagini", "Disdici quando vuoi"],
+        "note": "Nessun costo nascosto. Disdici quando vuoi."
+      },
+      {
+        "name": "Pro",
+        "subtitle": "Per creator professionisti",
+        "price_suffix": "/mese",
+        "saving_tag": "Risparmia 20%",
+        "yearly_note": "Fatturato $276/anno · risparmia $72",
+        "description": "Il miglior valore annuale per creator avanzati",
+        "features": ["500 immagini/mese", "Testo in immagine + modifica", "Coda prioritaria", "Output HD 2K/4K", "Disdici quando vuoi"],
+        "note": "Nessun costo nascosto. Disdici quando vuoi.",
+        "featured_label": "Più Popolare"
+      },
+      {
+        "name": "Flagship",
+        "subtitle": "Per team e aziende",
+        "price_suffix": "/mese",
+        "saving_tag": "Risparmia 20%",
+        "yearly_note": "Fatturato $756/anno · risparmia $192",
+        "description": "Quota illimitata, SLA enterprise",
+        "features": ["Quota illimitata", "Tutte le funzioni", "Supporto dedicato", "Accesso API", "Disdici quando vuoi"],
+        "note": "Nessun costo nascosto. Disdici quando vuoi."
+      }
+    ]
+  }
+}

@@ -1,148 +1,144 @@
 {
   "metadata": {
     "title": "案例展示",
-    "description": "用 ShipAny 打造的精彩项目"
+    "description": "用 GPT Image 2 创作的范例 — 人像、产品、插画到高保真修图。"
   },
   "page": {
-    "title": "案例展示",
+    "title": "GPT Image 2 案例展示",
     "sections": {
       "showcases": {
         "id": "showcases",
-        "title": "用 ShipAny 构建的 AI SaaS 创业项目",
-        "description": "简单、快速、高效。",
+        "title": "用 GPT Image 2 创作",
+        "description": "一条简短提示词 — 看看 GPT Image 2 开箱即用能产出哪些风格、场景与编辑效果。",
         "groups": [
           {
             "name": "all",
-            "title": "所有项目"
+            "title": "全部"
           },
           {
-            "name": "ai-chatbot",
-            "title": "AI 聊天机器人"
+            "name": "portrait",
+            "title": "人像"
           },
           {
-            "name": "ai-image",
-            "title": "AI 图片"
+            "name": "landscape",
+            "title": "风景"
           },
           {
-            "name": "ai-video",
-            "title": "AI 视频"
+            "name": "illustration",
+            "title": "插画"
           },
           {
-            "name": "ai-audio",
-            "title": "AI 音频"
+            "name": "product",
+            "title": "产品"
           },
           {
-            "name": "ai-music",
-            "title": "AI 音乐"
+            "name": "anime",
+            "title": "二次元"
           },
           {
-            "name": "ai-coding",
-            "title": "AI 编程"
-          },
-          {
-            "name": "other",
-            "title": "其他"
+            "name": "photo-edit",
+            "title": "修图"
           }
         ],
         "items": [
           {
-            "title": "ThinkAny",
-            "description": "AI 搜索引擎",
-            "url": "https://thinkany.ai",
-            "target": "_blank",
-            "image": {
-              "src": "/imgs/cases/7.png",
-              "alt": "案例展示"
-            },
-            "group": "ai-chatbot"
-          },
-          {
-            "title": "HeyBeauty",
-            "description": "AI 虚拟试妆",
-            "url": "https://heybeauty.ai",
-            "target": "_blank",
-            "image": {
-              "src": "/imgs/cases/5.png",
-              "alt": "案例展示"
-            },
-            "group": "ai-image"
-          },
-          {
-            "title": "AI Wallpaper",
-            "description": "AI 壁纸生成器",
-            "url": "https://aiwallpaper.shop",
-            "target": "_blank",
+            "title": "人像摄影",
+            "description": "电影级人像，准确肤色、戏剧化光影、浅景深氛围。",
+            "url": "#showcases",
+            "target": "_self",
             "image": {
               "src": "/imgs/cases/1.png",
-              "alt": "案例展示"
+              "alt": "GPT Image 2 生成的人像摄影范例"
             },
-            "group": "ai-image"
+            "group": "portrait"
           },
           {
-            "title": "AI Cover",
-            "description": "AI 封面生成器",
-            "url": "https://aicover.design",
-            "target": "_blank",
+            "title": "二次元插画",
+            "description": "经典动漫风格的精致角色与动感构图。",
+            "url": "#showcases",
+            "target": "_self",
             "image": {
               "src": "/imgs/cases/2.png",
-              "alt": "案例展示"
+              "alt": "GPT Image 2 生成的二次元插画范例"
             },
-            "group": "ai-image"
+            "group": "anime"
           },
           {
-            "title": "GPTs Works",
-            "description": "GPTs 导航",
-            "url": "https://gpts.works",
-            "target": "_blank",
+            "title": "风景大片",
+            "description": "拟真风景画面，自然光影与远近层次极具说服力。",
+            "url": "#showcases",
+            "target": "_self",
             "image": {
               "src": "/imgs/cases/3.png",
-              "alt": "案例展示"
+              "alt": "GPT Image 2 生成的风景大片"
             },
-            "group": "other"
+            "group": "landscape"
           },
           {
-            "title": "Melodisco",
-            "description": "AI 音乐播放器",
-            "url": "https://melodis.co",
-            "target": "_blank",
+            "title": "产品主图",
+            "description": "干净的产品摄影，反光与背景控制到位，可直接用于品牌素材。",
+            "url": "#showcases",
+            "target": "_self",
             "image": {
               "src": "/imgs/cases/4.png",
-              "alt": "案例展示"
+              "alt": "GPT Image 2 生成的产品主图"
             },
-            "group": "ai-music"
+            "group": "product"
           },
           {
-            "title": "Pagen",
-            "description": "AI 落地页生成器",
-            "url": "https://pagen.so",
-            "target": "_blank",
+            "title": "概念插画",
+            "description": "富有故事感的奇幻世界与角色，画面带笔触质感。",
+            "url": "#showcases",
+            "target": "_self",
+            "image": {
+              "src": "/imgs/cases/5.png",
+              "alt": "GPT Image 2 生成的概念插画"
+            },
+            "group": "illustration"
+          },
+          {
+            "title": "老照片修复",
+            "description": "修补褪色扫描件，去除划痕、提升面部细节，同时保留原图气质。",
+            "url": "#showcases",
+            "target": "_self",
             "image": {
               "src": "/imgs/cases/6.png",
-              "alt": "案例展示"
+              "alt": "GPT Image 2 老照片修复范例"
             },
-            "group": "ai-coding"
+            "group": "photo-edit"
           },
           {
-            "title": "SoraFM",
-            "description": "AI 视频生成器",
-            "url": "https://sorafm.trys.ai",
-            "target": "_blank",
+            "title": "生活方式摄影",
+            "description": "温暖、自然的场景画面，氛围与质感跨多种环境都准确。",
+            "url": "#showcases",
+            "target": "_self",
+            "image": {
+              "src": "/imgs/cases/7.png",
+              "alt": "GPT Image 2 生成的生活方式摄影范例"
+            },
+            "group": "portrait"
+          },
+          {
+            "title": "建筑效果图",
+            "description": "精准的室内外效果图，材质、比例与光线都拟真到位。",
+            "url": "#showcases",
+            "target": "_self",
             "image": {
               "src": "/imgs/cases/8.png",
-              "alt": "案例展示"
+              "alt": "GPT Image 2 建筑效果图范例"
             },
-            "group": "ai-video"
+            "group": "landscape"
           },
           {
-            "title": "PodLM",
-            "description": "AI 播客生成器",
-            "url": "https://podlm.ai",
-            "target": "_blank",
+            "title": "水彩与植物",
+            "description": "手绘风格画面，柔和色调、有机形态与丰富肌理。",
+            "url": "#showcases",
+            "target": "_self",
             "image": {
               "src": "/imgs/cases/9.png",
-              "alt": "案例展示"
+              "alt": "GPT Image 2 生成的水彩植物插画"
             },
-            "group": "ai-audio"
+            "group": "illustration"
           }
         ]
       }

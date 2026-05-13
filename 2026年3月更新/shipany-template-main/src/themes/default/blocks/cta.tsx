@@ -40,6 +40,7 @@ export function Cta({
                   asChild
                   size={button.size || 'default'}
                   variant={button.variant || 'default'}
+                  className={(button as any).className}
                   key={idx}
                 >
                   <Link

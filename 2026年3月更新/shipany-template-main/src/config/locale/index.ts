@@ -1,11 +1,20 @@
 import { envConfigs } from '..';
 
 export const localeNames: any = {
-  en: 'English',
-  zh: '中文',
+  en: '🇺🇸 English',
+  zh: '🇨🇳 中文',
+  ko: '🇰🇷 한국어',
+  ja: '🇯🇵 日本語',
+  es: '🇪🇸 Español',
+  de: '🇩🇪 Deutsch',
+  fr: '🇫🇷 Français',
+  ru: '🇷🇺 Русский',
+  ar: '🇸🇦 العربية',
+  pt: '🇧🇷 Português',
+  it: '🇮🇹 Italiano',
 };
 
-export const locales = ['en', 'zh'];
+export const locales = ['en', 'zh', 'ko', 'ja', 'es', 'de', 'fr', 'ru', 'ar', 'pt', 'it'];
 
 export const defaultLocale = envConfigs.locale;
 

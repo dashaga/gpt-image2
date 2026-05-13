@@ -1,4 +1,4 @@
-import { and, count, desc, eq, sql } from 'drizzle-orm';
+import { and, count, desc, eq, isNull, sql } from 'drizzle-orm';
 
 import { db } from '@/core/db';
 import { aiTask, credit } from '@/config/db/schema';
@@ -51,6 +51,14 @@ export async function createAITask(newAITask: NewAITask) {
 
 export async function findAITaskById(id: string) {
   const [result] = await db().select().from(aiTask).where(eq(aiTask.id, id));
+  return result;
+}
+
+export async function findAITaskByProviderTaskId(providerTaskId: string) {
+  const [result] = await db()
+    .select()
+    .from(aiTask)
+    .where(eq(aiTask.taskId, providerTaskId));
   return result;
 }
 
@@ -121,6 +129,7 @@ export async function getAITasksCount({
     .from(aiTask)
     .where(
       and(
+        isNull(aiTask.deletedAt),
         userId ? eq(aiTask.userId, userId) : undefined,
         mediaType ? eq(aiTask.mediaType, mediaType) : undefined,
         provider ? eq(aiTask.provider, provider) : undefined,
@@ -153,6 +162,7 @@ export async function getAITasks({
     .from(aiTask)
     .where(
       and(
+        isNull(aiTask.deletedAt),
         userId ? eq(aiTask.userId, userId) : undefined,
         mediaType ? eq(aiTask.mediaType, mediaType) : undefined,
         provider ? eq(aiTask.provider, provider) : undefined,
@@ -168,4 +178,11 @@ export async function getAITasks({
   }
 
   return result;
+}
+
+export async function deleteAITaskById(id: string): Promise<void> {
+  await db()
+    .update(aiTask)
+    .set({ deletedAt: new Date() })
+    .where(eq(aiTask.id, id));
 }

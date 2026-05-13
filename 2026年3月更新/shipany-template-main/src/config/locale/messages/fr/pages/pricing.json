@@ -1,0 +1,124 @@
+{
+  "metadata": {
+    "title": "Tarifs",
+    "description": "Choisissez le plan qui correspond à vos besoins de génération d'images"
+  },
+  "page": {
+    "title": "Tarifs GPT Image 2",
+    "sections": {
+      "pricing": {
+        "id": "pricing"
+      }
+    }
+  },
+  "messages": {
+    "current_plan": "Plan Actuel",
+    "processing": "Traitement en cours"
+  },
+  "custom": {
+    "header_title": "Des tarifs simples et transparents",
+    "header_tagline": "La confiance de plus de 10 000 créateurs dans le monde",
+    "tab_monthly": "Mensuel",
+    "tab_yearly": "Annuel",
+    "tab_yearly_badge": "Économisez 50%",
+    "tab_credits": "Crédits",
+    "tab_credits_badge": "50% de réduction",
+    "cancel_hint": "Annulez à tout moment. Sans frais cachés.",
+    "includes_label": "Comprend",
+    "buy_now": "Acheter maintenant",
+    "subscribe_now": "S'abonner",
+    "wechat_alipay": "WeChat/Alipay",
+    "payment_failed": "Paiement échoué ? Cliquez ici",
+    "stripe_error": "Échec du paiement Stripe : ",
+    "credit_packs": [
+      {
+        "name": "Pack Débutant",
+        "subtitle": "Compatible multi-utilisateurs",
+        "discount_tag": "50% de réduction",
+        "description": "Découvrez GPT Image 2 à prix réduit",
+        "features": ["500 crédits ≈ 125 images", "Crédits sans expiration", "Toutes les fonctionnalités premium débloquées"],
+        "promo": "🔥 Idéal pour les débutants !",
+        "note": "Sans frais cachés. Abonnement annulable à tout moment."
+      },
+      {
+        "name": "Pack Créateur",
+        "subtitle": "Compatible multi-utilisateurs",
+        "discount_tag": "50% de réduction",
+        "description": "Le meilleur choix pour les créateurs professionnels",
+        "features": ["2000 crédits ≈ 500 images", "Crédits sans expiration", "Toutes les fonctionnalités premium débloquées"],
+        "promo": "🔥 Le meilleur rapport qualité-prix !",
+        "note": "Sans frais cachés. Abonnement annulable à tout moment.",
+        "featured_label": "Le Plus Populaire"
+      },
+      {
+        "name": "Pack Pro",
+        "subtitle": "",
+        "discount_tag": "50% de réduction",
+        "description": "Qualité studio, achat en volume disponible",
+        "features": ["7000 crédits ≈ 1750 images", "Crédits sans expiration", "Toutes les fonctionnalités premium débloquées", "Avantages du plan annuel Pro", "Support prioritaire", "Génération de qualité professionnelle"],
+        "promo": "🔥 Recommandé pour les studios",
+        "note": "Sans frais cachés. Abonnement annulable à tout moment."
+      }
+    ],
+    "monthly_plans": [
+      {
+        "name": "Basique",
+        "subtitle": "Pour les créateurs individuels",
+        "price_suffix": "/mois",
+        "description": "Démarrage facile, facturation mensuelle flexible",
+        "features": ["100 images/mois", "Texte vers image", "Édition d'images", "Annulation à tout moment"],
+        "note": "Sans frais cachés. Annulation à tout moment."
+      },
+      {
+        "name": "Pro",
+        "subtitle": "Pour les créateurs professionnels",
+        "price_suffix": "/mois",
+        "description": "Plus de productivité, file d'attente prioritaire",
+        "features": ["500 images/mois", "Texte vers image + édition", "File d'attente prioritaire", "Sortie HD 2K/4K", "Annulation à tout moment"],
+        "note": "Sans frais cachés. Annulation à tout moment.",
+        "featured_label": "Le Plus Populaire"
+      },
+      {
+        "name": "Flagship",
+        "subtitle": "Pour les équipes et entreprises",
+        "price_suffix": "/mois",
+        "description": "Quota illimité, SLA entreprise",
+        "features": ["Quota illimité", "Toutes les fonctionnalités", "Support dédié", "Accès API", "Annulation à tout moment"],
+        "note": "Sans frais cachés. Annulation à tout moment."
+      }
+    ],
+    "yearly_plans": [
+      {
+        "name": "Basique",
+        "subtitle": "Pour les créateurs individuels",
+        "price_suffix": "/mois",
+        "saving_tag": "Économisez 20%",
+        "yearly_note": "Facturé $94.8/an · économisez $24",
+        "description": "Démarrage facile, économisez plus avec la facturation annuelle",
+        "features": ["100 images/mois", "Texte vers image", "Édition d'images", "Annulation à tout moment"],
+        "note": "Sans frais cachés. Annulation à tout moment."
+      },
+      {
+        "name": "Pro",
+        "subtitle": "Pour les créateurs professionnels",
+        "price_suffix": "/mois",
+        "saving_tag": "Économisez 20%",
+        "yearly_note": "Facturé $276/an · économisez $72",
+        "description": "Meilleure valeur annuelle pour les créateurs avancés",
+        "features": ["500 images/mois", "Texte vers image + édition", "File d'attente prioritaire", "Sortie HD 2K/4K", "Annulation à tout moment"],
+        "note": "Sans frais cachés. Annulation à tout moment.",
+        "featured_label": "Le Plus Populaire"
+      },
+      {
+        "name": "Flagship",
+        "subtitle": "Pour les équipes et entreprises",
+        "price_suffix": "/mois",
+        "saving_tag": "Économisez 20%",
+        "yearly_note": "Facturé $756/an · économisez $192",
+        "description": "Quota illimité, SLA entreprise",
+        "features": ["Quota illimité", "Toutes les fonctionnalités", "Support dédié", "Accès API", "Annulation à tout moment"],
+        "note": "Sans frais cachés. Annulation à tout moment."
+      }
+    ]
+  }
+}

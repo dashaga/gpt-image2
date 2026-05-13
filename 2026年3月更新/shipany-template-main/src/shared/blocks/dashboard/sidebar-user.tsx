@@ -141,7 +141,13 @@ export function SidebarUser({ user }: { user: SidebarUserType }) {
               >
                 <Avatar className="h-8 w-8 rounded-lg">
                   <AvatarImage src={authUser.image || ''} alt={authUser.name} />
-                  <AvatarFallback className="rounded-lg">
+                  <AvatarFallback
+                    className="rounded-lg text-white"
+                    style={{
+                      background: 'linear-gradient(135deg, #6366F1, #818CF8)',
+                      boxShadow: '0 2px 10px rgba(99, 102, 241, 0.35)',
+                    }}
+                  >
                     {authUser.name?.charAt(0)}
                   </AvatarFallback>
                 </Avatar>
@@ -169,7 +175,13 @@ export function SidebarUser({ user }: { user: SidebarUserType }) {
                       src={authUser.image || ''}
                       alt={authUser.name}
                     />
-                    <AvatarFallback className="rounded-lg">
+                    <AvatarFallback
+                      className="rounded-lg text-white"
+                      style={{
+                        background: 'linear-gradient(135deg, #6366F1, #818CF8)',
+                        boxShadow: '0 2px 10px rgba(99, 102, 241, 0.35)',
+                      }}
+                    >
                       {authUser.name?.charAt(0) || 'U'}
                     </AvatarFallback>
                   </Avatar>

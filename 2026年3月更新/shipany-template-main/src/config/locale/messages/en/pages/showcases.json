@@ -1,148 +1,144 @@
 {
   "metadata": {
     "title": "Showcases",
-    "description": "Awesome projects built with ShipAny"
+    "description": "Examples of what GPT Image 2 can create — from portraits to product shots, illustrations, and high-fidelity edits."
   },
   "page": {
-    "title": "Showcases",
+    "title": "GPT Image 2 Showcases",
     "sections": {
       "showcases": {
         "id": "showcases",
-        "title": "AI SaaS Startups built with ShipAny",
-        "description": "Easy to use and fast to ship.",
+        "title": "Made with GPT Image 2",
+        "description": "From a single short prompt — explore the styles, scenes, and edits GPT Image 2 produces out of the box.",
         "groups": [
           {
             "name": "all",
             "title": "All"
           },
           {
-            "name": "ai-chatbot",
-            "title": "AI Chatbot"
+            "name": "portrait",
+            "title": "Portrait"
           },
           {
-            "name": "ai-image",
-            "title": "AI Image"
+            "name": "landscape",
+            "title": "Landscape"
           },
           {
-            "name": "ai-video",
-            "title": "AI Video"
+            "name": "illustration",
+            "title": "Illustration"
           },
           {
-            "name": "ai-audio",
-            "title": "AI Audio"
+            "name": "product",
+            "title": "Product"
           },
           {
-            "name": "ai-music",
-            "title": "AI Music"
+            "name": "anime",
+            "title": "Anime"
           },
           {
-            "name": "ai-coding",
-            "title": "AI Coding"
-          },
-          {
-            "name": "other",
-            "title": "Other"
+            "name": "photo-edit",
+            "title": "Photo edit"
           }
         ],
         "items": [
           {
-            "title": "ThinkAny",
-            "description": "AI Search Engine",
-            "url": "https://thinkany.ai",
-            "target": "_blank",
-            "image": {
-              "src": "/imgs/cases/7.png",
-              "alt": "showcases"
-            },
-            "group": "ai-chatbot"
-          },
-          {
-            "title": "HeyBeauty",
-            "description": "AI Virtual Try On",
-            "url": "https://heybeauty.ai",
-            "target": "_blank",
-            "image": {
-              "src": "/imgs/cases/5.png",
-              "alt": "showcases"
-            },
-            "group": "ai-image"
-          },
-          {
-            "title": "AI Wallpaper",
-            "description": "AI Wallpaper Generator",
-            "url": "https://aiwallpaper.shop",
-            "target": "_blank",
+            "title": "Portrait Photography",
+            "description": "Editorial-grade portraits with cinematic lighting, accurate skin tones, and shallow depth of field.",
+            "url": "#showcases",
+            "target": "_self",
             "image": {
               "src": "/imgs/cases/1.png",
-              "alt": "showcases"
+              "alt": "Portrait photography example generated with GPT Image 2"
             },
-            "group": "ai-image"
+            "group": "portrait"
           },
           {
-            "title": "AI Cover",
-            "description": "AI Cover Generator",
-            "url": "https://aicover.design",
-            "target": "_blank",
+            "title": "Anime Illustration",
+            "description": "Stylized characters with rich detail and dynamic composition in classic anime aesthetics.",
+            "url": "#showcases",
+            "target": "_self",
             "image": {
               "src": "/imgs/cases/2.png",
-              "alt": "showcases"
+              "alt": "Anime illustration example generated with GPT Image 2"
             },
-            "group": "ai-image"
+            "group": "anime"
           },
           {
-            "title": "GPTs Works",
-            "description": "GPTs Directory",
-            "url": "https://gpts.works",
-            "target": "_blank",
+            "title": "Landscape Scenes",
+            "description": "Photorealistic vistas with believable atmospheric perspective and naturalistic lighting.",
+            "url": "#showcases",
+            "target": "_self",
             "image": {
               "src": "/imgs/cases/3.png",
-              "alt": "showcases"
+              "alt": "Landscape scene generated with GPT Image 2"
             },
-            "group": "other"
+            "group": "landscape"
           },
           {
-            "title": "Melodisco",
-            "description": "AI Music Player",
-            "url": "https://melodis.co",
-            "target": "_blank",
+            "title": "Product Hero Shots",
+            "description": "Clean studio product imagery with controlled reflections and brand-ready backdrops.",
+            "url": "#showcases",
+            "target": "_self",
             "image": {
               "src": "/imgs/cases/4.png",
-              "alt": "showcases"
+              "alt": "Product hero shot generated with GPT Image 2"
             },
-            "group": "ai-music"
+            "group": "product"
           },
           {
-            "title": "Pagen",
-            "description": "AI Landing Page Generator",
-            "url": "https://pagen.so",
-            "target": "_blank",
+            "title": "Concept Illustration",
+            "description": "Whimsical worlds and characters rendered in painterly, narrative-driven style.",
+            "url": "#showcases",
+            "target": "_self",
+            "image": {
+              "src": "/imgs/cases/5.png",
+              "alt": "Concept illustration generated with GPT Image 2"
+            },
+            "group": "illustration"
+          },
+          {
+            "title": "Photo Restoration",
+            "description": "Repair faded scans, remove scratches, and enhance facial detail without losing the original character.",
+            "url": "#showcases",
+            "target": "_self",
             "image": {
               "src": "/imgs/cases/6.png",
-              "alt": "showcases"
+              "alt": "Photo restoration example with GPT Image 2"
             },
-            "group": "ai-coding"
+            "group": "photo-edit"
           },
           {
-            "title": "SoraFM",
-            "description": "AI Video Generator",
-            "url": "https://sorafm.trys.ai",
-            "target": "_blank",
+            "title": "Lifestyle Photography",
+            "description": "Warm, candid scenes that capture mood and texture across diverse environments.",
+            "url": "#showcases",
+            "target": "_self",
+            "image": {
+              "src": "/imgs/cases/7.png",
+              "alt": "Lifestyle photography generated with GPT Image 2"
+            },
+            "group": "portrait"
+          },
+          {
+            "title": "Architectural Renderings",
+            "description": "Precise interior and exterior visualizations with realistic materials, scale, and light.",
+            "url": "#showcases",
+            "target": "_self",
             "image": {
               "src": "/imgs/cases/8.png",
-              "alt": "showcases"
+              "alt": "Architectural rendering generated with GPT Image 2"
             },
-            "group": "ai-video"
+            "group": "landscape"
           },
           {
-            "title": "PodLM",
-            "description": "AI Podcast Generator",
-            "url": "https://podlm.ai",
-            "target": "_blank",
+            "title": "Watercolor & Botanical",
+            "description": "Hand-painted styles with soft palettes, organic forms, and textural detail.",
+            "url": "#showcases",
+            "target": "_self",
             "image": {
               "src": "/imgs/cases/9.png",
-              "alt": "showcases"
+              "alt": "Watercolor botanical illustration generated with GPT Image 2"
             },
-            "group": "ai-audio"
+            "group": "illustration"
           }
         ]
       }

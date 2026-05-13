@@ -1,0 +1,32 @@
+{
+  "fields": {
+    "email": "E-mail",
+    "password": "Senha",
+    "new_password": "Nova senha",
+    "confirm_password": "Confirmar senha"
+  },
+  "reset_password": {
+    "title": "Redefinir senha",
+    "description": "Redefina sua senha",
+    "tip": "Enviaremos um e-mail para redefinir sua senha.",
+    "crumbs": {
+      "settings": "Configurações",
+      "security": "Segurança"
+    },
+    "buttons": {
+      "submit": "Salvar"
+    }
+  },
+  "delete_account": {
+    "title": "Excluir conta",
+    "description": "Exclua sua conta",
+    "tip": "Tem certeza de que deseja excluir sua conta? Esta ação não pode ser desfeita.",
+    "crumbs": {
+      "settings": "Configurações",
+      "security": "Segurança"
+    },
+    "buttons": {
+      "submit": "Excluir"
+    }
+  }
+}

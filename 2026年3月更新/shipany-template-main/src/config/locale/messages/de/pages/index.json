@@ -1,0 +1,63 @@
+{
+  "page": {
+    "show_sections": ["hero","creation_workbench","features_cards","pricing_plans"],
+    "sections": {
+      "hero": {
+        "id": "hero",
+        "title": "GPT Image 2",
+        "description": "<span class='block text-2xl md:text-3xl font-medium text-foreground mb-6'>Weniger Eingaben, bessere Ergebnisse.</span>GPT Image 2 ist das fortschrittlichste KI-Bildgenerierungsmodell — erzielen Sie beeindruckende Ergebnisse mit einfachen Eingaben. Ob Text-zu-Bild oder Bildbearbeitung, es verfügt über ein außergewöhnliches Verständnis von Absicht und Komposition.",
+        "buttons": [
+          {"title": "GPT Image 2 ausprobieren","icon": "Zap","url": "/ai/gpt-image-2","target": "_self","variant": "default"},
+          {"title": "GPT Image 2 Beispiele anzeigen","icon": "Sparkles","url": "/showcases","target": "_self","variant": "outline"}
+        ],
+        "show_avatars": false,"show_award": false,
+        "stats": [
+          {"value": "10K+","label": "Kreative"},
+          {"value": "4K","label": "Ultra-HD-Ausgabe"},
+          {"value": "99%","label": "Genauigkeit"}
+        ],
+        "background_image": {"src": "/imgs/bg/tree.jpg","alt": "hero"}
+      },
+      "creation_workbench": {
+        "id": "creation-workbench","block": "creation-workbench",
+        "label": "Kreativ-Studio",
+        "title": "Jetzt mit KI kreieren",
+        "description": "Wählen Sie ein Modell, geben Sie eine Eingabe ein und generieren Sie professionelle Bilder mit einem Klick."
+      },
+      "features_cards": {
+        "id": "features-cards","block": "features-cards",
+        "label": "Kernfunktionen",
+        "title": "Was GPT Image 2 kann",
+        "description": "Native multimodale Architektur mit tiefem Verständnis komplexer Eingaben",
+        "items": [
+          {"icon": "Type","title": "Perfektes Textrendering","description": "Klare, lesbare Logos und Veranstaltungsplakate — Text direkt ins Bild eingebettet, keine Nachbearbeitung nötig"},
+          {"icon": "LayoutGrid","title": "Räumliche Layoutkontrolle","description": "Kontrollieren Sie präzise die Position jedes Elements mit vollständigem Verständnis von Verdeckung und Perspektive"},
+          {"icon": "Layers","title": "Objektbasierte Bearbeitung","description": "Bearbeiten Sie einzelne Elemente ohne die umliegende Beleuchtung zu stören — präzise Kontrolle über jedes Detail"},
+          {"icon": "Sparkles","title": "Hochwertige Ausgabe","description": "Tiefes Verständnis der Physik natürlichen Lichts und Materialreflexion — rivalisiert mit professioneller Studioqualität"}
+        ]
+      },
+      "pricing_plans": {
+        "id": "pricing-plans","block": "pricing-custom",
+        "label": "Preise",
+        "title": "Einfache, transparente Preise",
+        "description": "Wählen Sie den Plan, der zu Ihrem Workflow passt",
+        "groups": [
+          {"name": "one-time","title": "Nutzungsbasierte Zahlung","is_featured": true},
+          {"name": "monthly","title": "Monatlich"},
+          {"name": "yearly","title": "Jährlich","label": "20% sparen"}
+        ],
+        "items": [
+          {"group": "one-time","product_id": "credits_starter","interval": "one-time","title": "Starter-Paket","description": "500 Credits ≈ 125 Bilder","currency": "USD","amount": 2999,"price": "$29.99","button": {"title": "Jetzt kaufen"},"features": ["500 Credits","~125 Bilder","Kein Ablaufdatum","Alle Zahlungsmethoden"]},
+          {"group": "one-time","product_id": "credits_creator","interval": "one-time","is_featured": true,"label": "Am beliebtesten","title": "Creator-Paket","description": "2000 Credits ≈ 500 Bilder","currency": "USD","amount": 9999,"price": "$99.99","button": {"title": "Jetzt kaufen"},"features": ["2000 Credits","~500 Bilder","Kein Ablaufdatum","Alle Zahlungsmethoden","Prioritätswarteschlange"]},
+          {"group": "one-time","product_id": "credits_pro","interval": "one-time","title": "Pro-Paket","description": "7000 Credits ≈ 1750 Bilder","currency": "USD","amount": 22900,"price": "$229","button": {"title": "Jetzt kaufen"},"features": ["7000 Credits","~1750 Bilder","Kein Ablaufdatum","Alle Zahlungsmethoden","Prioritätswarteschlange","Dedizierter Support"]},
+          {"group": "monthly","product_id": "plan_basic_monthly","interval": "month","title": "Basic","description": "Für einzelne Kreative","currency": "USD","amount": 990,"price": "$9.9","unit": "/Monat","button": {"title": "Abonnieren"},"features": ["200 Credits/Monat","Standardgeschwindigkeit","Grundlegende Stile","E-Mail-Support"]},
+          {"group": "monthly","product_id": "plan_pro_monthly","interval": "month","is_featured": true,"label": "Am beliebtesten","title": "Pro","description": "Für professionelle Kreative","currency": "USD","amount": 2900,"price": "$29","unit": "/Monat","button": {"title": "Abonnieren"},"features": ["800 Credits/Monat","Prioritätsgeschwindigkeit","Alle Stile","Bildbearbeitung","Prioritätssupport"]},
+          {"group": "monthly","product_id": "plan_flagship_monthly","interval": "month","title": "Flagship","description": "Für Teams & Unternehmen","currency": "USD","amount": 7900,"price": "$79","unit": "/Monat","button": {"title": "Abonnieren"},"features": ["3000 Credits/Monat","Höchste Geschwindigkeit","Alle Stile","Bildbearbeitung","API-Zugang","Dedizierter Support"]},
+          {"group": "yearly","product_id": "plan_basic_yearly","interval": "year","title": "Basic","description": "Für einzelne Kreative","currency": "USD","amount": 9480,"price": "$7.9","unit": "/Monat · jährlich abgerechnet","button": {"title": "Abonnieren"},"features": ["200 Credits/Monat","Standardgeschwindigkeit","Grundlegende Stile","E-Mail-Support"]},
+          {"group": "yearly","product_id": "plan_pro_yearly","interval": "year","is_featured": true,"label": "Am beliebtesten","title": "Pro","description": "Für professionelle Kreative","currency": "USD","amount": 27600,"price": "$23","unit": "/Monat · jährlich abgerechnet","button": {"title": "Abonnieren"},"features": ["800 Credits/Monat","Prioritätsgeschwindigkeit","Alle Stile","Bildbearbeitung","Prioritätssupport"]},
+          {"group": "yearly","product_id": "plan_flagship_yearly","interval": "year","title": "Flagship","description": "Für Teams & Unternehmen","currency": "USD","amount": 75600,"price": "$63","unit": "/Monat · jährlich abgerechnet","button": {"title": "Abonnieren"},"features": ["3000 Credits/Monat","Höchste Geschwindigkeit","Alle Stile","Bildbearbeitung","API-Zugang","Dedizierter Support"]}
+        ]
+      }
+    }
+  }
+}

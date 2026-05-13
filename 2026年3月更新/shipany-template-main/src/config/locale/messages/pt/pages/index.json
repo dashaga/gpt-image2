@@ -1,0 +1,63 @@
+{
+  "page": {
+    "show_sections": ["hero","creation_workbench","features_cards","pricing_plans"],
+    "sections": {
+      "hero": {
+        "id": "hero",
+        "title": "GPT Image 2",
+        "description": "<span class='block text-2xl md:text-3xl font-medium text-foreground mb-6'>Menos descrições, melhores resultados.</span>GPT Image 2 é o modelo de geração de imagens com IA mais avançado — alcance resultados impressionantes com simples descrições. Seja geração de texto para imagem ou edição de imagens, ele possui compreensão excepcional de intenção e composição.",
+        "buttons": [
+          {"title": "Experimentar GPT Image 2","icon": "Zap","url": "/ai/gpt-image-2","target": "_self","variant": "default"},
+          {"title": "Ver exemplos do GPT Image 2","icon": "Sparkles","url": "/showcases","target": "_self","variant": "outline"}
+        ],
+        "show_avatars": false,"show_award": false,
+        "stats": [
+          {"value": "10K+","label": "Criadores"},
+          {"value": "4K","label": "Saída Ultra HD"},
+          {"value": "99%","label": "Precisão"}
+        ],
+        "background_image": {"src": "/imgs/bg/tree.jpg","alt": "hero"}
+      },
+      "creation_workbench": {
+        "id": "creation-workbench","block": "creation-workbench",
+        "label": "Estúdio de Criação",
+        "title": "Comece a criar com IA agora",
+        "description": "Escolha um modelo, escreva uma descrição e gere imagens profissionais em um clique."
+      },
+      "features_cards": {
+        "id": "features-cards","block": "features-cards",
+        "label": "Capacidades principais",
+        "title": "O que o GPT Image 2 pode fazer",
+        "description": "Arquitetura multimodal nativa com compreensão profunda de descrições complexas",
+        "items": [
+          {"icon": "Type","title": "Renderização de texto perfeita","description": "Logotipos e cartazes de eventos nítidos e legíveis — texto incorporado diretamente na imagem, sem edição posterior"},
+          {"icon": "LayoutGrid","title": "Controle de layout espacial","description": "Controle com precisão a posição de cada elemento, com compreensão total de oclusão e perspectiva"},
+          {"icon": "Layers","title": "Edição em nível de objeto","description": "Edite um único elemento sem perturbar a iluminação ao redor — controle preciso sobre cada detalhe"},
+          {"icon": "Sparkles","title": "Saída de alta fidelidade","description": "Compreensão profunda da física da luz natural e refletância de materiais — rivaliza com a qualidade de um estúdio profissional"}
+        ]
+      },
+      "pricing_plans": {
+        "id": "pricing-plans","block": "pricing-custom",
+        "label": "Preços",
+        "title": "Preços simples e transparentes",
+        "description": "Escolha o plano que se adapta ao seu fluxo de trabalho",
+        "groups": [
+          {"name": "one-time","title": "Pague pelo uso","is_featured": true},
+          {"name": "monthly","title": "Mensal"},
+          {"name": "yearly","title": "Anual","label": "Economize 20%"}
+        ],
+        "items": [
+          {"group": "one-time","product_id": "credits_starter","interval": "one-time","title": "Pack Iniciante","description": "500 créditos ≈ 125 imagens","currency": "USD","amount": 2999,"price": "$29.99","button": {"title": "Comprar agora"},"features": ["500 créditos","~125 imagens","Sem vencimento","Todos os métodos de pagamento"]},
+          {"group": "one-time","product_id": "credits_creator","interval": "one-time","is_featured": true,"label": "Mais popular","title": "Pack Criador","description": "2000 créditos ≈ 500 imagens","currency": "USD","amount": 9999,"price": "$99.99","button": {"title": "Comprar agora"},"features": ["2000 créditos","~500 imagens","Sem vencimento","Todos os métodos de pagamento","Fila prioritária"]},
+          {"group": "one-time","product_id": "credits_pro","interval": "one-time","title": "Pack Pro","description": "7000 créditos ≈ 1750 imagens","currency": "USD","amount": 22900,"price": "$229","button": {"title": "Comprar agora"},"features": ["7000 créditos","~1750 imagens","Sem vencimento","Todos os métodos de pagamento","Fila prioritária","Suporte dedicado"]},
+          {"group": "monthly","product_id": "plan_basic_monthly","interval": "month","title": "Básico","description": "Para criadores individuais","currency": "USD","amount": 990,"price": "$9.9","unit": "/mês","button": {"title": "Assinar"},"features": ["200 créditos/mês","Velocidade padrão","Estilos básicos","Suporte por e-mail"]},
+          {"group": "monthly","product_id": "plan_pro_monthly","interval": "month","is_featured": true,"label": "Mais popular","title": "Pro","description": "Para criadores profissionais","currency": "USD","amount": 2900,"price": "$29","unit": "/mês","button": {"title": "Assinar"},"features": ["800 créditos/mês","Velocidade prioritária","Todos os estilos","Edição de imagens","Suporte prioritário"]},
+          {"group": "monthly","product_id": "plan_flagship_monthly","interval": "month","title": "Flagship","description": "Para equipes e empresas","currency": "USD","amount": 7900,"price": "$79","unit": "/mês","button": {"title": "Assinar"},"features": ["3000 créditos/mês","Velocidade máxima","Todos os estilos","Edição de imagens","Acesso à API","Suporte dedicado"]},
+          {"group": "yearly","product_id": "plan_basic_yearly","interval": "year","title": "Básico","description": "Para criadores individuais","currency": "USD","amount": 9480,"price": "$7.9","unit": "/mês · cobrado anualmente","button": {"title": "Assinar"},"features": ["200 créditos/mês","Velocidade padrão","Estilos básicos","Suporte por e-mail"]},
+          {"group": "yearly","product_id": "plan_pro_yearly","interval": "year","is_featured": true,"label": "Mais popular","title": "Pro","description": "Para criadores profissionais","currency": "USD","amount": 27600,"price": "$23","unit": "/mês · cobrado anualmente","button": {"title": "Assinar"},"features": ["800 créditos/mês","Velocidade prioritária","Todos os estilos","Edição de imagens","Suporte prioritário"]},
+          {"group": "yearly","product_id": "plan_flagship_yearly","interval": "year","title": "Flagship","description": "Para equipes e empresas","currency": "USD","amount": 75600,"price": "$63","unit": "/mês · cobrado anualmente","button": {"title": "Assinar"},"features": ["3000 créditos/mês","Velocidade máxima","Todos os estilos","Edição de imagens","Acesso à API","Suporte dedicado"]}
+        ]
+      }
+    }
+  }
+}

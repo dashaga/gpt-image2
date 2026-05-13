@@ -1,0 +1,18 @@
+{
+  "fields": {
+    "email": "Электронная почта",
+    "name": "Имя",
+    "avatar": "Аватар"
+  },
+  "edit": {
+    "title": "Профиль",
+    "description": "Обновить профиль",
+    "crumbs": {
+      "settings": "Настройки",
+      "profile": "Профиль"
+    },
+    "buttons": {
+      "submit": "Сохранить"
+    }
+  }
+}

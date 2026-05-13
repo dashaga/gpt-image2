@@ -709,6 +709,15 @@ export async function getSettings() {
       tab: 'email',
     },
     {
+      name: 'r2_account_id',
+      title: 'Account ID',
+      type: 'text',
+      placeholder: '2dc4f07fc8159b16d56f859dd7f588a1',
+      tip: 'Cloudflare Account ID. Found at Cloudflare dashboard → right sidebar.',
+      group: 'r2',
+      tab: 'storage',
+    },
+    {
       name: 'r2_access_key',
       title: 'Cloudflare Access Key',
       type: 'text',

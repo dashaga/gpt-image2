@@ -2,63 +2,49 @@
   "page": {
     "show_sections": [
       "hero",
-      "logos",
-      "introduce",
-      "benefits",
-      "usage",
-      "features",
-      "stats",
-      "testimonials",
-      "faq",
-      "cta"
+      "creation_workbench",
+      "features_cards",
+      "pricing_plans"
     ],
     "sections": {
       "hero": {
         "id": "hero",
-        "title": "一小时快速上线你的 AI 创业项目",
-        "highlight_text": "一小时",
-        "description": "ShipAny 是用于构建 AI SaaS 创业项目的 NextJS 项目模板。<br/>集成常用功能，快速上线你的产品。",
-        "announcement": {
-          "badge": "全新",
-          "title": "🎉 ShipAny 模板二已发布",
-          "url": "/pricing"
-        },
-        "tip": "🎁 前 1000 名用户特价优惠",
+        "title": "GPT Image 2",
+        "description": "<span class='block text-2xl md:text-3xl font-medium text-foreground mb-6'>更少提示词，更佳效果</span>GPT Image 2 是最先进的 AI 图像生成模型，只需简单的提示词就能达到惊艳的效果。无论是文生图还是图片编辑，都有极强的意图理解和构图能力。",
         "buttons": [
           {
-            "title": "立即开始",
+            "title": "体验 GPT Image 2",
             "icon": "Zap",
-            "url": "/pricing",
+            "url": "/ai/gpt-image-2",
             "target": "_self",
             "variant": "default"
           },
           {
-            "title": "阅读文档",
-            "icon": "BookOpenText",
-            "url": "/docs",
-            "target": "_blank",
+            "title": "查看 GPT Image 2 示例",
+            "icon": "Sparkles",
+            "url": "/showcases",
+            "target": "_self",
             "variant": "outline"
           }
         ],
-        "show_avatars": true,
-        "avatars_tip": "999+ 用户在使用 ShipAny 上站",
+        "show_avatars": false,
         "show_award": false,
-        "image": {
-          "src": "/imgs/features/admin.png",
-          "alt": "hero",
-          "width": 1200,
-          "height": 800
-        },
-        "image_invert": {
-          "src": "/imgs/features/admin-dark.png",
-          "alt": "hero",
-          "width": 1200,
-          "height": 800
-        },
+        "stats": [
+          { "value": "10K+", "label": "创作者" },
+          { "value": "4K", "label": "超清输出" },
+          { "value": "99%", "label": "准确率" }
+        ],
         "background_image": {
           "src": "/imgs/bg/tree.jpg",
           "alt": "hero"
         }
+      },
+      "creation_workbench": {
+        "id": "creation-workbench",
+        "block": "creation-workbench",
+        "label": "创作工作台",
+        "title": "立即开始 AI 创作",
+        "description": "选择模型，输入提示词，一键生成专业图像"
       },
       "logos": {
         "title": "ShipAny 使用以下技术栈构建",
@@ -384,24 +370,16 @@
       },
       "cta": {
         "id": "cta",
-        "title": "发布你的第一个 AI SaaS 项目",
-        "description": "从这里出发，用 ShipAny 极速交付。",
+        "title": "立即体验 GPT Image 2",
+        "description": "更少提示词，更佳效果，专业创作触手可及",
         "buttons": [
           {
-            "title": "获取 ShipAny",
-            "url": "https://shipany.ai",
-            "target": "_blank",
-            "icon": "Zap"
-          },
-          {
-            "title": "阅读文档",
-            "url": "/docs",
-            "target": "_blank",
-            "variant": "outline",
-            "icon": "BookOpenText"
+            "title": "免费开始创作",
+            "url": "/ai/gpt-image-2",
+            "className": "bg-white text-[#6366F1] hover:bg-white/90 font-semibold"
           }
         ],
-        "className": "bg-muted"
+        "className": "bg-[#6366F1] text-white"
       },
       "subscribe": {
         "id": "subscribe",
@@ -417,6 +395,169 @@
           "action": "/api/subscribe"
         },
         "className": "bg-muted"
+      },
+      "features_cards": {
+        "id": "features-cards",
+        "block": "features-cards",
+        "label": "核心能力",
+        "title": "GPT Image 2 的强大功能",
+        "description": "原生多模态架构，深度理解复杂提示词",
+        "items": [
+          {
+            "icon": "Type",
+            "title": "完美文字渲染",
+            "description": "清晰可读的企业标志、活动海报，文字直接嵌入画面，无需二次修图"
+          },
+          {
+            "icon": "LayoutGrid",
+            "title": "空间布局控制",
+            "description": "精确掌控画面中每个元素位置，理解视觉遮挡与透视原理"
+          },
+          {
+            "icon": "Layers",
+            "title": "对象级编辑",
+            "description": "单独修改某个元素，不影响周围光影，精准掌控每处细节"
+          },
+          {
+            "icon": "Sparkles",
+            "title": "高保真输出",
+            "description": "深度理解自然光物理特性与材质反射，媲美专业棚拍水准"
+          }
+        ]
+      },
+      "pricing_plans": {
+        "id": "pricing-plans",
+        "block": "pricing-custom",
+        "label": "定价方案",
+        "title": "简单透明的定价",
+        "description": "按需选择付费方式，支持微信/支付宝",
+        "groups": [
+          { "name": "one-time", "title": "按次付费", "is_featured": true },
+          { "name": "monthly", "title": "月付" },
+          { "name": "yearly", "title": "年付", "label": "省20%" }
+        ],
+        "items": [
+          {
+            "group": "one-time",
+            "product_id": "credits_starter",
+            "interval": "one-time",
+            "title": "体验积分包",
+            "description": "500积分约125张图",
+            "currency": "USD",
+            "amount": 2999,
+            "price": "$29.99",
+            "button": { "title": "立即购买" },
+            "features": ["500 积分", "约125张图", "无有效期限制", "支持多种支付"]
+          },
+          {
+            "group": "one-time",
+            "product_id": "credits_creator",
+            "interval": "one-time",
+            "is_featured": true,
+            "label": "最受欢迎",
+            "title": "创作积分包",
+            "description": "2000积分约500张图",
+            "currency": "USD",
+            "amount": 9999,
+            "price": "$99.99",
+            "button": { "title": "立即购买" },
+            "features": ["2000 积分", "约500张图", "无有效期限制", "优先处理队列", "支持多种支付"]
+          },
+          {
+            "group": "one-time",
+            "product_id": "credits_pro",
+            "interval": "one-time",
+            "title": "专业积分包",
+            "description": "7000积分约1750张图",
+            "currency": "USD",
+            "amount": 22900,
+            "price": "$229",
+            "button": { "title": "立即购买" },
+            "features": ["7000 积分", "约1750张图", "无有效期限制", "优先处理队列", "专属客服支持"]
+          },
+          {
+            "group": "monthly",
+            "product_id": "plan_basic_monthly",
+            "interval": "month",
+            "title": "基础版",
+            "description": "适合个人创作者",
+            "currency": "USD",
+            "amount": 990,
+            "price": "$9.9",
+            "unit": "/月",
+            "button": { "title": "立即订阅" },
+            "features": ["每月200积分", "标准生成速度", "基础风格选项", "邮件支持"]
+          },
+          {
+            "group": "monthly",
+            "product_id": "plan_pro_monthly",
+            "interval": "month",
+            "is_featured": true,
+            "label": "最受欢迎",
+            "title": "专业版",
+            "description": "适合专业创作者",
+            "currency": "USD",
+            "amount": 2900,
+            "price": "$29",
+            "unit": "/月",
+            "button": { "title": "立即订阅" },
+            "features": ["每月800积分", "优先生成速度", "全部风格选项", "图片编辑功能", "优先客服支持"]
+          },
+          {
+            "group": "monthly",
+            "product_id": "plan_flagship_monthly",
+            "interval": "month",
+            "title": "旗舰版",
+            "description": "适合团队与企业",
+            "currency": "USD",
+            "amount": 7900,
+            "price": "$79",
+            "unit": "/月",
+            "button": { "title": "立即订阅" },
+            "features": ["每月3000积分", "最高生成速度", "全部风格选项", "图片编辑功能", "API访问权限", "专属客服支持"]
+          },
+          {
+            "group": "yearly",
+            "product_id": "plan_basic_yearly",
+            "interval": "year",
+            "title": "基础版",
+            "description": "适合个人创作者",
+            "currency": "USD",
+            "amount": 9480,
+            "price": "$7.9",
+            "unit": "/月 · 按年付",
+            "button": { "title": "立即订阅" },
+            "features": ["每月200积分", "标准生成速度", "基础风格选项", "邮件支持"]
+          },
+          {
+            "group": "yearly",
+            "product_id": "plan_pro_yearly",
+            "interval": "year",
+            "is_featured": true,
+            "label": "最受欢迎",
+            "title": "专业版",
+            "description": "适合专业创作者",
+            "currency": "USD",
+            "amount": 27600,
+            "price": "$23",
+            "unit": "/月 · 按年付",
+            "button": { "title": "立即订阅" },
+            "features": ["每月800积分", "优先生成速度", "全部风格选项", "图片编辑功能", "优先客服支持"]
+          },
+          {
+            "group": "yearly",
+            "product_id": "plan_flagship_yearly",
+            "interval": "year",
+            "title": "旗舰版",
+            "description": "适合团队与企业",
+            "currency": "USD",
+            "amount": 75600,
+            "price": "$63",
+            "unit": "/月 · 按年付",
+            "button": { "title": "立即订阅" },
+            "features": ["每月3000积分", "最高生成速度", "全部风格选项", "图片编辑功能", "API访问权限", "专属客服支持"]
+          }
+        ]
       }
     }
   }

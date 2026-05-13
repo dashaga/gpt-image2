@@ -1,8 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { Fragment } from 'react/jsx-runtime';
-import { Coins, LayoutDashboard, Loader2, LogOut, User } from 'lucide-react';
+import { Coins, Loader2, LogOut, User } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 import { authClient, signOut, useSession } from '@/core/auth/client';
@@ -23,9 +22,8 @@ import {
 import { useAppContext } from '@/shared/contexts/app';
 import { cn } from '@/shared/lib/utils';
 import { User as UserType } from '@/shared/models/user';
-import { NavItem, UserNav } from '@/shared/types/blocks/common';
+import { UserNav } from '@/shared/types/blocks/common';
 
-import { SmartIcon } from '../common/smart-icon';
 import { SignModal } from './sign-modal';
 
 function extractSessionUser(data: any): UserType | null {
@@ -139,6 +137,8 @@ export function SignUser({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isPending, sessionUser, user?.id]);
 
+  const nameInitial = (displayUser?.name || displayUser?.email || '?')[0].toUpperCase();
+
   return (
     <>
       {isCheckSign || !mounted ? (
@@ -157,79 +157,81 @@ export function SignUser({
                   src={displayUser.image || ''}
                   alt={displayUser.name || ''}
                 />
-                <AvatarFallback>{displayUser.name.charAt(0)}</AvatarFallback>
+                <AvatarFallback
+                  style={{
+                    background: 'linear-gradient(135deg, #6366F1, #818CF8)',
+                    boxShadow: '0 2px 10px rgba(99, 102, 241, 0.35)',
+                  }}
+                >
+                  <span className="text-white font-semibold text-base leading-none">
+                    {nameInitial}
+                  </span>
+                </AvatarFallback>
               </Avatar>
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent>
-            {userNav?.show_name && (
-              <>
-                <DropdownMenuItem asChild>
-                  <Link
-                    className="w-full cursor-pointer"
-                    href="/settings/profile"
+
+          <DropdownMenuContent
+            align="end"
+            className="w-64 p-0 overflow-hidden rounded-xl shadow-lg"
+          >
+            {/* User info header */}
+            <div className="px-4 py-4 bg-gradient-to-br from-indigo-50/60 to-purple-50/60 dark:from-indigo-950/30 dark:to-purple-950/30">
+              <div className="flex items-center gap-3">
+                <Avatar className="h-11 w-11 shrink-0">
+                  <AvatarImage
+                    src={displayUser.image || ''}
+                    alt={displayUser.name || ''}
+                  />
+                  <AvatarFallback
+                    style={{
+                      background: 'linear-gradient(135deg, #6366F1, #818CF8)',
+                    }}
                   >
-                    <User />
-                    {displayUser.name}
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuSeparator />
-              </>
-            )}
+                    <span className="text-white font-semibold text-lg leading-none">
+                      {nameInitial}
+                    </span>
+                  </AvatarFallback>
+                </Avatar>
+                <div className="flex-1 min-w-0">
+                  {displayUser.name && (
+                    <p className="font-semibold text-sm truncate leading-tight">
+                      {displayUser.name}
+                    </p>
+                  )}
+                  {displayUser.email && (
+                    <p className="text-xs text-muted-foreground truncate mt-0.5">
+                      {displayUser.email}
+                    </p>
+                  )}
+                  <div className="flex items-center gap-1 mt-1.5">
+                    <Coins className="w-3 h-3 text-[#6366F1] shrink-0" />
+                    <span className="text-xs font-medium text-[#6366F1]">
+                      {t('credits_title', {
+                        credits: displayUser.credits?.remainingCredits || 0,
+                      })}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-            {userNav?.show_credits && (
-              <>
-                <DropdownMenuItem asChild>
-                  <Link
-                    className="w-full cursor-pointer"
-                    href="/settings/credits"
-                  >
-                    <Coins />
-                    {t('credits_title', {
-                      credits: displayUser.credits?.remainingCredits || 0,
-                    })}
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuSeparator />
-              </>
-            )}
+            <DropdownMenuSeparator className="my-0" />
 
-            {userNav?.items?.map((item: NavItem, idx: number) => (
-              <Fragment key={idx}>
-                <DropdownMenuItem asChild>
-                  <Link
-                    className="w-full cursor-pointer"
-                    href={item.url || ''}
-                    target={item.target || '_self'}
-                  >
-                    {item.icon && (
-                      <SmartIcon
-                        name={item.icon as string}
-                        className="h-4 w-4"
-                      />
-                    )}
-                    {item.title}
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuSeparator />
-              </Fragment>
-            ))}
+            {/* Menu items */}
+            <div className="p-1">
+              <DropdownMenuItem asChild>
+                <Link
+                  href="/settings/profile"
+                  className="flex items-center gap-2 cursor-pointer rounded-lg"
+                >
+                  <User className="w-4 h-4" />
+                  {t('user_center_title')}
+                </Link>
+              </DropdownMenuItem>
 
-            {displayUser.isAdmin && (
-              <>
-                <DropdownMenuItem asChild>
-                  <Link className="w-full cursor-pointer" href="/admin">
-                    <LayoutDashboard />
-                    {t('admin_title')}
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuSeparator />
-              </>
-            )}
-
-            {userNav?.show_sign_out && (
               <DropdownMenuItem
-                className="w-full cursor-pointer"
+                className="flex items-center gap-2 cursor-pointer rounded-lg mt-0.5"
                 onClick={() =>
                   signOut({
                     fetchOptions: {
@@ -240,10 +242,10 @@ export function SignUser({
                   })
                 }
               >
-                <LogOut />
-                <span>{t('sign_out_title')}</span>
+                <LogOut className="w-4 h-4" />
+                {t('sign_out_title')}
               </DropdownMenuItem>
-            )}
+            </div>
           </DropdownMenuContent>
         </DropdownMenu>
       ) : (

@@ -1,0 +1,124 @@
+{
+  "metadata": {
+    "title": "料金プラン",
+    "description": "GPT Image 2に合った料金プランをお選びください"
+  },
+  "page": {
+    "title": "GPT Image 2 料金プラン",
+    "sections": {
+      "pricing": {
+        "id": "pricing"
+      }
+    }
+  },
+  "messages": {
+    "current_plan": "現在のプラン",
+    "processing": "処理中"
+  },
+  "custom": {
+    "header_title": "シンプルで透明な料金プラン",
+    "header_tagline": "世界中の10,000人以上のクリエイターに信頼されています",
+    "tab_monthly": "月払い",
+    "tab_yearly": "年払い",
+    "tab_yearly_badge": "50%節約",
+    "tab_credits": "クレジット",
+    "tab_credits_badge": "50%オフ",
+    "cancel_hint": "いつでもキャンセル可能。隠れた費用なし。",
+    "includes_label": "特典内容",
+    "buy_now": "今すぐ購入",
+    "subscribe_now": "今すぐ申し込む",
+    "wechat_alipay": "WeChat Pay / Alipay",
+    "payment_failed": "決済に失敗した場合はこちら",
+    "stripe_error": "Stripe決済に失敗しました: ",
+    "credit_packs": [
+      {
+        "name": "スタータープラン",
+        "subtitle": "マルチユーザー対応",
+        "discount_tag": "50%オフ",
+        "description": "GPT Image 2をお得に体験できます",
+        "features": ["500クレジット ≈ 125枚の画像", "クレジットの有効期限なし", "すべてのプレミアム機能が利用可能"],
+        "promo": "🔥 初心者におすすめ！",
+        "note": "隠れた費用なし。サブスクリプションはいつでもキャンセル可能。"
+      },
+      {
+        "name": "クリエイタープラン",
+        "subtitle": "マルチユーザー対応",
+        "discount_tag": "50%オフ",
+        "description": "プロクリエイター向けの最高の選択肢",
+        "features": ["2000クレジット ≈ 500枚の画像", "クレジットの有効期限なし", "すべてのプレミアム機能が利用可能"],
+        "promo": "🔥 最高のコスパ！",
+        "note": "隠れた費用なし。サブスクリプションはいつでもキャンセル可能。",
+        "featured_label": "最も人気"
+      },
+      {
+        "name": "プロプラン",
+        "subtitle": "",
+        "discount_tag": "50%オフ",
+        "description": "スタジオグレード、大量購入対応",
+        "features": ["7000クレジット ≈ 1750枚の画像", "クレジットの有効期限なし", "すべてのプレミアム機能が利用可能", "プロ年間プランの特典", "優先サポート", "プロ品質の画像生成"],
+        "promo": "🔥 スタジオ向け推奨",
+        "note": "隠れた費用なし。サブスクリプションはいつでもキャンセル可能。"
+      }
+    ],
+    "monthly_plans": [
+      {
+        "name": "ベーシック",
+        "subtitle": "個人クリエイター向け",
+        "price_suffix": "/月",
+        "description": "気軽に始められる、柔軟な月払い",
+        "features": ["月100枚の画像", "テキスト→画像生成", "画像編集", "いつでもキャンセル"],
+        "note": "隠れた費用なし。いつでもキャンセル可能。"
+      },
+      {
+        "name": "プロ",
+        "subtitle": "プロクリエイター向け",
+        "price_suffix": "/月",
+        "description": "生産性向上、優先処理キュー",
+        "features": ["月500枚の画像", "テキスト→画像 + 編集", "優先処理キュー", "2K/4K HD出力", "いつでもキャンセル"],
+        "note": "隠れた費用なし。いつでもキャンセル可能。",
+        "featured_label": "最も人気"
+      },
+      {
+        "name": "フラッグシップ",
+        "subtitle": "チーム・企業向け",
+        "price_suffix": "/月",
+        "description": "無制限クォータ、エンタープライズSLA",
+        "features": ["無制限クォータ", "全機能利用可能", "専用サポート", "APIアクセス", "いつでもキャンセル"],
+        "note": "隠れた費用なし。いつでもキャンセル可能。"
+      }
+    ],
+    "yearly_plans": [
+      {
+        "name": "ベーシック",
+        "subtitle": "個人クリエイター向け",
+        "price_suffix": "/月",
+        "saving_tag": "20%節約",
+        "yearly_note": "年間 $94.8 請求 · $24 節約",
+        "description": "気軽に始められる、年払いでさらにお得",
+        "features": ["月100枚の画像", "テキスト→画像生成", "画像編集", "いつでもキャンセル"],
+        "note": "隠れた費用なし。いつでもキャンセル可能。"
+      },
+      {
+        "name": "プロ",
+        "subtitle": "プロクリエイター向け",
+        "price_suffix": "/月",
+        "saving_tag": "20%節約",
+        "yearly_note": "年間 $276 請求 · $72 節約",
+        "description": "パワークリエイター向けの最高年間価値",
+        "features": ["月500枚の画像", "テキスト→画像 + 編集", "優先処理キュー", "2K/4K HD出力", "いつでもキャンセル"],
+        "note": "隠れた費用なし。いつでもキャンセル可能。",
+        "featured_label": "最も人気"
+      },
+      {
+        "name": "フラッグシップ",
+        "subtitle": "チーム・企業向け",
+        "price_suffix": "/月",
+        "saving_tag": "20%節約",
+        "yearly_note": "年間 $756 請求 · $192 節約",
+        "description": "無制限クォータ、エンタープライズSLA",
+        "features": ["無制限クォータ", "全機能利用可能", "専用サポート", "APIアクセス", "いつでもキャンセル"],
+        "note": "隠れた費用なし。いつでもキャンセル可能。"
+      }
+    ]
+  }
+}

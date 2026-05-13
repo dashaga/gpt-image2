@@ -135,6 +135,24 @@ export class S3Provider implements StorageProvider {
     }
   }
 
+  async deleteFile(key: string): Promise<boolean> {
+    try {
+      const uploadBucket = this.configs.bucket;
+      if (!uploadBucket) return false;
+      const url = `${this.configs.endpoint}/${uploadBucket}/${key}`;
+      const { AwsClient } = await import('aws4fetch');
+      const client = new AwsClient({
+        accessKeyId:     this.configs.accessKeyId,
+        secretAccessKey: this.configs.secretAccessKey,
+        region:          this.configs.region,
+      });
+      const response = await client.fetch(new Request(url, { method: 'DELETE' }));
+      return response.ok || response.status === 204 || response.status === 404;
+    } catch {
+      return false;
+    }
+  }
+
   async downloadAndUpload(
     options: StorageDownloadUploadOptions
   ): Promise<StorageUploadResult> {

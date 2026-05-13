@@ -19,6 +19,8 @@
   },
   "view": {
     "title": "Credits Balance",
+    "banner_label": "Current Credits Balance",
+    "hint": "Credits never expire and work across all models",
     "buttons": {
       "purchase": "Purchase Credits"
     }

@@ -1,0 +1,47 @@
+{
+  "fields": {
+    "title": "タイトル",
+    "key": "キー",
+    "created_at": "作成日",
+    "action": "操作"
+  },
+  "list": {
+    "title": "APIキー",
+    "empty_message": "APIキーなし",
+    "buttons": {
+      "add": "APIキーを作成",
+      "edit": "編集",
+      "delete": "削除"
+    }
+  },
+  "add": {
+    "title": "APIキーを作成",
+    "crumbs": {
+      "apikeys": "APIキー",
+      "add": "APIキーを作成"
+    },
+    "buttons": {
+      "submit": "作成"
+    }
+  },
+  "edit": {
+    "title": "APIキーを編集",
+    "crumbs": {
+      "apikeys": "APIキー",
+      "edit": "APIキーを編集"
+    },
+    "buttons": {
+      "submit": "更新"
+    }
+  },
+  "delete": {
+    "title": "APIキーを削除",
+    "crumbs": {
+      "apikeys": "APIキー",
+      "delete": "APIキーを削除"
+    },
+    "buttons": {
+      "submit": "削除を確認"
+    }
+  }
+}

@@ -61,6 +61,7 @@ const nextConfig = {
       // },
     },
   },
+  serverExternalPackages: ['formidable', 'superagent'],
   experimental: {
     turbopackFileSystemCacheForDev: true,
     // Disable mdxRs for Vercel deployment compatibility with fumadocs-mdx

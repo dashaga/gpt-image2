@@ -75,7 +75,7 @@ const MAX_PROMPT_LENGTH = 2000;
 const MODEL_OPTIONS = [
   {
     value: 'google/nano-banana-pro',
-    label: 'Nano Banana Pro',
+    label: 'Nano Banana 2',
     provider: 'replicate',
     scenes: ['text-to-image', 'image-to-image'],
   },
@@ -87,13 +87,13 @@ const MODEL_OPTIONS = [
   },
   {
     value: 'fal-ai/nano-banana-pro',
-    label: 'Nano Banana Pro',
+    label: 'Nano Banana 2',
     provider: 'fal',
     scenes: ['text-to-image'],
   },
   {
     value: 'fal-ai/nano-banana-pro/edit',
-    label: 'Nano Banana Pro',
+    label: 'Nano Banana 2',
     provider: 'fal',
     scenes: ['image-to-image'],
   },
@@ -123,7 +123,7 @@ const MODEL_OPTIONS = [
   },
   {
     value: 'nano-banana-pro',
-    label: 'Nano Banana Pro',
+    label: 'Nano Banana 2',
     provider: 'kie',
     scenes: ['text-to-image', 'image-to-image'],
   },

@@ -1,4 +1,4 @@
-import { oneTapClient } from 'better-auth/client/plugins';
+import { emailOTPClient, oneTapClient } from 'better-auth/client/plugins';
 import { createAuthClient } from 'better-auth/react';
 
 import { envConfigs } from '@/config';
@@ -79,9 +79,12 @@ function createGetSessionThrottledFetch({
 const AUTH_GET_SESSION_MIN_INTERVAL_MS =
   Number(process.env.NEXT_PUBLIC_AUTH_GET_SESSION_MIN_INTERVAL_MS) || 2000;
 
-// create default auth client, without plugins
+// create default auth client. emailOTPClient is included unconditionally so
+// signIn.emailOtp / authClient.emailOtp are typed and callable across the app;
+// the server enforces whether OTP is actually enabled.
 export const authClient = createAuthClient({
-  baseURL: envConfigs.auth_url,
+  baseURL: undefined,
+  plugins: [emailOTPClient()],
   fetchOptions: {
     // Avoid amplifying request storms (e.g. during env/db switching in dev).
     // IMPORTANT: auth mutations (sign-in/sign-up) must be non-retriable,
@@ -96,11 +99,28 @@ export const authClient = createAuthClient({
 // export default auth client methods
 export const { useSession, signIn, signUp, signOut } = authClient;
 
-// get auth client with plugins
+// get auth client with plugins. The plugin list is fixed (emailOTP + oneTap)
+// so TypeScript can infer the augmented client surface (e.g. authClient.oneTap).
+// Whether each plugin actually does anything is controlled at server-config
+// time and via the runtime configs passed in here.
 export function getAuthClient(configs: Record<string, string>) {
   const authClient = createAuthClient({
-    baseURL: envConfigs.auth_url,
-    plugins: getAuthPlugins(configs),
+    baseURL: undefined,
+    plugins: [
+      emailOTPClient(),
+      oneTapClient({
+        clientId: configs.google_client_id || '',
+        autoSelect: false,
+        cancelOnTapOutside: false,
+        context: 'signin',
+        additionalOptions: {},
+        promptOptions: {
+          baseDelay: 1000,
+          // Only attempt once to avoid multiple error logs (default: 5)
+          maxAttempts: 1,
+        },
+      }),
+    ],
     fetchOptions: {
       // Avoid amplifying request storms (e.g. during env/db switching in dev).
       // IMPORTANT: auth mutations (sign-in/sign-up) must be non-retriable,
@@ -113,32 +133,4 @@ export function getAuthClient(configs: Record<string, string>) {
   });
 
   return authClient;
-}
-
-// get auth plugins with configs
-function getAuthPlugins(configs: Record<string, string>) {
-  const authPlugins = [];
-
-  // google one tap plugin
-  if (configs.google_client_id && configs.google_one_tap_enabled === 'true') {
-    authPlugins.push(
-      oneTapClient({
-        clientId: configs.google_client_id,
-        // Optional client configuration:
-        autoSelect: false,
-        cancelOnTapOutside: false,
-        context: 'signin',
-        additionalOptions: {
-          // Any extra options for the Google initialize method
-        },
-        // Configure prompt behavior and exponential backoff:
-        promptOptions: {
-          baseDelay: 1000, // Base delay in ms (default: 1000)
-          maxAttempts: 1, // Only attempt once to avoid multiple error logs (default: 5)
-        },
-      })
-    );
-  }
-
-  return authPlugins;
 }

@@ -1,0 +1,59 @@
+{
+  "header": {
+    "id": "header",
+    "brand": { "title": "GPT Image 2", "logo": {"src": "/logo.svg","alt": "GPT Image 2","width": 100,"height": 100}, "url": "/" },
+    "nav": {
+      "items": [
+        {"title": "ホーム","url": "/","icon": "Sparkles"},
+        {"title": "GPT Image 2","icon": "RiImage2Line","children": [
+          {"title": "GPT Image 2","description": "フォトリアルなリアリズム、精密なテキストレンダリング、ピクセルレベルの編集。","url": "/ai/gpt-image-2","icon": "Bot","iconBg": "#EEF2FF","iconColor": "#6366F1","badge": "NEW","badgeColor": "#16a34a"},
+          {"title": "Nano Banana 2","description": "テキストプロンプトから高品質な画像を生成します。","url": "/ai/nano-banana-pro","icon": "Sparkles","iconBg": "#FEF9C3","iconColor": "#CA8A04"},
+          {"title": "Seedream 5","description": "最新のSeedreamモデル、4K品質、8つのアスペクト比。","url": "/ai/seedream5","icon": "Leaf","iconBg": "#FFF7ED","iconColor": "#EA580C","badge": "WILD","badgeColor": "#EA580C"},
+          {"title": "Image Enhancer","description": "解像度をアップスケールし、細部を精細化します。","url": "/ai/ai-image-upscaler","icon": "ZoomIn","iconBg": "#EFF6FF","iconColor": "#2563EB"}
+        ]},
+        {"title": "Seedance 2","icon": "RiVideoLine","children": [
+          {"title": "Seedance 2","description": "ネイティブオーディオ付きの映画的な動画、最大15秒。","url": "/ai/seedance2","icon": "Video","iconBg": "#FEF9C3","iconColor": "#CA8A04","badge": "NEW","badgeColor": "#16a34a"},
+          {"title": "Hailuo AI","description": "MiniMax Hailuo動画、卓越したファースト/ラストフレーム制御。","url": "/ai/hailuo","icon": "AudioWaveform","iconBg": "#EFF6FF","iconColor": "#2563EB"},
+          {"title": "Grok","description": "高速生成、スパイシーモード対応。","url": "/ai/grok-video","icon": "Bolt","iconBg": "#FDF2F8","iconColor": "#DB2777"}
+        ]},
+        {"title": "料金","url": "/pricing","icon": "DollarSign"},
+        {"title": "ショーケース","url": "/showcases","icon": "Box"},
+        {"title": "履歴","url": "/history","icon": "History"}
+      ]
+    },
+    "buttons": [],
+    "user_nav": {"show_name": true,"show_credits": true,"show_sign_out": true,"items": [
+      {"title": "請求","url": "/settings/billing","icon": "CreditCard"},
+      {"title": "アクティビティ","url": "/activity","icon": "Activity"}
+    ]},
+    "show_sign": true,"show_theme": true,"show_locale": true,
+    "topbanner": {"text": ""}
+  },
+  "footer": {
+    "id": "footer",
+    "brand": {"title": "GPT Image 2","description": "GPT Image 2は最先端のAI画像生成モデルです — 少ないプロンプトで、より良い結果を。","logo": {"src": "/logo.svg","alt": "GPT Image 2","width": 1024,"height": 1024},"url": "/"},
+    "nav": {"items": [
+      {"title": "情報","children": [
+        {"title": "機能","url": "/#features","target": "_self"},
+        {"title": "ショーケース","url": "/showcases","target": "_self"},
+        {"title": "料金","url": "/pricing","target": "_self"}
+      ]},
+      {"title": "リソース","children": [{"title": "チャット","url": "/chat","target": "_self"}]},
+      {"title": "パートナー","children": [
+        {"title": "ThinkAny","url": "https://thinkany.ai","target": "_blank"},
+        {"title": "MCP.so","url": "https://mcp.so","target": "_blank"}
+      ]}
+    ]},
+    "social": {"items": [
+      {"title": "X","icon": "RiTwitterXFill","url": "https://x.com/your-app-name","target": "_blank"},
+      {"title": "Github","icon": "Github","url": "https://github.com/your-app-name","target": "_blank"},
+      {"title": "Discord","icon": "RiDiscordFill","url": "https://discord.gg/your-app-name","target": "_blank"},
+      {"title": "メール","icon": "Mail","url": "mailto:support@your-domain.com","target": "_self"}
+    ]},
+    "agreement": {"items": [
+      {"title": "プライバシーポリシー","url": "/privacy-policy"},
+      {"title": "利用規約","url": "/terms-of-service"}
+    ]},
+    "show_theme": true,"show_locale": true,"show_built_with": false
+  }
+}

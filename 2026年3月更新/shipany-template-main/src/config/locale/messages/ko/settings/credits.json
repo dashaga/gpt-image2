@@ -1,0 +1,28 @@
+{
+  "fields": {
+    "transaction_no": "거래 번호",
+    "description": "설명",
+    "type": "유형",
+    "scene": "장면",
+    "credits": "크레딧",
+    "expires_at": "만료일",
+    "created_at": "생성일",
+    "action": "작업"
+  },
+  "list": {
+    "title": "크레딧 내역",
+    "tabs": {
+      "all": "전체",
+      "grant": "지급",
+      "consume": "사용"
+    }
+  },
+  "view": {
+    "title": "크레딧 잔액",
+    "banner_label": "현재 크레딧 잔액",
+    "hint": "크레딧은 만료되지 않으며 모든 모델에서 사용 가능합니다",
+    "buttons": {
+      "purchase": "크레딧 구매"
+    }
+  }
+}

@@ -1,7 +1,10 @@
 import Image from 'next/image';
+import { Syne } from 'next/font/google';
 
 import { Link } from '@/core/i18n/navigation';
 import { Brand as BrandType } from '@/shared/types/blocks/common';
+
+const syne = Syne({ subsets: ['latin'], weight: ['700'] });
 
 export function BrandLogo({ brand }: { brand: BrandType }) {
   return (
@@ -17,11 +20,27 @@ export function BrandLogo({ brand }: { brand: BrandType }) {
           width={brand.logo.width || 80}
           height={brand.logo.height || 80}
           className="h-8 w-auto rounded-lg"
-          unoptimized={brand.logo.src.startsWith('http')}
+          // Skip the Next.js image optimizer for remote URLs and for local
+          // SVGs (the optimizer rejects SVG without dangerouslyAllowSVG).
+          unoptimized={
+            brand.logo.src.startsWith('http') ||
+            brand.logo.src.toLowerCase().endsWith('.svg')
+          }
         />
       )}
       {brand.title && (
-        <span className="text-lg font-medium">{brand.title}</span>
+        <span
+          className={`text-lg ${syne.className}`}
+          style={{
+            fontWeight: 700,
+            background: 'linear-gradient(135deg, #6366F1, #a78bfa)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+          }}
+        >
+          {brand.title}
+        </span>
       )}
     </Link>
   );

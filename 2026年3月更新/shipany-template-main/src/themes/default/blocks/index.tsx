@@ -5,6 +5,7 @@ export * from './footer';
 export * from './hero';
 
 export * from './features';
+export * from './features-cards';
 export * from './features-list';
 export * from './features-accordion';
 export * from './features-step';
@@ -21,6 +22,7 @@ export * from './faq';
 export * from './cta';
 export * from './subscribe';
 export * from './pricing';
+export * from './pricing-custom';
 
 export * from './blog';
 export * from './blog-detail';

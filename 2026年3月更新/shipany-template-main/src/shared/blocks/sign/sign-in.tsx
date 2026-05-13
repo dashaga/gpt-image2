@@ -1,19 +1,18 @@
 'use client';
 
-import { useState } from 'react';
-import { Loader2 } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import { ArrowLeft, Loader2 } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
 import { toast } from 'sonner';
 
 import { authClient, signIn } from '@/core/auth/client';
-import { Link, useRouter } from '@/core/i18n/navigation';
+import { useRouter } from '@/core/i18n/navigation';
 import { defaultLocale } from '@/config/locale';
 import { Button } from '@/shared/components/ui/button';
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from '@/shared/components/ui/card';
@@ -21,6 +20,8 @@ import { Input } from '@/shared/components/ui/input';
 import { Label } from '@/shared/components/ui/label';
 
 import { SocialProviders } from './social-providers';
+
+const RESEND_COOLDOWN_SECONDS = 60;
 
 export function SignIn({
   configs,
@@ -34,16 +35,18 @@ export function SignIn({
   const router = useRouter();
   const locale = useLocale();
   const t = useTranslations('common.sign');
+
+  const [step, setStep] = useState<'email' | 'otp'>('email');
   const [email, setEmail] = useState(defaultEmail || '');
-  const [password, setPassword] = useState('');
+  const [otp, setOtp] = useState('');
   const [loading, setLoading] = useState(false);
-  const [rememberMe, setRememberMe] = useState(false);
+  const [resendSeconds, setResendSeconds] = useState(0);
 
   const isGoogleAuthEnabled = configs.google_auth_enabled === 'true';
   const isGithubAuthEnabled = configs.github_auth_enabled === 'true';
   const isEmailAuthEnabled =
     configs.email_auth_enabled !== 'false' ||
-    (!isGoogleAuthEnabled && !isGithubAuthEnabled); // no social providers enabled, auto enable email auth
+    (!isGoogleAuthEnabled && !isGithubAuthEnabled);
 
   if (callbackUrl) {
     if (
@@ -55,69 +58,78 @@ export function SignIn({
     }
   }
 
-  const base = locale !== defaultLocale ? `/${locale}` : '';
-  const stripLocalePrefix = (path: string) => {
-    if (!path?.startsWith('/')) return '/';
-    if (locale === defaultLocale) return path;
-    if (path === `/${locale}`) return '/';
-    if (path.startsWith(`/${locale}/`))
-      return path.slice(locale.length + 1) || '/';
-    return path;
+  // Countdown for resend button.
+  useEffect(() => {
+    if (resendSeconds <= 0) return;
+    const timer = setTimeout(
+      () => setResendSeconds((s) => Math.max(0, s - 1)),
+      1000
+    );
+    return () => clearTimeout(timer);
+  }, [resendSeconds]);
+
+  const startResendCooldown = () => setResendSeconds(RESEND_COOLDOWN_SECONDS);
+
+  const otpInputRef = useRef<HTMLInputElement | null>(null);
+  useEffect(() => {
+    if (step === 'otp') {
+      otpInputRef.current?.focus();
+    }
+  }, [step]);
+
+  const sendOtp = async ({ resend = false }: { resend?: boolean } = {}) => {
+    const trimmed = email.trim();
+    if (!trimmed) {
+      toast.error(t('email_required'));
+      return false;
+    }
+
+    setLoading(true);
+    try {
+      const { error } = await authClient.emailOtp.sendVerificationOtp({
+        email: trimmed,
+        type: 'sign-in',
+      });
+      if (error) {
+        toast.error(error.message || t('otp_send_failed'));
+        return false;
+      }
+      if (resend) toast.success(t('otp_resend_sent'));
+      startResendCooldown();
+      return true;
+    } catch (e: any) {
+      toast.error(e?.message || t('otp_send_failed'));
+      return false;
+    } finally {
+      setLoading(false);
+    }
   };
 
-  const handleSignIn = async () => {
-    if (loading) {
+  const handleSendCode = async () => {
+    if (loading) return;
+    const ok = await sendOtp();
+    if (ok) setStep('otp');
+  };
+
+  const handleVerify = async () => {
+    if (loading) return;
+    const code = otp.trim();
+    if (!code || code.length < 4) {
+      toast.error(t('otp_required'));
       return;
     }
 
-    if (!email || !password) {
-      toast.error('email and password are required');
-      return;
-    }
-
-    // Set loading immediately to avoid duplicate submits before request hooks fire.
     setLoading(true);
-
     try {
-      await signIn.email(
+      await signIn.emailOtp(
+        { email: email.trim(), otp: code },
         {
-          email,
-          password,
-          callbackURL: callbackUrl,
-        },
-        {
-          onRequest: (ctx) => {
-            // loading is already set above; keep as no-op for safety
-          },
-          onResponse: (ctx) => {
-            // Do NOT reset loading here; navigation may not have completed yet.
-          },
-          onSuccess: (ctx) => {
-            // Keep loading=true until navigation completes.
+          onSuccess: () => {
+            // Keep loading=true while we navigate to the callback URL —
+            // the new session cookie needs the page to fully reload.
+            window.location.href = callbackUrl || '/';
           },
           onError: (e: any) => {
-            const status = e?.error?.status;
-            if (status === 403) {
-              const normalizedCallbackUrl = stripLocalePrefix(callbackUrl);
-              const verifyPath = `/verify-email?sent=1&email=${encodeURIComponent(
-                email
-              )}&callbackUrl=${encodeURIComponent(normalizedCallbackUrl)}`;
-
-              // IMPORTANT:
-              // better-auth does not URL-encode callbackURL when generating the verification URL.
-              // So callbackURL must not contain its own '&' query params (or they'll get split).
-              // We send users to home/callbackUrl after verification, and keep the verify page only
-              // as the waiting UI.
-              void authClient.sendVerificationEmail({
-                email,
-                callbackURL: `${base}${normalizedCallbackUrl || '/'}`,
-              });
-
-              // i18n router will prefix locale automatically; do NOT include locale here.
-              router.push(verifyPath);
-              return;
-            }
-
             toast.error(e?.error?.message || 'sign in failed');
             setLoading(false);
           },
@@ -141,12 +153,12 @@ export function SignIn({
       </CardHeader>
       <CardContent>
         <div className="grid gap-4">
-          {isEmailAuthEnabled && (
+          {isEmailAuthEnabled && step === 'email' && (
             <form
               className="grid gap-4"
               onSubmit={(e) => {
                 e.preventDefault();
-                void handleSignIn();
+                void handleSendCode();
               }}
             >
               <div className="grid gap-2">
@@ -156,51 +168,90 @@ export function SignIn({
                   type="email"
                   placeholder={t('email_placeholder')}
                   required
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                  }}
+                  autoComplete="email"
+                  onChange={(e) => setEmail(e.target.value)}
                   value={email}
                 />
               </div>
-
-              <div className="grid gap-2">
-                <div className="flex items-center">
-                  <Label htmlFor="password">{t('password_title')}</Label>
-                  {/* <Link
-                    href="#"
-                    className="ml-auto inline-block text-sm underline"
-                  >
-                    Forgot your password?
-                  </Link> */}
-                </div>
-
-                <Input
-                  id="password"
-                  type="password"
-                  placeholder={t('password_placeholder')}
-                  autoComplete="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </div>
-
-              {/* <div className="flex items-center gap-2">
-            <Checkbox
-              id="remember"
-              onClick={() => {
-                setRememberMe(!rememberMe);
-              }}
-            />
-            <Label htmlFor="remember">Remember me</Label>
-          </div> */}
 
               <Button type="submit" className="w-full" disabled={loading}>
                 {loading ? (
                   <Loader2 size={16} className="animate-spin" />
                 ) : (
-                  <p> {t('sign_in_title')} </p>
+                  <p>{t('send_code_title')}</p>
                 )}
               </Button>
+            </form>
+          )}
+
+          {isEmailAuthEnabled && step === 'otp' && (
+            <form
+              className="grid gap-4"
+              onSubmit={(e) => {
+                e.preventDefault();
+                void handleVerify();
+              }}
+            >
+              <p className="text-sm text-neutral-500">
+                {t('otp_sent_to', { email })}
+              </p>
+
+              <div className="grid gap-2">
+                <Label htmlFor="otp">{t('otp_title')}</Label>
+                <Input
+                  id="otp"
+                  ref={otpInputRef}
+                  type="text"
+                  inputMode="numeric"
+                  autoComplete="one-time-code"
+                  maxLength={8}
+                  placeholder={t('otp_placeholder')}
+                  value={otp}
+                  onChange={(e) =>
+                    setOtp(e.target.value.replace(/\s+/g, '').trim())
+                  }
+                  required
+                />
+                <p className="text-xs text-neutral-500">
+                  {t('otp_new_user_hint')}
+                </p>
+              </div>
+
+              <Button type="submit" className="w-full" disabled={loading}>
+                {loading ? (
+                  <Loader2 size={16} className="animate-spin" />
+                ) : (
+                  <p>{t('otp_continue_title')}</p>
+                )}
+              </Button>
+
+              <div className="flex items-center justify-between text-xs">
+                <button
+                  type="button"
+                  className="inline-flex items-center gap-1 text-neutral-500 hover:text-neutral-800 dark:hover:text-white/80"
+                  onClick={() => {
+                    if (loading) return;
+                    setOtp('');
+                    setStep('email');
+                  }}
+                >
+                  <ArrowLeft size={12} />
+                  {t('otp_use_different_email')}
+                </button>
+
+                <button
+                  type="button"
+                  className="text-neutral-500 underline-offset-2 hover:underline disabled:opacity-50"
+                  disabled={loading || resendSeconds > 0}
+                  onClick={() => {
+                    void sendOtp({ resend: true });
+                  }}
+                >
+                  {resendSeconds > 0
+                    ? t('otp_resend_countdown', { seconds: resendSeconds })
+                    : t('otp_resend')}
+                </button>
+              </div>
             </form>
           )}
 
@@ -212,20 +263,6 @@ export function SignIn({
           />
         </div>
       </CardContent>
-      {isEmailAuthEnabled && (
-        <CardFooter>
-          <div className="flex w-full justify-center border-t py-4">
-            <p className="text-center text-xs text-neutral-500">
-              {t('no_account')}
-              <Link href="/sign-up" className="underline">
-                <span className="cursor-pointer dark:text-white/70">
-                  {t('sign_up_title')}
-                </span>
-              </Link>
-            </p>
-          </div>
-        </CardFooter>
-      )}
     </Card>
   );
 }

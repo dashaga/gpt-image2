@@ -2,10 +2,10 @@
   "header": {
     "id": "header",
     "brand": {
-      "title": "ShipAny Two",
+      "title": "GPT Image 2",
       "logo": {
-        "src": "/logo.png",
-        "alt": "ShipAny Two",
+        "src": "/logo.svg",
+        "alt": "GPT Image 2",
         "width": 100,
         "height": 100
       },
@@ -14,14 +14,83 @@
     "nav": {
       "items": [
         {
-          "title": "功能亮点",
-          "url": "/#features",
+          "title": "首页",
+          "url": "/",
           "icon": "Sparkles"
         },
         {
-          "title": "案例展示",
-          "url": "/showcases",
-          "icon": "Box"
+          "title": "GPT Image 2",
+          "icon": "RiImage2Line",
+          "children": [
+            {
+              "title": "GPT Image 2",
+              "description": "照片级真实感·精准文本渲染·像素级编辑",
+              "url": "/ai/gpt-image-2",
+              "icon": "Bot",
+              "iconBg": "#EEF2FF",
+              "iconColor": "#6366F1",
+              "badge": "NEW",
+              "badgeColor": "#16a34a"
+            },
+            {
+              "title": "Nano Banana 2",
+              "description": "根据文本描述生成高质量图像",
+              "url": "/ai/nano-banana-pro",
+              "icon": "Sparkles",
+              "iconBg": "#FEF9C3",
+              "iconColor": "#CA8A04"
+            },
+            {
+              "title": "Seedream 5",
+              "description": "最新 Seedream 模型，4K 画质，8 种宽高比",
+              "url": "/ai/seedream5",
+              "icon": "Leaf",
+              "iconBg": "#FFF7ED",
+              "iconColor": "#EA580C",
+              "badge": "WILD",
+              "badgeColor": "#EA580C"
+            },
+            {
+              "title": "图像增强",
+              "description": "提升图像分辨率，优化细节表现",
+              "url": "/ai/ai-image-upscaler",
+              "icon": "ZoomIn",
+              "iconBg": "#EFF6FF",
+              "iconColor": "#2563EB"
+            }
+          ]
+        },
+        {
+          "title": "Seedance 2",
+          "icon": "RiVideoLine",
+          "children": [
+            {
+              "title": "Seedance 2",
+              "description": "影院级视频，原生音频，最长 15 秒",
+              "url": "/ai/seedance2",
+              "icon": "Video",
+              "iconBg": "#FEF9C3",
+              "iconColor": "#CA8A04",
+              "badge": "NEW",
+              "badgeColor": "#16a34a"
+            },
+            {
+              "title": "海螺 AI",
+              "description": "MiniMax Hailuo 视频，首尾帧效果出众",
+              "url": "/ai/hailuo",
+              "icon": "AudioWaveform",
+              "iconBg": "#EFF6FF",
+              "iconColor": "#2563EB"
+            },
+            {
+              "title": "Grok",
+              "description": "生成速度更快，支持辣味模式",
+              "url": "/ai/grok-video",
+              "icon": "Bolt",
+              "iconBg": "#FDF2F8",
+              "iconColor": "#DB2777"
+            }
+          ]
         },
         {
           "title": "价格",
@@ -29,59 +98,14 @@
           "icon": "DollarSign"
         },
         {
-          "title": "AI",
-          "icon": "RiRobot2Line",
-          "children": [
-            {
-              "title": "AI 图片生成器",
-              "description": "使用 AI 生成图片",
-              "url": "/ai-image-generator",
-              "icon": "RiImage2Line"
-            },
-            {
-              "title": "AI 音乐生成器",
-              "description": "使用 AI 生成美妙的音乐",
-              "url": "/ai-music-generator",
-              "icon": "RiMusic2Line"
-            },
-            {
-              "title": "AI 视频生成器",
-              "description": "使用 AI 生成视频",
-              "url": "/ai-video-generator",
-              "icon": "RiVideoLine"
-            },
-            {
-              "title": "AI 聊天机器人",
-              "description": "与 AI 聊天机器人对话",
-              "url": "/chat",
-              "icon": "RiMessage2Line"
-            }
-          ]
+          "title": "案例展示",
+          "url": "/showcases",
+          "icon": "Box"
         },
         {
-          "title": "内容",
-          "icon": "FileText",
-          "children": [
-            {
-              "title": "博客",
-              "description": "阅读博客文章",
-              "url": "/blog",
-              "icon": "Newspaper"
-            },
-            {
-              "title": "更新日志",
-              "description": "阅读更新日志",
-              "url": "/updates",
-              "icon": "Clock"
-            },
-            {
-              "title": "文档",
-              "description": "阅读文档",
-              "url": "/docs",
-              "target": "_blank",
-              "icon": "BookOpenText"
-            }
-          ]
+          "title": "创作记录",
+          "url": "/history",
+          "icon": "History"
         }
       ]
     },
@@ -107,17 +131,17 @@
     "show_theme": true,
     "show_locale": true,
     "topbanner": {
-      "text": "此网站是 ShipAny 模板的演示站点，购买 ShipAny 模板，请访问 <a href='https://shipany.ai/zh/pricing' class='text-orange-300' target='_blank'>ShipAny 官网</a>"
+      "text": ""
     }
   },
   "footer": {
     "id": "footer",
     "brand": {
-      "title": "ShipAny Two",
-      "description": "ShipAny 是专为 AI SaaS 创业项目打造的 NextJS 模板。丰富模板与组件，极速交付你的产品。",
+      "title": "GPT Image 2",
+      "description": "GPT Image 2 — 最先进的 AI 图像生成模型，更少提示词，更佳效果。",
       "logo": {
-        "src": "/logo.png",
-        "alt": "ShipAny Two",
+        "src": "/logo.svg",
+        "alt": "GPT Image 2",
         "width": 100,
         "height": 100
       },
@@ -149,16 +173,6 @@
           "title": "资源",
           "children": [
             {
-              "title": "文档",
-              "url": "/docs",
-              "target": "_self"
-            },
-            {
-              "title": "博客",
-              "url": "/blog",
-              "target": "_self"
-            },
-            {
               "title": "对话",
               "url": "/chat",
               "target": "_blank"
@@ -168,11 +182,6 @@
         {
           "title": "合作伙伴",
           "children": [
-            {
-              "title": "ShipAny",
-              "url": "https://shipany.ai",
-              "target": "_blank"
-            },
             {
               "title": "ThinkAny",
               "url": "https://thinkany.ai",
@@ -228,6 +237,7 @@
       ]
     },
     "show_theme": true,
-    "show_locale": true
+    "show_locale": true,
+    "show_built_with": false
   }
 }

@@ -1,0 +1,28 @@
+{
+  "fields": {
+    "transaction_no": "رقم المعاملة",
+    "description": "الوصف",
+    "type": "النوع",
+    "scene": "المشهد",
+    "credits": "الرصيد",
+    "expires_at": "تنتهي في",
+    "created_at": "تاريخ الإنشاء",
+    "action": "إجراء"
+  },
+  "list": {
+    "title": "سجل الرصيد",
+    "tabs": {
+      "all": "الكل",
+      "grant": "منح",
+      "consume": "استهلاك"
+    }
+  },
+  "view": {
+    "title": "رصيد الائتمان",
+    "banner_label": "الرصيد الحالي",
+    "hint": "لا تنتهي صلاحية الرصيد وتعمل مع جميع النماذج",
+    "buttons": {
+      "purchase": "شراء رصيد"
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "fields": {
+    "title": "Название",
+    "key": "Ключ",
+    "created_at": "Создано",
+    "action": "Действие"
+  },
+  "list": {
+    "title": "API-ключи",
+    "empty_message": "Нет API-ключей",
+    "buttons": {
+      "add": "Создать API-ключ",
+      "edit": "Редактировать",
+      "delete": "Удалить"
+    }
+  },
+  "add": {
+    "title": "Создать API-ключ",
+    "crumbs": {
+      "apikeys": "API-ключи",
+      "add": "Создать API-ключ"
+    },
+    "buttons": {
+      "submit": "Создать"
+    }
+  },
+  "edit": {
+    "title": "Редактировать API-ключ",
+    "crumbs": {
+      "apikeys": "API-ключи",
+      "edit": "Редактировать API-ключ"
+    },
+    "buttons": {
+      "submit": "Обновить"
+    }
+  },
+  "delete": {
+    "title": "Удалить API-ключ",
+    "crumbs": {
+      "apikeys": "API-ключи",
+      "delete": "Удалить API-ключ"
+    },
+    "buttons": {
+      "submit": "Подтвердить удаление"
+    }
+  }
+}

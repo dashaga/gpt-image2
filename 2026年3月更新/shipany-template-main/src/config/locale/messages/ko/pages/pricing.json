@@ -1,0 +1,124 @@
+{
+  "metadata": {
+    "title": "요금제",
+    "description": "GPT Image 2에 맞는 요금제를 선택하세요"
+  },
+  "page": {
+    "title": "GPT Image 2 요금제",
+    "sections": {
+      "pricing": {
+        "id": "pricing"
+      }
+    }
+  },
+  "messages": {
+    "current_plan": "현재 요금제",
+    "processing": "처리 중"
+  },
+  "custom": {
+    "header_title": "간단하고 투명한 요금제",
+    "header_tagline": "전 세계 10,000명 이상의 크리에이터가 신뢰하는 서비스",
+    "tab_monthly": "월간",
+    "tab_yearly": "연간",
+    "tab_yearly_badge": "50% 절약",
+    "tab_credits": "크레딧",
+    "tab_credits_badge": "50% 할인",
+    "cancel_hint": "언제든지 취소 가능. 숨겨진 요금 없음.",
+    "includes_label": "포함 혜택",
+    "buy_now": "지금 구매",
+    "subscribe_now": "지금 구독",
+    "wechat_alipay": "위챗페이/알리페이",
+    "payment_failed": "결제 실패 시 여기 클릭",
+    "stripe_error": "Stripe 결제 실패: ",
+    "credit_packs": [
+      {
+        "name": "스타터 팩",
+        "subtitle": "멀티 유저 지원",
+        "discount_tag": "50% 할인",
+        "description": "GPT Image 2를 저렴하게 체험해보세요",
+        "features": ["크레딧 500개 ≈ 이미지 125장", "크레딧 영구 유효", "모든 프리미엄 기능 이용 가능"],
+        "promo": "🔥 입문자에게 추천!",
+        "note": "숨겨진 요금 없음. 언제든지 구독 취소 가능."
+      },
+      {
+        "name": "크리에이터 팩",
+        "subtitle": "멀티 유저 지원",
+        "discount_tag": "50% 할인",
+        "description": "전문 크리에이터를 위한 최고의 선택",
+        "features": ["크레딧 2000개 ≈ 이미지 500장", "크레딧 영구 유효", "모든 프리미엄 기능 이용 가능"],
+        "promo": "🔥 최고의 가성비!",
+        "note": "숨겨진 요금 없음. 언제든지 구독 취소 가능.",
+        "featured_label": "가장 인기"
+      },
+      {
+        "name": "프로 팩",
+        "subtitle": "",
+        "discount_tag": "50% 할인",
+        "description": "스튜디오급, 대량 구매 지원",
+        "features": ["크레딧 7000개 ≈ 이미지 1750장", "크레딧 영구 유효", "모든 프리미엄 기능 이용 가능", "프로 연간 플랜 혜택", "우선 지원", "전문 수준 이미지 생성"],
+        "promo": "🔥 스튜디오에 추천",
+        "note": "숨겨진 요금 없음. 언제든지 구독 취소 가능."
+      }
+    ],
+    "monthly_plans": [
+      {
+        "name": "기본",
+        "subtitle": "개인 크리에이터를 위한",
+        "price_suffix": "/월",
+        "description": "손쉬운 시작, 유연한 월간 결제",
+        "features": ["월 이미지 100장", "텍스트→이미지 변환", "이미지 편집", "언제든지 취소"],
+        "note": "숨겨진 요금 없음. 언제든지 취소 가능."
+      },
+      {
+        "name": "프로",
+        "subtitle": "전문 크리에이터를 위한",
+        "price_suffix": "/월",
+        "description": "생산성 향상, 우선 처리 큐",
+        "features": ["월 이미지 500장", "텍스트→이미지 + 편집", "우선 처리 큐", "2K/4K HD 출력", "언제든지 취소"],
+        "note": "숨겨진 요금 없음. 언제든지 취소 가능.",
+        "featured_label": "가장 인기"
+      },
+      {
+        "name": "플래그십",
+        "subtitle": "팀 및 기업을 위한",
+        "price_suffix": "/월",
+        "description": "무제한 할당량, 엔터프라이즈 SLA",
+        "features": ["무제한 할당량", "모든 기능", "전담 지원", "API 접근", "언제든지 취소"],
+        "note": "숨겨진 요금 없음. 언제든지 취소 가능."
+      }
+    ],
+    "yearly_plans": [
+      {
+        "name": "기본",
+        "subtitle": "개인 크리에이터를 위한",
+        "price_suffix": "/월",
+        "saving_tag": "20% 절약",
+        "yearly_note": "연간 $94.8 결제 · $24 절약",
+        "description": "손쉬운 시작, 연간 결제로 더 절약",
+        "features": ["월 이미지 100장", "텍스트→이미지 변환", "이미지 편집", "언제든지 취소"],
+        "note": "숨겨진 요금 없음. 언제든지 취소 가능."
+      },
+      {
+        "name": "프로",
+        "subtitle": "전문 크리에이터를 위한",
+        "price_suffix": "/월",
+        "saving_tag": "20% 절약",
+        "yearly_note": "연간 $276 결제 · $72 절약",
+        "description": "파워 크리에이터를 위한 최고의 연간 가치",
+        "features": ["월 이미지 500장", "텍스트→이미지 + 편집", "우선 처리 큐", "2K/4K HD 출력", "언제든지 취소"],
+        "note": "숨겨진 요금 없음. 언제든지 취소 가능.",
+        "featured_label": "가장 인기"
+      },
+      {
+        "name": "플래그십",
+        "subtitle": "팀 및 기업을 위한",
+        "price_suffix": "/월",
+        "saving_tag": "20% 절약",
+        "yearly_note": "연간 $756 결제 · $192 절약",
+        "description": "무제한 할당량, 엔터프라이즈 SLA",
+        "features": ["무제한 할당량", "모든 기능", "전담 지원", "API 접근", "언제든지 취소"],
+        "note": "숨겨진 요금 없음. 언제든지 취소 가능."
+      }
+    ]
+  }
+}

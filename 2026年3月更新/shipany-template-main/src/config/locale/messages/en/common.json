@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "title": "ShipAny Template Two",
-    "description": "ShipAny is a NextJS boilerplate for building AI SaaS startups. Ship Fast with a variety of templates and components.",
-    "keywords": "shipany, shipany-boilerplate, shipany-template-two-demo"
+    "title": "GPT Image 2",
+    "description": "GPT Image 2 is the most advanced AI image generation model — fewer prompts, better results. Powerful intent understanding and composition for both text-to-image and image editing.",
+    "keywords": "gpt image 2, ai image generator, text to image, image editing, ai image model"
   },
   "sign": {
     "sign_in_title": "Sign In",
-    "sign_in_description": "Sign in to your account",
+    "sign_in_description": "Sign in or create your account in one step.",
     "sign_up_title": "Sign Up",
     "sign_up_description": "Create an account",
     "email_title": "Email",
@@ -28,6 +28,19 @@
     "name_title": "Name",
     "name_placeholder": "Input your name here",
     "email_verification_hint": "Use an email address you can access. You must verify your email after signing up.",
+    "send_code_title": "Send code",
+    "otp_title": "Verification code",
+    "otp_placeholder": "6-digit code",
+    "otp_sent_to": "We sent a 6-digit code to {email}",
+    "otp_new_user_hint": "If you don't have an account yet, one will be created automatically.",
+    "otp_continue_title": "Verify and sign in",
+    "otp_use_different_email": "Use a different email",
+    "otp_resend": "Resend code",
+    "otp_resend_countdown": "Resend code ({seconds}s)",
+    "otp_resend_sent": "Verification code resent. Please check your inbox.",
+    "otp_required": "Please enter the 6-digit code",
+    "otp_send_failed": "Failed to send verification code, please try again",
+    "email_required": "Please enter your email",
     "admin_title": "Admin System",
     "credits_title": "Credits: {credits}",
     "verify_email_sent": "Verification email sent. Please check your inbox.",
@@ -42,7 +55,67 @@
     "verify_email_account_mismatch": "Signed in as {current}. This page is waiting for {expected}.",
     "resend_verification_countdown": "Resend verification email ({seconds}s)",
     "resend_verification_wait": "Please wait {seconds}s before resending.",
-    "back_to_sign_in": "Back to Sign In"
+    "back_to_sign_in": "Back to Sign In",
+    "user_center_title": "User Center"
+  },
+  "multi_generator": {
+    "title": "AI Generator",
+    "description": "Create images, videos, and music in one place. Pick a mode, pick a model, hit generate.",
+    "examples_title": "Examples",
+    "mode": {
+      "image": "Image",
+      "video": "Video",
+      "music": "Music"
+    },
+    "image_sub_mode": {
+      "text-to-image": "Text to image",
+      "image-to-image": "Image edit"
+    },
+    "video_method": {
+      "media": "Media",
+      "image": "Image",
+      "text": "Text"
+    },
+    "form": {
+      "model": "Model",
+      "prompt": "Prompt",
+      "image_prompt_placeholder": "Describe the image you want…",
+      "video_prompt_placeholder": "Describe the video you want…",
+      "music_prompt_placeholder": "Describe the music you want — genre, mood, instruments…",
+      "aspect_ratio": "Aspect ratio",
+      "resolution": "Resolution",
+      "count": "Count",
+      "duration": "Duration",
+      "reference_image": "Reference image",
+      "media_input": "Media input",
+      "media_input_hint": "Upload a video, audio, or image to remix",
+      "instrumental": "Instrumental only",
+      "generate": "Generate",
+      "sign_in_to_generate": "Sign in to generate",
+      "coming_soon_toast": "Generation is coming soon — stay tuned!",
+      "prompt_required_toast": "Please enter a prompt before generating.",
+      "image_required_toast": "Please upload a reference image."
+    }
+  },
+  "model_page": {
+    "examples_title": "Examples",
+    "tabs_label": "Choose a model",
+    "form": {
+      "upload_title": "Reference image",
+      "upload_required_title": "Upload an image",
+      "upload_hint": "Drop an image or click to upload",
+      "prompt_title": "Prompt",
+      "prompt_placeholder": "Describe the image or scene you want to create…",
+      "aspect_ratio": "Aspect ratio",
+      "resolution": "Resolution",
+      "count": "Count",
+      "duration": "Duration",
+      "generate": "Generate",
+      "sign_in_to_generate": "Sign in to generate",
+      "coming_soon_toast": "Generation is coming soon — stay tuned!",
+      "upload_required_toast": "Please upload an image to continue.",
+      "prompt_required_toast": "Please enter a prompt before generating."
+    }
   },
   "payment": {
     "choose_payment_method": "Choose Payment Method",

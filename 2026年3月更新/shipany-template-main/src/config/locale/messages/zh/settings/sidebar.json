@@ -13,11 +13,6 @@
         "icon": "CreditCard"
       },
       {
-        "title": "支付",
-        "url": "/settings/payments",
-        "icon": "DollarSign"
-      },
-      {
         "title": "积分",
         "url": "/settings/credits",
         "icon": "Coins"

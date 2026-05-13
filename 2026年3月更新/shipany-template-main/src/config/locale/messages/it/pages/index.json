@@ -1,0 +1,63 @@
+{
+  "page": {
+    "show_sections": ["hero","creation_workbench","features_cards","pricing_plans"],
+    "sections": {
+      "hero": {
+        "id": "hero",
+        "title": "GPT Image 2",
+        "description": "<span class='block text-2xl md:text-3xl font-medium text-foreground mb-6'>Meno descrizioni, risultati migliori.</span>GPT Image 2 è il modello di generazione di immagini IA più avanzato — ottieni risultati straordinari con semplici descrizioni. Che si tratti di testo in immagine o editing di immagini, vanta una comprensione eccezionale dell'intenzione e della composizione.",
+        "buttons": [
+          {"title": "Prova GPT Image 2","icon": "Zap","url": "/ai/gpt-image-2","target": "_self","variant": "default"},
+          {"title": "Guarda esempi di GPT Image 2","icon": "Sparkles","url": "/showcases","target": "_self","variant": "outline"}
+        ],
+        "show_avatars": false,"show_award": false,
+        "stats": [
+          {"value": "10K+","label": "Creatori"},
+          {"value": "4K","label": "Output Ultra HD"},
+          {"value": "99%","label": "Precisione"}
+        ],
+        "background_image": {"src": "/imgs/bg/tree.jpg","alt": "hero"}
+      },
+      "creation_workbench": {
+        "id": "creation-workbench","block": "creation-workbench",
+        "label": "Studio di Creazione",
+        "title": "Inizia a creare con l'IA adesso",
+        "description": "Scegli un modello, scrivi una descrizione e genera immagini professionali in un clic."
+      },
+      "features_cards": {
+        "id": "features-cards","block": "features-cards",
+        "label": "Capacità principali",
+        "title": "Cosa può fare GPT Image 2",
+        "description": "Architettura multimodale nativa con comprensione profonda di descrizioni complesse",
+        "items": [
+          {"icon": "Type","title": "Rendering del testo perfetto","description": "Logo e poster di eventi nitidi e leggibili — testo incorporato direttamente nell'immagine, senza ritocchi"},
+          {"icon": "LayoutGrid","title": "Controllo del layout spaziale","description": "Controlla con precisione la posizione di ogni elemento, con piena comprensione di occlusione e prospettiva"},
+          {"icon": "Layers","title": "Editing a livello di oggetto","description": "Modifica un singolo elemento senza disturbare l'illuminazione circostante — controllo preciso su ogni dettaglio"},
+          {"icon": "Sparkles","title": "Output ad alta fedeltà","description": "Comprensione profonda della fisica della luce naturale e della riflettanza dei materiali — alla pari della qualità di uno studio professionale"}
+        ]
+      },
+      "pricing_plans": {
+        "id": "pricing-plans","block": "pricing-custom",
+        "label": "Prezzi",
+        "title": "Prezzi semplici e trasparenti",
+        "description": "Scegli il piano adatto al tuo flusso di lavoro",
+        "groups": [
+          {"name": "one-time","title": "Paga per utilizzo","is_featured": true},
+          {"name": "monthly","title": "Mensile"},
+          {"name": "yearly","title": "Annuale","label": "Risparmia il 20%"}
+        ],
+        "items": [
+          {"group": "one-time","product_id": "credits_starter","interval": "one-time","title": "Pack Iniziante","description": "500 crediti ≈ 125 immagini","currency": "USD","amount": 2999,"price": "$29.99","button": {"title": "Acquista ora"},"features": ["500 crediti","~125 immagini","Senza scadenza","Tutti i metodi di pagamento"]},
+          {"group": "one-time","product_id": "credits_creator","interval": "one-time","is_featured": true,"label": "Più popolare","title": "Pack Creatore","description": "2000 crediti ≈ 500 immagini","currency": "USD","amount": 9999,"price": "$99.99","button": {"title": "Acquista ora"},"features": ["2000 crediti","~500 immagini","Senza scadenza","Tutti i metodi di pagamento","Coda prioritaria"]},
+          {"group": "one-time","product_id": "credits_pro","interval": "one-time","title": "Pack Pro","description": "7000 crediti ≈ 1750 immagini","currency": "USD","amount": 22900,"price": "$229","button": {"title": "Acquista ora"},"features": ["7000 crediti","~1750 immagini","Senza scadenza","Tutti i metodi di pagamento","Coda prioritaria","Supporto dedicato"]},
+          {"group": "monthly","product_id": "plan_basic_monthly","interval": "month","title": "Base","description": "Per creatori individuali","currency": "USD","amount": 990,"price": "$9.9","unit": "/mese","button": {"title": "Abbonati"},"features": ["200 crediti/mese","Velocità standard","Stili di base","Supporto via e-mail"]},
+          {"group": "monthly","product_id": "plan_pro_monthly","interval": "month","is_featured": true,"label": "Più popolare","title": "Pro","description": "Per creatori professionali","currency": "USD","amount": 2900,"price": "$29","unit": "/mese","button": {"title": "Abbonati"},"features": ["800 crediti/mese","Velocità prioritaria","Tutti gli stili","Editing di immagini","Supporto prioritario"]},
+          {"group": "monthly","product_id": "plan_flagship_monthly","interval": "month","title": "Flagship","description": "Per team e aziende","currency": "USD","amount": 7900,"price": "$79","unit": "/mese","button": {"title": "Abbonati"},"features": ["3000 crediti/mese","Velocità massima","Tutti gli stili","Editing di immagini","Accesso API","Supporto dedicato"]},
+          {"group": "yearly","product_id": "plan_basic_yearly","interval": "year","title": "Base","description": "Per creatori individuali","currency": "USD","amount": 9480,"price": "$7.9","unit": "/mese · fatturato annualmente","button": {"title": "Abbonati"},"features": ["200 crediti/mese","Velocità standard","Stili di base","Supporto via e-mail"]},
+          {"group": "yearly","product_id": "plan_pro_yearly","interval": "year","is_featured": true,"label": "Più popolare","title": "Pro","description": "Per creatori professionali","currency": "USD","amount": 27600,"price": "$23","unit": "/mese · fatturato annualmente","button": {"title": "Abbonati"},"features": ["800 crediti/mese","Velocità prioritaria","Tutti gli stili","Editing di immagini","Supporto prioritario"]},
+          {"group": "yearly","product_id": "plan_flagship_yearly","interval": "year","title": "Flagship","description": "Per team e aziende","currency": "USD","amount": 75600,"price": "$63","unit": "/mese · fatturato annualmente","button": {"title": "Abbonati"},"features": ["3000 crediti/mese","Velocità massima","Tutti gli stili","Editing di immagini","Accesso API","Supporto dedicato"]}
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "fields": {
+    "transaction_no": "N° transazione",
+    "description": "Descrizione",
+    "type": "Tipo",
+    "scene": "Scena",
+    "credits": "Crediti",
+    "expires_at": "Scade il",
+    "created_at": "Creato il",
+    "action": "Azione"
+  },
+  "list": {
+    "title": "Registro crediti",
+    "tabs": {
+      "all": "Tutti",
+      "grant": "Assegnato",
+      "consume": "Consumato"
+    }
+  },
+  "view": {
+    "title": "Saldo crediti",
+    "banner_label": "Saldo crediti attuale",
+    "hint": "I crediti non scadono e funzionano con tutti i modelli",
+    "buttons": {
+      "purchase": "Acquista crediti"
+    }
+  }
+}

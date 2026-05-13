@@ -1,0 +1,63 @@
+{
+  "page": {
+    "show_sections": ["hero","creation_workbench","features_cards","pricing_plans"],
+    "sections": {
+      "hero": {
+        "id": "hero",
+        "title": "GPT Image 2",
+        "description": "<span class='block text-2xl md:text-3xl font-medium text-foreground mb-6'>少ないプロンプトで、より良い結果を。</span>GPT Image 2は最先端のAI画像生成モデルです — シンプルなプロンプトだけで驚くべき結果を実現します。テキストから画像生成でも画像編集でも、優れた意図理解と構図を備えています。",
+        "buttons": [
+          {"title": "GPT Image 2を試す","icon": "Zap","url": "/ai/gpt-image-2","target": "_self","variant": "default"},
+          {"title": "GPT Image 2のサンプルを見る","icon": "Sparkles","url": "/showcases","target": "_self","variant": "outline"}
+        ],
+        "show_avatars": false,"show_award": false,
+        "stats": [
+          {"value": "10K+","label": "クリエイター"},
+          {"value": "4K","label": "超高画質出力"},
+          {"value": "99%","label": "精度"}
+        ],
+        "background_image": {"src": "/imgs/bg/tree.jpg","alt": "hero"}
+      },
+      "creation_workbench": {
+        "id": "creation-workbench","block": "creation-workbench",
+        "label": "クリエイションスタジオ",
+        "title": "今すぐAIで創作を始めよう",
+        "description": "モデルを選び、プロンプトを入力して、ワンクリックでプロ品質の画像を生成します。"
+      },
+      "features_cards": {
+        "id": "features-cards","block": "features-cards",
+        "label": "主要機能",
+        "title": "GPT Image 2にできること",
+        "description": "複雑なプロンプトを深く理解するネイティブマルチモーダルアーキテクチャ",
+        "items": [
+          {"icon": "Type","title": "完璧なテキストレンダリング","description": "くっきりと読みやすいロゴやイベントポスター — テキストを画像に直接埋め込み、後処理不要"},
+          {"icon": "LayoutGrid","title": "空間レイアウト制御","description": "すべての要素の位置を精密にコントロールし、重なりや遠近感を完全に理解"},
+          {"icon": "Layers","title": "オブジェクトレベル編集","description": "周囲の照明を乱さずに単一の要素を編集 — あらゆる詳細への精密なコントロール"},
+          {"icon": "Sparkles","title": "高品質出力","description": "自然光の物理学と素材の反射率を深く理解 — プロのスタジオ品質に匹敵"}
+        ]
+      },
+      "pricing_plans": {
+        "id": "pricing-plans","block": "pricing-custom",
+        "label": "料金",
+        "title": "シンプルで透明な料金体系",
+        "description": "あなたのワークフローに合ったプランを選んでください",
+        "groups": [
+          {"name": "one-time","title": "使った分だけ支払い","is_featured": true},
+          {"name": "monthly","title": "月額"},
+          {"name": "yearly","title": "年額","label": "20%お得"}
+        ],
+        "items": [
+          {"group": "one-time","product_id": "credits_starter","interval": "one-time","title": "スターターパック","description": "500クレジット ≈ 125枚の画像","currency": "USD","amount": 2999,"price": "$29.99","button": {"title": "今すぐ購入"},"features": ["500クレジット","~125枚の画像","有効期限なし","全決済方法"]},
+          {"group": "one-time","product_id": "credits_creator","interval": "one-time","is_featured": true,"label": "最も人気","title": "クリエイターパック","description": "2000クレジット ≈ 500枚の画像","currency": "USD","amount": 9999,"price": "$99.99","button": {"title": "今すぐ購入"},"features": ["2000クレジット","~500枚の画像","有効期限なし","全決済方法","優先キュー"]},
+          {"group": "one-time","product_id": "credits_pro","interval": "one-time","title": "プロパック","description": "7000クレジット ≈ 1750枚の画像","currency": "USD","amount": 22900,"price": "$229","button": {"title": "今すぐ購入"},"features": ["7000クレジット","~1750枚の画像","有効期限なし","全決済方法","優先キュー","専任サポート"]},
+          {"group": "monthly","product_id": "plan_basic_monthly","interval": "month","title": "ベーシック","description": "個人クリエイター向け","currency": "USD","amount": 990,"price": "$9.9","unit": "/月","button": {"title": "サブスクライブ"},"features": ["月200クレジット","標準速度","基本スタイル","メールサポート"]},
+          {"group": "monthly","product_id": "plan_pro_monthly","interval": "month","is_featured": true,"label": "最も人気","title": "プロ","description": "プロクリエイター向け","currency": "USD","amount": 2900,"price": "$29","unit": "/月","button": {"title": "サブスクライブ"},"features": ["月800クレジット","優先速度","全スタイル","画像編集","優先サポート"]},
+          {"group": "monthly","product_id": "plan_flagship_monthly","interval": "month","title": "フラッグシップ","description": "チーム・企業向け","currency": "USD","amount": 7900,"price": "$79","unit": "/月","button": {"title": "サブスクライブ"},"features": ["月3000クレジット","最高速度","全スタイル","画像編集","APIアクセス","専任サポート"]},
+          {"group": "yearly","product_id": "plan_basic_yearly","interval": "year","title": "ベーシック","description": "個人クリエイター向け","currency": "USD","amount": 9480,"price": "$7.9","unit": "/月 · 年払い","button": {"title": "サブスクライブ"},"features": ["月200クレジット","標準速度","基本スタイル","メールサポート"]},
+          {"group": "yearly","product_id": "plan_pro_yearly","interval": "year","is_featured": true,"label": "最も人気","title": "プロ","description": "プロクリエイター向け","currency": "USD","amount": 27600,"price": "$23","unit": "/月 · 年払い","button": {"title": "サブスクライブ"},"features": ["月800クレジット","優先速度","全スタイル","画像編集","優先サポート"]},
+          {"group": "yearly","product_id": "plan_flagship_yearly","interval": "year","title": "フラッグシップ","description": "チーム・企業向け","currency": "USD","amount": 75600,"price": "$63","unit": "/月 · 年払い","button": {"title": "サブスクライブ"},"features": ["月3000クレジット","最高速度","全スタイル","画像編集","APIアクセス","専任サポート"]}
+        ]
+      }
+    }
+  }
+}

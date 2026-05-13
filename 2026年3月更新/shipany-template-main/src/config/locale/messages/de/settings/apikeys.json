@@ -1,0 +1,47 @@
+{
+  "fields": {
+    "title": "Titel",
+    "key": "Schlüssel",
+    "created_at": "Erstellt am",
+    "action": "Aktion"
+  },
+  "list": {
+    "title": "API-Schlüssel",
+    "empty_message": "Keine API-Schlüssel",
+    "buttons": {
+      "add": "API-Schlüssel erstellen",
+      "edit": "Bearbeiten",
+      "delete": "Löschen"
+    }
+  },
+  "add": {
+    "title": "API-Schlüssel erstellen",
+    "crumbs": {
+      "apikeys": "API-Schlüssel",
+      "add": "API-Schlüssel erstellen"
+    },
+    "buttons": {
+      "submit": "Erstellen"
+    }
+  },
+  "edit": {
+    "title": "API-Schlüssel bearbeiten",
+    "crumbs": {
+      "apikeys": "API-Schlüssel",
+      "edit": "API-Schlüssel bearbeiten"
+    },
+    "buttons": {
+      "submit": "Aktualisieren"
+    }
+  },
+  "delete": {
+    "title": "API-Schlüssel löschen",
+    "crumbs": {
+      "apikeys": "API-Schlüssel",
+      "delete": "API-Schlüssel löschen"
+    },
+    "buttons": {
+      "submit": "Löschen bestätigen"
+    }
+  }
+}

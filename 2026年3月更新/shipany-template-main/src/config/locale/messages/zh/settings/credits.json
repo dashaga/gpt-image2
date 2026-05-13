@@ -13,12 +13,14 @@
     "title": "积分记录",
     "tabs": {
       "all": "全部",
-      "grant": "授予",
-      "consume": "消费"
+      "grant": "获得",
+      "consume": "消耗"
     }
   },
   "view": {
     "title": "积分余额",
+    "banner_label": "当前积分余额",
+    "hint": "积分永久有效，可用于所有模型",
     "buttons": {
       "purchase": "购买积分"
     }

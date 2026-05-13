@@ -1,0 +1,63 @@
+{
+  "page": {
+    "show_sections": ["hero","creation_workbench","features_cards","pricing_plans"],
+    "sections": {
+      "hero": {
+        "id": "hero",
+        "title": "GPT Image 2",
+        "description": "<span class='block text-2xl md:text-3xl font-medium text-foreground mb-6'>وصف أقل، نتائج أفضل.</span>GPT Image 2 هو أكثر نماذج توليد الصور بالذكاء الاصطناعي تطورًا — احقق نتائج مذهلة بمجرد أوصاف بسيطة. سواء من نص إلى صورة أو تحرير الصور، يمتلك فهمًا استثنائيًا للنية والتركيب.",
+        "buttons": [
+          {"title": "جرّب GPT Image 2","icon": "Zap","url": "/ai/gpt-image-2","target": "_self","variant": "default"},
+          {"title": "عرض أمثلة GPT Image 2","icon": "Sparkles","url": "/showcases","target": "_self","variant": "outline"}
+        ],
+        "show_avatars": false,"show_award": false,
+        "stats": [
+          {"value": "10K+","label": "منشئ محتوى"},
+          {"value": "4K","label": "إخراج فائق الدقة"},
+          {"value": "99%","label": "دقة"}
+        ],
+        "background_image": {"src": "/imgs/bg/tree.jpg","alt": "hero"}
+      },
+      "creation_workbench": {
+        "id": "creation-workbench","block": "creation-workbench",
+        "label": "استوديو الإبداع",
+        "title": "ابدأ الإبداع بالذكاء الاصطناعي الآن",
+        "description": "اختر نموذجًا، اكتب وصفًا، وأنشئ صورًا احترافية بنقرة واحدة."
+      },
+      "features_cards": {
+        "id": "features-cards","block": "features-cards",
+        "label": "القدرات الأساسية",
+        "title": "ما يمكن لـ GPT Image 2 فعله",
+        "description": "بنية متعددة الوسائط أصلية مع فهم عميق للأوصاف المعقدة",
+        "items": [
+          {"icon": "Type","title": "تصيير نص مثالي","description": "شعارات وملصقات فعاليات واضحة وقابلة للقراءة — النص مدمج مباشرة في الصورة دون الحاجة لتحرير لاحق"},
+          {"icon": "LayoutGrid","title": "التحكم في التخطيط المكاني","description": "تحكم دقيق في موضع كل عنصر، مع فهم كامل للحجب والمنظور"},
+          {"icon": "Layers","title": "التحرير على مستوى الكائن","description": "تحرير عنصر واحد دون الإخلال بالإضاءة المحيطة — تحكم دقيق في كل تفصيلة"},
+          {"icon": "Sparkles","title": "إخراج عالي الجودة","description": "فهم عميق لفيزياء الضوء الطبيعي وانعكاس المواد — يضاهي جودة الاستوديو الاحترافي"}
+        ]
+      },
+      "pricing_plans": {
+        "id": "pricing-plans","block": "pricing-custom",
+        "label": "الأسعار",
+        "title": "أسعار بسيطة وشفافة",
+        "description": "اختر الخطة المناسبة لسير عملك",
+        "groups": [
+          {"name": "one-time","title": "ادفع حسب الاستخدام","is_featured": true},
+          {"name": "monthly","title": "شهري"},
+          {"name": "yearly","title": "سنوي","label": "وفّر 20%"}
+        ],
+        "items": [
+          {"group": "one-time","product_id": "credits_starter","interval": "one-time","title": "حزمة البداية","description": "500 رصيد ≈ 125 صورة","currency": "USD","amount": 2999,"price": "$29.99","button": {"title": "اشتر الآن"},"features": ["500 رصيد","~125 صورة","لا تنتهي صلاحيتها","جميع طرق الدفع"]},
+          {"group": "one-time","product_id": "credits_creator","interval": "one-time","is_featured": true,"label": "الأكثر شيوعًا","title": "حزمة المنشئ","description": "2000 رصيد ≈ 500 صورة","currency": "USD","amount": 9999,"price": "$99.99","button": {"title": "اشتر الآن"},"features": ["2000 رصيد","~500 صورة","لا تنتهي صلاحيتها","جميع طرق الدفع","قائمة انتظار مميزة"]},
+          {"group": "one-time","product_id": "credits_pro","interval": "one-time","title": "حزمة الاحتراف","description": "7000 رصيد ≈ 1750 صورة","currency": "USD","amount": 22900,"price": "$229","button": {"title": "اشتر الآن"},"features": ["7000 رصيد","~1750 صورة","لا تنتهي صلاحيتها","جميع طرق الدفع","قائمة انتظار مميزة","دعم مخصص"]},
+          {"group": "monthly","product_id": "plan_basic_monthly","interval": "month","title": "الأساسية","description": "للمنشئين الأفراد","currency": "USD","amount": 990,"price": "$9.9","unit": "/شهر","button": {"title": "اشترك"},"features": ["200 رصيد/شهر","سرعة قياسية","أنماط أساسية","دعم بالبريد الإلكتروني"]},
+          {"group": "monthly","product_id": "plan_pro_monthly","interval": "month","is_featured": true,"label": "الأكثر شيوعًا","title": "الاحترافية","description": "للمنشئين المحترفين","currency": "USD","amount": 2900,"price": "$29","unit": "/شهر","button": {"title": "اشترك"},"features": ["800 رصيد/شهر","سرعة مميزة","جميع الأنماط","تحرير الصور","دعم مميز"]},
+          {"group": "monthly","product_id": "plan_flagship_monthly","interval": "month","title": "الرائدة","description": "للفرق والمؤسسات","currency": "USD","amount": 7900,"price": "$79","unit": "/شهر","button": {"title": "اشترك"},"features": ["3000 رصيد/شهر","أسرع معالجة","جميع الأنماط","تحرير الصور","وصول API","دعم مخصص"]},
+          {"group": "yearly","product_id": "plan_basic_yearly","interval": "year","title": "الأساسية","description": "للمنشئين الأفراد","currency": "USD","amount": 9480,"price": "$7.9","unit": "/شهر · تُحصَّل سنويًا","button": {"title": "اشترك"},"features": ["200 رصيد/شهر","سرعة قياسية","أنماط أساسية","دعم بالبريد الإلكتروني"]},
+          {"group": "yearly","product_id": "plan_pro_yearly","interval": "year","is_featured": true,"label": "الأكثر شيوعًا","title": "الاحترافية","description": "للمنشئين المحترفين","currency": "USD","amount": 27600,"price": "$23","unit": "/شهر · تُحصَّل سنويًا","button": {"title": "اشترك"},"features": ["800 رصيد/شهر","سرعة مميزة","جميع الأنماط","تحرير الصور","دعم مميز"]},
+          {"group": "yearly","product_id": "plan_flagship_yearly","interval": "year","title": "الرائدة","description": "للفرق والمؤسسات","currency": "USD","amount": 75600,"price": "$63","unit": "/شهر · تُحصَّل سنويًا","button": {"title": "اشترك"},"features": ["3000 رصيد/شهر","أسرع معالجة","جميع الأنماط","تحرير الصور","وصول API","دعم مخصص"]}
+        ]
+      }
+    }
+  }
+}

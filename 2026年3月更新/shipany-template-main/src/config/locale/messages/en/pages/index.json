@@ -2,63 +2,49 @@
   "page": {
     "show_sections": [
       "hero",
-      "logos",
-      "introduce",
-      "benefits",
-      "usage",
-      "features",
-      "stats",
-      "testimonials",
-      "faq",
-      "cta"
+      "creation_workbench",
+      "features_cards",
+      "pricing_plans"
     ],
     "sections": {
       "hero": {
         "id": "hero",
-        "title": "Ship AI Startups in hours, not days",
-        "highlight_text": "in hours",
-        "description": "ShipAny is a NextJS boilerplate for building AI SaaS startups.<br/>Ship Fast with a variety of templates and components.",
-        "announcement": {
-          "badge": "New",
-          "title": "🎉 ShipAny Template Two",
-          "url": "/pricing"
-        },
-        "tip": "🎁 Special offer for the first 1000 users",
+        "title": "GPT Image 2",
+        "description": "<span class='block text-2xl md:text-3xl font-medium text-foreground mb-6'>Fewer prompts, better results.</span>GPT Image 2 is the most advanced AI image generation model — achieve stunning results with just simple prompts. Whether text-to-image or image editing, it has exceptional intent understanding and composition.",
         "buttons": [
           {
-            "title": "Get Started",
+            "title": "Try GPT Image 2",
             "icon": "Zap",
-            "url": "/pricing",
+            "url": "/ai/gpt-image-2",
             "target": "_self",
             "variant": "default"
           },
           {
-            "title": "Read Document",
-            "icon": "BookOpenText",
-            "url": "/docs",
-            "target": "_blank",
+            "title": "View GPT Image 2 examples",
+            "icon": "Sparkles",
+            "url": "/showcases",
+            "target": "_self",
             "variant": "outline"
           }
         ],
-        "show_avatars": true,
-        "avatars_tip": "999+ users are using ShipAny",
+        "show_avatars": false,
         "show_award": false,
-        "image": {
-          "src": "/imgs/features/admin.png",
-          "alt": "hero",
-          "width": 1200,
-          "height": 800
-        },
-        "image_invert": {
-          "src": "/imgs/features/admin-dark.png",
-          "alt": "hero",
-          "width": 1200,
-          "height": 800
-        },
+        "stats": [
+          { "value": "10K+", "label": "Creators" },
+          { "value": "4K", "label": "Ultra HD output" },
+          { "value": "99%", "label": "Accuracy" }
+        ],
         "background_image": {
           "src": "/imgs/bg/tree.jpg",
           "alt": "hero"
         }
+      },
+      "creation_workbench": {
+        "id": "creation-workbench",
+        "block": "creation-workbench",
+        "label": "Creation Studio",
+        "title": "Start creating with AI now",
+        "description": "Pick a model, type a prompt, and generate professional images in one click."
       },
       "logos": {
         "id": "logos",
@@ -385,24 +371,16 @@
       },
       "cta": {
         "id": "cta",
-        "title": "Ship your first AI SaaS Startup",
-        "description": "Start from here, ship with ShipAny.",
+        "title": "Try GPT Image 2 Now",
+        "description": "Less prompting, better results — professional creation at your fingertips.",
         "buttons": [
           {
-            "title": "Get ShipAny",
-            "url": "https://shipany.ai",
-            "target": "_blank",
-            "icon": "Zap"
-          },
-          {
-            "title": "Read Document",
-            "url": "/docs",
-            "target": "_blank",
-            "variant": "outline",
-            "icon": "BookOpenText"
+            "title": "Start Creating for Free",
+            "url": "/ai/gpt-image-2",
+            "className": "bg-white text-[#6366F1] hover:bg-white/90 font-semibold"
           }
         ],
-        "className": "bg-muted"
+        "className": "bg-[#6366F1] text-white"
       },
       "subscribe": {
         "id": "subscribe",
@@ -418,6 +396,169 @@
           "action": "/api/subscribe"
         },
         "className": "bg-muted"
+      },
+      "features_cards": {
+        "id": "features-cards",
+        "block": "features-cards",
+        "label": "Core Capabilities",
+        "title": "What GPT Image 2 Can Do",
+        "description": "Native multimodal architecture with deep understanding of complex prompts",
+        "items": [
+          {
+            "icon": "Type",
+            "title": "Perfect Text Rendering",
+            "description": "Crisp, readable logos and event posters — text embedded directly in the image, no post-editing needed"
+          },
+          {
+            "icon": "LayoutGrid",
+            "title": "Spatial Layout Control",
+            "description": "Precisely control every element's position, with full understanding of occlusion and perspective"
+          },
+          {
+            "icon": "Layers",
+            "title": "Object-Level Editing",
+            "description": "Edit a single element without disturbing surrounding lighting — precise control over every detail"
+          },
+          {
+            "icon": "Sparkles",
+            "title": "High-Fidelity Output",
+            "description": "Deep understanding of natural light physics and material reflectance — rivaling professional studio quality"
+          }
+        ]
+      },
+      "pricing_plans": {
+        "id": "pricing-plans",
+        "block": "pricing-custom",
+        "label": "Pricing",
+        "title": "Simple, Transparent Pricing",
+        "description": "Choose the plan that fits your workflow",
+        "groups": [
+          { "name": "one-time", "title": "Pay as You Go", "is_featured": true },
+          { "name": "monthly", "title": "Monthly" },
+          { "name": "yearly", "title": "Yearly", "label": "Save 20%" }
+        ],
+        "items": [
+          {
+            "group": "one-time",
+            "product_id": "credits_starter",
+            "interval": "one-time",
+            "title": "Starter Pack",
+            "description": "500 credits ≈ 125 images",
+            "currency": "USD",
+            "amount": 2999,
+            "price": "$29.99",
+            "button": { "title": "Buy Now" },
+            "features": ["500 credits", "~125 images", "No expiry", "All payment methods"]
+          },
+          {
+            "group": "one-time",
+            "product_id": "credits_creator",
+            "interval": "one-time",
+            "is_featured": true,
+            "label": "Most Popular",
+            "title": "Creator Pack",
+            "description": "2000 credits ≈ 500 images",
+            "currency": "USD",
+            "amount": 9999,
+            "price": "$99.99",
+            "button": { "title": "Buy Now" },
+            "features": ["2000 credits", "~500 images", "No expiry", "All payment methods", "Priority queue"]
+          },
+          {
+            "group": "one-time",
+            "product_id": "credits_pro",
+            "interval": "one-time",
+            "title": "Pro Pack",
+            "description": "7000 credits ≈ 1750 images",
+            "currency": "USD",
+            "amount": 22900,
+            "price": "$229",
+            "button": { "title": "Buy Now" },
+            "features": ["7000 credits", "~1750 images", "No expiry", "All payment methods", "Priority queue", "Dedicated support"]
+          },
+          {
+            "group": "monthly",
+            "product_id": "plan_basic_monthly",
+            "interval": "month",
+            "title": "Basic",
+            "description": "For individual creators",
+            "currency": "USD",
+            "amount": 990,
+            "price": "$9.9",
+            "unit": "/mo",
+            "button": { "title": "Subscribe" },
+            "features": ["200 credits/mo", "Standard speed", "Basic styles", "Email support"]
+          },
+          {
+            "group": "monthly",
+            "product_id": "plan_pro_monthly",
+            "interval": "month",
+            "is_featured": true,
+            "label": "Most Popular",
+            "title": "Pro",
+            "description": "For professional creators",
+            "currency": "USD",
+            "amount": 2900,
+            "price": "$29",
+            "unit": "/mo",
+            "button": { "title": "Subscribe" },
+            "features": ["800 credits/mo", "Priority speed", "All styles", "Image editing", "Priority support"]
+          },
+          {
+            "group": "monthly",
+            "product_id": "plan_flagship_monthly",
+            "interval": "month",
+            "title": "Flagship",
+            "description": "For teams & enterprises",
+            "currency": "USD",
+            "amount": 7900,
+            "price": "$79",
+            "unit": "/mo",
+            "button": { "title": "Subscribe" },
+            "features": ["3000 credits/mo", "Fastest speed", "All styles", "Image editing", "API access", "Dedicated support"]
+          },
+          {
+            "group": "yearly",
+            "product_id": "plan_basic_yearly",
+            "interval": "year",
+            "title": "Basic",
+            "description": "For individual creators",
+            "currency": "USD",
+            "amount": 9480,
+            "price": "$7.9",
+            "unit": "/mo · billed yearly",
+            "button": { "title": "Subscribe" },
+            "features": ["200 credits/mo", "Standard speed", "Basic styles", "Email support"]
+          },
+          {
+            "group": "yearly",
+            "product_id": "plan_pro_yearly",
+            "interval": "year",
+            "is_featured": true,
+            "label": "Most Popular",
+            "title": "Pro",
+            "description": "For professional creators",
+            "currency": "USD",
+            "amount": 27600,
+            "price": "$23",
+            "unit": "/mo · billed yearly",
+            "button": { "title": "Subscribe" },
+            "features": ["800 credits/mo", "Priority speed", "All styles", "Image editing", "Priority support"]
+          },
+          {
+            "group": "yearly",
+            "product_id": "plan_flagship_yearly",
+            "interval": "year",
+            "title": "Flagship",
+            "description": "For teams & enterprises",
+            "currency": "USD",
+            "amount": 75600,
+            "price": "$63",
+            "unit": "/mo · billed yearly",
+            "button": { "title": "Subscribe" },
+            "features": ["3000 credits/mo", "Fastest speed", "All styles", "Image editing", "API access", "Dedicated support"]
+          }
+        ]
       }
     }
   }

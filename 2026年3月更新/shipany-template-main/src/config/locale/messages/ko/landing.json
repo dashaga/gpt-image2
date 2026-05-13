@@ -1,0 +1,59 @@
+{
+  "header": {
+    "id": "header",
+    "brand": { "title": "GPT Image 2", "logo": {"src": "/logo.svg","alt": "GPT Image 2","width": 100,"height": 100}, "url": "/" },
+    "nav": {
+      "items": [
+        {"title": "홈","url": "/","icon": "Sparkles"},
+        {"title": "GPT Image 2","icon": "RiImage2Line","children": [
+          {"title": "GPT Image 2","description": "사실적인 리얼리즘, 정밀한 텍스트 렌더링, 픽셀 수준의 편집.","url": "/ai/gpt-image-2","icon": "Bot","iconBg": "#EEF2FF","iconColor": "#6366F1","badge": "NEW","badgeColor": "#16a34a"},
+          {"title": "Nano Banana 2","description": "텍스트 프롬프트로 고품질 이미지를 생성하세요.","url": "/ai/nano-banana-pro","icon": "Sparkles","iconBg": "#FEF9C3","iconColor": "#CA8A04"},
+          {"title": "Seedream 5","description": "최신 Seedream 모델, 4K 품질, 8가지 화면 비율.","url": "/ai/seedream5","icon": "Leaf","iconBg": "#FFF7ED","iconColor": "#EA580C","badge": "WILD","badgeColor": "#EA580C"},
+          {"title": "Image Enhancer","description": "해상도를 높이고 세부 디테일을 개선하세요.","url": "/ai/ai-image-upscaler","icon": "ZoomIn","iconBg": "#EFF6FF","iconColor": "#2563EB"}
+        ]},
+        {"title": "Seedance 2","icon": "RiVideoLine","children": [
+          {"title": "Seedance 2","description": "네이티브 오디오를 포함한 시네마틱 비디오, 최대 15초.","url": "/ai/seedance2","icon": "Video","iconBg": "#FEF9C3","iconColor": "#CA8A04","badge": "NEW","badgeColor": "#16a34a"},
+          {"title": "Hailuo AI","description": "MiniMax Hailuo 비디오, 탁월한 첫/마지막 프레임 제어.","url": "/ai/hailuo","icon": "AudioWaveform","iconBg": "#EFF6FF","iconColor": "#2563EB"},
+          {"title": "Grok","description": "빠른 생성, 스파이시 모드 지원.","url": "/ai/grok-video","icon": "Bolt","iconBg": "#FDF2F8","iconColor": "#DB2777"}
+        ]},
+        {"title": "가격","url": "/pricing","icon": "DollarSign"},
+        {"title": "쇼케이스","url": "/showcases","icon": "Box"},
+        {"title": "히스토리","url": "/history","icon": "History"}
+      ]
+    },
+    "buttons": [],
+    "user_nav": {"show_name": true,"show_credits": true,"show_sign_out": true,"items": [
+      {"title": "결제","url": "/settings/billing","icon": "CreditCard"},
+      {"title": "활동","url": "/activity","icon": "Activity"}
+    ]},
+    "show_sign": true,"show_theme": true,"show_locale": true,
+    "topbanner": {"text": ""}
+  },
+  "footer": {
+    "id": "footer",
+    "brand": {"title": "GPT Image 2","description": "GPT Image 2는 가장 진보된 AI 이미지 생성 모델입니다 — 더 적은 프롬프트로 더 나은 결과를.","logo": {"src": "/logo.svg","alt": "GPT Image 2","width": 1024,"height": 1024},"url": "/"},
+    "nav": {"items": [
+      {"title": "소개","children": [
+        {"title": "기능","url": "/#features","target": "_self"},
+        {"title": "쇼케이스","url": "/showcases","target": "_self"},
+        {"title": "가격","url": "/pricing","target": "_self"}
+      ]},
+      {"title": "리소스","children": [{"title": "채팅","url": "/chat","target": "_self"}]},
+      {"title": "파트너","children": [
+        {"title": "ThinkAny","url": "https://thinkany.ai","target": "_blank"},
+        {"title": "MCP.so","url": "https://mcp.so","target": "_blank"}
+      ]}
+    ]},
+    "social": {"items": [
+      {"title": "X","icon": "RiTwitterXFill","url": "https://x.com/your-app-name","target": "_blank"},
+      {"title": "Github","icon": "Github","url": "https://github.com/your-app-name","target": "_blank"},
+      {"title": "Discord","icon": "RiDiscordFill","url": "https://discord.gg/your-app-name","target": "_blank"},
+      {"title": "이메일","icon": "Mail","url": "mailto:support@your-domain.com","target": "_self"}
+    ]},
+    "agreement": {"items": [
+      {"title": "개인정보 처리방침","url": "/privacy-policy"},
+      {"title": "서비스 이용약관","url": "/terms-of-service"}
+    ]},
+    "show_theme": true,"show_locale": true,"show_built_with": false
+  }
+}

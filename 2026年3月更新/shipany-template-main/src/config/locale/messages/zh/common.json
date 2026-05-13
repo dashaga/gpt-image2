@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "title": "ShipAny 模板二",
-    "description": "ShipAny 是用于构建 AI SaaS 创业项目的 NextJS 脚手架。提供丰富模板和组件，助您快速上线产品。",
-    "keywords": "shipany, shipany-boilerplate, shipany-template-two-demo"
+    "title": "GPT Image 2",
+    "description": "GPT Image 2 是最先进的 AI 图像生成模型，更少提示词，更佳效果。文生图与图片编辑都具备强大的意图理解和构图能力。",
+    "keywords": "GPT Image 2, AI 图像生成, 文生图, 图片编辑, AI 绘图"
   },
   "sign": {
     "sign_in_title": "登录",
-    "sign_in_description": "登录到您的账户",
+    "sign_in_description": "输入邮箱即可登录，新用户自动注册。",
     "sign_up_title": "注册",
     "sign_up_description": "创建一个新账户",
     "email_title": "邮箱",
@@ -23,11 +23,24 @@
     "github_sign_in_title": "使用 GitHub 登录",
     "close_title": "关闭",
     "cancel_title": "取消",
-    "sign_out_title": "登出",
+    "sign_out_title": "退出账号",
     "billing_title": "账单",
     "name_title": "姓名",
     "name_placeholder": "请输入您的姓名",
     "email_verification_hint": "请输入可正常接收邮件的邮箱。注册后需完成邮箱验证才能正常使用。",
+    "send_code_title": "发送验证码",
+    "otp_title": "验证码",
+    "otp_placeholder": "请输入 6 位验证码",
+    "otp_sent_to": "已向 {email} 发送 6 位验证码",
+    "otp_new_user_hint": "如果你还没有账号，我们会自动为你创建。",
+    "otp_continue_title": "验证并登录",
+    "otp_use_different_email": "使用其他邮箱",
+    "otp_resend": "重新发送验证码",
+    "otp_resend_countdown": "重新发送验证码（{seconds}s）",
+    "otp_resend_sent": "验证码已重新发送，请查收。",
+    "otp_required": "请输入 6 位验证码",
+    "otp_send_failed": "验证码发送失败，请稍后重试",
+    "email_required": "请输入邮箱",
     "admin_title": "管理后台",
     "credits_title": "积分: {credits}",
     "verify_email_sent": "验证邮件已发送，请前往邮箱完成验证。",
@@ -42,7 +55,67 @@
     "verify_email_account_mismatch": "当前已登录 {current}，本页面等待 {expected} 的验证结果。",
     "resend_verification_countdown": "重新发送验证邮件（{seconds}秒）",
     "resend_verification_wait": "请等待 {seconds} 秒后再重新发送。",
-    "back_to_sign_in": "返回登录"
+    "back_to_sign_in": "返回登录",
+    "user_center_title": "用户中心"
+  },
+  "multi_generator": {
+    "title": "AI 生成器",
+    "description": "图片、视频、音乐一站搞定。选模式、选模型，点生成。",
+    "examples_title": "示例",
+    "mode": {
+      "image": "图片",
+      "video": "视频",
+      "music": "音乐"
+    },
+    "image_sub_mode": {
+      "text-to-image": "文生图",
+      "image-to-image": "图片编辑"
+    },
+    "video_method": {
+      "media": "媒体",
+      "image": "图片",
+      "text": "文本"
+    },
+    "form": {
+      "model": "模型",
+      "prompt": "提示词",
+      "image_prompt_placeholder": "描述你想生成的图片…",
+      "video_prompt_placeholder": "描述你想生成的视频…",
+      "music_prompt_placeholder": "描述你想生成的音乐——风格、情绪、配器…",
+      "aspect_ratio": "比例",
+      "resolution": "分辨率",
+      "count": "数量",
+      "duration": "时长",
+      "reference_image": "参考图片",
+      "media_input": "媒体素材",
+      "media_input_hint": "上传视频、音频或图片用作素材",
+      "instrumental": "纯器乐",
+      "generate": "生成",
+      "sign_in_to_generate": "登录后生成",
+      "coming_soon_toast": "生成功能即将上线，敬请期待！",
+      "prompt_required_toast": "请输入提示词再生成。",
+      "image_required_toast": "请上传参考图片。"
+    }
+  },
+  "model_page": {
+    "examples_title": "示例",
+    "tabs_label": "选择模型",
+    "form": {
+      "upload_title": "参考图片",
+      "upload_required_title": "上传图片",
+      "upload_hint": "点击或拖入图片上传",
+      "prompt_title": "提示词",
+      "prompt_placeholder": "描述你想生成的画面或场景…",
+      "aspect_ratio": "比例",
+      "resolution": "分辨率",
+      "count": "数量",
+      "duration": "时长",
+      "generate": "生成",
+      "sign_in_to_generate": "登录后生成",
+      "coming_soon_toast": "生成功能即将上线，敬请期待！",
+      "upload_required_toast": "请先上传图片再生成。",
+      "prompt_required_toast": "请输入提示词再生成。"
+    }
   },
   "payment": {
     "choose_payment_method": "选择支付方式",

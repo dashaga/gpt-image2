@@ -41,6 +41,7 @@ export default async function PricingPage({
     sections: {
       pricing: {
         ...t.raw('page.sections.pricing'),
+        block: 'pricing-custom',
         data: {
           currentSubscription,
         },
@@ -51,5 +52,9 @@ export default async function PricingPage({
   // load page component
   const Page = await getThemePage('dynamic-page');
 
-  return <Page locale={locale} page={page} />;
+  return (
+    <div className="pt-18 max-lg:pt-14">
+      <Page locale={locale} page={page} />
+    </div>
+  );
 }

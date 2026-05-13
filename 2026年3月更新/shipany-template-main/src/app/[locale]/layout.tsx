@@ -6,6 +6,7 @@ import { routing } from '@/core/i18n/config';
 import { ThemeProvider } from '@/core/theme/provider';
 import { Toaster } from '@/shared/components/ui/sonner';
 import { AppContextProvider } from '@/shared/contexts/app';
+import { InsufficientCreditsModal } from '@/shared/blocks/credits/insufficient-credits-modal';
 import { getMetadata } from '@/shared/lib/seo';
 
 export const generateMetadata = getMetadata();
@@ -30,6 +31,7 @@ export default async function LocaleLayout({
         <AppContextProvider>
           {children}
           <Toaster position="top-center" richColors />
+          <InsufficientCreditsModal />
         </AppContextProvider>
       </ThemeProvider>
     </NextIntlClientProvider>

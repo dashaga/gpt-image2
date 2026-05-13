@@ -1,0 +1,17 @@
+{
+  "title": "Настройки",
+  "nav": {
+    "items": [
+      {"title": "Профиль","url": "/settings/profile","icon": "User"},
+      {"title": "Оплата","url": "/settings/billing","icon": "CreditCard"},
+      {"title": "Кредиты","url": "/settings/credits","icon": "Coins"},
+      {"title": "API-ключи","url": "/settings/apikeys","icon": "RiKeyLine"}
+    ]
+  },
+  "top_nav": {
+    "items": [
+      {"title": "Активность","url": "/activity","icon": "Activity"},
+      {"title": "Настройки","url": "/settings","icon": "Settings"}
+    ]
+  }
+}

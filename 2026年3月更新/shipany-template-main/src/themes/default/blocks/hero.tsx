@@ -27,7 +27,7 @@ export function Hero({
     <section
       id={section.id}
       className={cn(
-        `pt-24 pb-8 md:pt-36 md:pb-8`,
+        `pt-24 pb-[30px] md:pt-36 md:pb-[30px]`,
         section.className,
         className
       )}
@@ -94,6 +94,24 @@ export function Hero({
             ))}
           </div>
         )}
+
+        {Array.isArray((section as any).stats) &&
+          (section as any).stats.length > 0 && (
+            <div className="border-foreground/10 dark:bg-foreground/5 mx-auto mt-10 grid w-full max-w-2xl grid-cols-3 divide-x divide-foreground/10 overflow-hidden rounded-xl border bg-white/50 backdrop-blur-sm dark:bg-white/5">
+              {((section as any).stats as { value: string; label: string }[]).map(
+                (stat, idx) => (
+                  <div key={idx} className="px-4 py-5 text-center">
+                    <div className="text-foreground text-2xl font-semibold tracking-tight md:text-3xl">
+                      {stat.value}
+                    </div>
+                    <div className="text-muted-foreground mt-1 text-xs md:text-sm">
+                      {stat.label}
+                    </div>
+                  </div>
+                )
+              )}
+            </div>
+          )}
 
         {section.tip && (
           <p

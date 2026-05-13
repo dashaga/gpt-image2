@@ -1,7 +1,8 @@
+import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
+import { Coins } from 'lucide-react';
 
 import { Empty } from '@/shared/blocks/common';
-import { PanelCard } from '@/shared/blocks/panel';
 import { TableCard } from '@/shared/blocks/table';
 import {
   Credit,
@@ -74,13 +75,6 @@ export default async function CreditsPage({
         metadata: { variant: 'outline' },
       },
       {
-        name: 'expiresAt',
-        title: t('fields.expires_at'),
-        type: 'time',
-        placeholder: '-',
-        metadata: { format: 'YYYY-MM-DD HH:mm:ss' },
-      },
-      {
         name: 'createdAt',
         title: t('fields.created_at'),
         type: 'time',
@@ -119,22 +113,35 @@ export default async function CreditsPage({
 
   return (
     <div className="space-y-8">
-      <PanelCard
-        title={t('view.title')}
-        buttons={[
-          {
-            title: t('view.buttons.purchase'),
-            url: '/pricing',
-            target: '_blank',
-            icon: 'Coins',
-          },
-        ]}
-        className="max-w-md"
+      {/* Credits banner */}
+      <div
+        className="rounded-2xl p-6 text-white"
+        style={{ background: 'linear-gradient(135deg, #6366F1 0%, #818CF8 100%)' }}
       >
-        <div className="text-primary text-3xl font-bold">
-          {remainingCredits}
+        <div className="flex flex-wrap items-center justify-between gap-6">
+          {/* Left: icon + balance */}
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-white/20">
+              <Coins className="w-6 h-6 text-white" />
+            </div>
+            <div>
+              <p className="text-sm text-white/75">{t('view.banner_label')}</p>
+              <p className="text-4xl font-bold mt-0.5 leading-none">{remainingCredits}</p>
+            </div>
+          </div>
+          {/* Right: hint + purchase button */}
+          <div className="flex flex-col items-start sm:items-end gap-3">
+            <p className="text-sm text-white/75">{t('view.hint')}</p>
+            <Link
+              href="/pricing"
+              className="px-4 py-2 rounded-lg bg-white text-[#6366F1] text-sm font-semibold hover:bg-white/90 transition-colors"
+            >
+              {t('view.buttons.purchase')}
+            </Link>
+          </div>
         </div>
-      </PanelCard>
+      </div>
+
       <TableCard title={t('list.title')} tabs={tabs} table={table} />
     </div>
   );

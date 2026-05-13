@@ -1,0 +1,59 @@
+{
+  "header": {
+    "id": "header",
+    "brand": { "title": "GPT Image 2", "logo": {"src": "/logo.svg","alt": "GPT Image 2","width": 100,"height": 100}, "url": "/" },
+    "nav": {
+      "items": [
+        {"title": "Startseite","url": "/","icon": "Sparkles"},
+        {"title": "GPT Image 2","icon": "RiImage2Line","children": [
+          {"title": "GPT Image 2","description": "Fotorealistischer Realismus, präzises Textrendering, pixelgenaue Bearbeitung.","url": "/ai/gpt-image-2","icon": "Bot","iconBg": "#EEF2FF","iconColor": "#6366F1","badge": "NEW","badgeColor": "#16a34a"},
+          {"title": "Nano Banana 2","description": "Generiere hochwertige Bilder aus Texteingaben.","url": "/ai/nano-banana-pro","icon": "Sparkles","iconBg": "#FEF9C3","iconColor": "#CA8A04"},
+          {"title": "Seedream 5","description": "Neuestes Seedream-Modell, 4K-Qualität, 8 Seitenverhältnisse.","url": "/ai/seedream5","icon": "Leaf","iconBg": "#FFF7ED","iconColor": "#EA580C","badge": "WILD","badgeColor": "#EA580C"},
+          {"title": "Image Enhancer","description": "Auflösung hochskalieren und Feinheiten verfeinern.","url": "/ai/ai-image-upscaler","icon": "ZoomIn","iconBg": "#EFF6FF","iconColor": "#2563EB"}
+        ]},
+        {"title": "Seedance 2","icon": "RiVideoLine","children": [
+          {"title": "Seedance 2","description": "Kinematografische Videos mit nativem Audio, bis zu 15 Sekunden.","url": "/ai/seedance2","icon": "Video","iconBg": "#FEF9C3","iconColor": "#CA8A04","badge": "NEW","badgeColor": "#16a34a"},
+          {"title": "Hailuo AI","description": "MiniMax Hailuo Video, außergewöhnliche Kontrolle über erstes/letztes Bild.","url": "/ai/hailuo","icon": "AudioWaveform","iconBg": "#EFF6FF","iconColor": "#2563EB"},
+          {"title": "Grok","description": "Schnellere Generierung, unterstützt pikanten Modus.","url": "/ai/grok-video","icon": "Bolt","iconBg": "#FDF2F8","iconColor": "#DB2777"}
+        ]},
+        {"title": "Preise","url": "/pricing","icon": "DollarSign"},
+        {"title": "Galerie","url": "/showcases","icon": "Box"},
+        {"title": "Verlauf","url": "/history","icon": "History"}
+      ]
+    },
+    "buttons": [],
+    "user_nav": {"show_name": true,"show_credits": true,"show_sign_out": true,"items": [
+      {"title": "Abrechnung","url": "/settings/billing","icon": "CreditCard"},
+      {"title": "Aktivität","url": "/activity","icon": "Activity"}
+    ]},
+    "show_sign": true,"show_theme": true,"show_locale": true,
+    "topbanner": {"text": ""}
+  },
+  "footer": {
+    "id": "footer",
+    "brand": {"title": "GPT Image 2","description": "GPT Image 2 ist das fortschrittlichste KI-Bildgenerierungsmodell — weniger Eingaben, bessere Ergebnisse.","logo": {"src": "/logo.svg","alt": "GPT Image 2","width": 1024,"height": 1024},"url": "/"},
+    "nav": {"items": [
+      {"title": "Über uns","children": [
+        {"title": "Funktionen","url": "/#features","target": "_self"},
+        {"title": "Galerie","url": "/showcases","target": "_self"},
+        {"title": "Preise","url": "/pricing","target": "_self"}
+      ]},
+      {"title": "Ressourcen","children": [{"title": "Chat","url": "/chat","target": "_self"}]},
+      {"title": "Partner","children": [
+        {"title": "ThinkAny","url": "https://thinkany.ai","target": "_blank"},
+        {"title": "MCP.so","url": "https://mcp.so","target": "_blank"}
+      ]}
+    ]},
+    "social": {"items": [
+      {"title": "X","icon": "RiTwitterXFill","url": "https://x.com/your-app-name","target": "_blank"},
+      {"title": "Github","icon": "Github","url": "https://github.com/your-app-name","target": "_blank"},
+      {"title": "Discord","icon": "RiDiscordFill","url": "https://discord.gg/your-app-name","target": "_blank"},
+      {"title": "E-Mail","icon": "Mail","url": "mailto:support@your-domain.com","target": "_self"}
+    ]},
+    "agreement": {"items": [
+      {"title": "Datenschutzrichtlinie","url": "/privacy-policy"},
+      {"title": "Nutzungsbedingungen","url": "/terms-of-service"}
+    ]},
+    "show_theme": true,"show_locale": true,"show_built_with": false
+  }
+}

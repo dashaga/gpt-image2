@@ -1,12 +1,12 @@
 import { drizzleAdapter } from 'better-auth/adapters/drizzle';
-import { oneTap } from 'better-auth/plugins';
+import { emailOTP, oneTap } from 'better-auth/plugins';
 import { getLocale } from 'next-intl/server';
 
 import { db } from '@/core/db';
 import { envConfigs } from '@/config';
 import * as schema from '@/config/db/schema';
 import { isCloudflareWorker } from '@/shared/lib/env';
-import { VerifyEmail } from '@/shared/blocks/email/verify-email';
+import { LoginOtpEmail } from '@/shared/blocks/email/login-otp';
 import {
   getCookieFromCtx,
   getHeaderValue,
@@ -17,12 +17,6 @@ import { getClientIp } from '@/shared/lib/ip';
 import { grantCreditsForNewUser } from '@/shared/models/credit';
 import { getEmailService } from '@/shared/services/email';
 import { grantRoleForNewUser } from '@/shared/services/rbac';
-
-// Best-effort dedupe to prevent sending verification emails too frequently.
-// This is especially helpful in dev/hot reload, transient network conditions,
-// and to add a server-side throttle beyond any client-side cooldown.
-const recentVerificationEmailSentAt = new Map<string, number>();
-const VERIFICATION_EMAIL_MIN_INTERVAL_MS = 60_000;
 
 // Static auth options - NO database connection
 // This ensures zero database calls during build time
@@ -61,9 +55,6 @@ const authOptions = {
       generateId: () => getUuid(),
     },
   },
-  emailAndPassword: {
-    enabled: true,
-  },
   logger: {
     verboseLogging: false,
     // Disable all logs during build and production
@@ -73,8 +64,8 @@ const authOptions = {
 
 // get auth options with configs
 export async function getAuthOptions(configs: Record<string, string>) {
-  const emailVerificationEnabled =
-    configs.email_verification_enabled === 'true' && !!configs.resend_api_key;
+  const emailOtpEnabled =
+    configs.email_auth_enabled !== 'false' && !!configs.resend_api_key;
 
   return {
     ...authOptions,
@@ -149,64 +140,44 @@ export async function getAuthOptions(configs: Record<string, string>) {
         },
       },
     },
-    emailAndPassword: {
-      enabled: configs.email_auth_enabled !== 'false',
-      requireEmailVerification: emailVerificationEnabled,
-      // Avoid creating a session immediately after sign up when verification is required.
-      autoSignIn: emailVerificationEnabled ? false : true,
-    },
-    ...(emailVerificationEnabled
-      ? {
-          emailVerification: {
-            // We explicitly send verification emails from the UI with a callbackURL
-            // (redirecting to /verify-email). Disabling automatic sends avoids duplicates.
-            sendOnSignUp: false,
-            sendOnSignIn: false,
-            // After user clicks the verification link, create session automatically.
-            autoSignInAfterVerification: true,
-            // 24 hours
-            expiresIn: 60 * 60 * 24,
-            sendVerificationEmail: async (
-              { user, url }: { user: any; url: string; token: string },
-              _request: Request
-            ) => {
-              try {
-                const key = String(user?.email || '').toLowerCase();
-                const now = Date.now();
-                const last = recentVerificationEmailSentAt.get(key) || 0;
-                if (key && now - last < VERIFICATION_EMAIL_MIN_INTERVAL_MS) {
-                  return;
-                }
-                if (key) {
-                  recentVerificationEmailSentAt.set(key, now);
-                }
-
-                const emailService = await getEmailService(configs as any);
-                const logoUrl = envConfigs.app_logo?.startsWith('http')
-                  ? envConfigs.app_logo
-                  : `${envConfigs.app_url}${envConfigs.app_logo?.startsWith('/') ? '' : '/'}${envConfigs.app_logo || ''}`;
-                // Avoid blocking auth response on email sending.
-                await emailService.sendEmail({
-                  to: user.email,
-                  subject: `Verify your email - ${envConfigs.app_name}`,
-                  react: VerifyEmail({
-                    appName: envConfigs.app_name,
-                    logoUrl,
-                    url,
-                  }),
-                });
-              } catch (e) {
-                console.log('send verification email failed:', e);
-              }
-            },
-          },
-        }
-      : {}),
     socialProviders: await getSocialProviders(configs),
-    plugins:
-      configs.google_client_id && configs.google_one_tap_enabled === 'true'
+    plugins: [
+      ...(emailOtpEnabled
+        ? [
+            emailOTP({
+              // OTP-only login: new users are auto-created on first verified code.
+              // 6-digit code, valid for 10 minutes, 5 attempts.
+              otpLength: 6,
+              expiresIn: 60 * 10,
+              allowedAttempts: 5,
+              // Bind delivery to the Resend-backed email service used elsewhere.
+              sendVerificationOTP: async ({ email, otp, type }) => {
+                if (type !== 'sign-in') return;
+                try {
+                  const emailService = await getEmailService(configs as any);
+                  const logoUrl = envConfigs.app_logo?.startsWith('http')
+                    ? envConfigs.app_logo
+                    : `${envConfigs.app_url}${envConfigs.app_logo?.startsWith('/') ? '' : '/'}${envConfigs.app_logo || ''}`;
+                  await emailService.sendEmail({
+                    to: email,
+                    subject: `${otp} is your sign-in code - ${envConfigs.app_name}`,
+                    react: LoginOtpEmail({
+                      appName: envConfigs.app_name,
+                      logoUrl,
+                      otp,
+                    }),
+                  });
+                } catch (e) {
+                  console.log('send login otp email failed:', e);
+                }
+              },
+            }),
+          ]
+        : []),
+      ...(configs.google_client_id && configs.google_one_tap_enabled === 'true'
         ? [oneTap()]
-        : [],
+        : []),
+    ],
   };
 }
 

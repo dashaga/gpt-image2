@@ -1,0 +1,59 @@
+{
+  "fields": {
+    "subscription_no": "Abonnementnummer",
+    "interval": "Intervall",
+    "provider": "Anbieter",
+    "current_period": "Aktueller Zeitraum",
+    "plan": "Tarif",
+    "status": "Status",
+    "amount": "Betrag",
+    "created_at": "Erstellt am",
+    "end_time": "Enddatum",
+    "action": "Aktion"
+  },
+  "view": {
+    "title": "Aktueller Tarif",
+    "tip": "Ihr Abonnement wird am {date} automatisch verlängert",
+    "end_tip": "Ihr Abonnement wird am {date} automatisch gekündigt",
+    "no_subscription": "Kein Tarif",
+    "buttons": {
+      "adjust": "Tarif anpassen",
+      "subscribe": "Abonnieren",
+      "manage": "Abonnement verwalten",
+      "cancel": "Abonnement kündigen"
+    }
+  },
+  "list": {
+    "title": "Abonnementverlauf",
+    "tabs": {
+      "all": "Alle",
+      "active": "Aktiv",
+      "pending_cancel": "Kündigung ausstehend",
+      "canceled": "Gekündigt",
+      "trialing": "Testphase",
+      "paused": "Pausiert",
+      "expired": "Abgelaufen"
+    }
+  },
+  "cancel": {
+    "title": "Abonnement kündigen",
+    "description": "Möchten Sie Ihr Abonnement wirklich kündigen?",
+    "fields": {
+      "subscription_no": "Abonnementnummer",
+      "subscription_amount": "Abonnementbetrag",
+      "interval_cycle": "Abrechnungszyklus",
+      "subscription_created_at": "Abonnement erstellt am",
+      "current_period": "Aktueller Zeitraum",
+      "start_at": "Startdatum",
+      "end_at": "Enddatum"
+    },
+    "crumbs": {
+      "settings": "Einstellungen",
+      "billing": "Abrechnung",
+      "cancel": "Abonnement kündigen"
+    },
+    "buttons": {
+      "confirm_cancel": "Kündigung bestätigen"
+    }
+  }
+}

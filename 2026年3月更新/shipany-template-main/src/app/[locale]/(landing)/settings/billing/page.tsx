@@ -1,19 +1,18 @@
+import Link from 'next/link';
 import moment from 'moment';
 import { getTranslations } from 'next-intl/server';
+import { CreditCard } from 'lucide-react';
 
 import { Empty } from '@/shared/blocks/common';
-import { PanelCard } from '@/shared/blocks/panel';
 import { TableCard } from '@/shared/blocks/table';
-import { Button } from '@/shared/components/ui/button';
 import {
   getCurrentSubscription,
   getSubscriptions,
   getSubscriptionsCount,
-  Subscription,
   SubscriptionStatus,
 } from '@/shared/models/subscription';
 import { getUserInfo } from '@/shared/models/user';
-import { Button as ButtonType, Tab } from '@/shared/types/blocks/common';
+import { Tab } from '@/shared/types/blocks/common';
 import { type Table } from '@/shared/types/blocks/table';
 
 export default async function BillingPage({
@@ -97,20 +96,6 @@ export default async function BillingPage({
         type: 'time',
       },
       {
-        title: t('fields.current_period'),
-        callback: function (item) {
-          let period = (
-            <div>
-              {`${moment(item.currentPeriodStart).format('YYYY-MM-DD')}`} ~
-              <br />
-              {`${moment(item.currentPeriodEnd).format('YYYY-MM-DD')}`}
-            </div>
-          );
-
-          return period;
-        },
-      },
-      {
         title: t('fields.end_time'),
         callback: function (item) {
           if (item.canceledEndAt) {
@@ -164,12 +149,6 @@ export default async function BillingPage({
       is_active: status === 'active',
     },
     {
-      title: t('list.tabs.trialing'),
-      name: 'trialing',
-      url: '/settings/billing?status=trialing',
-      is_active: status === 'trialing',
-    },
-    {
       title: t('list.tabs.paused'),
       name: 'paused',
       url: '/settings/billing?status=paused',
@@ -195,73 +174,85 @@ export default async function BillingPage({
     },
   ];
 
-  let buttons: ButtonType[] = [];
-  if (currentSubscription) {
-    buttons = [
-      {
-        title: t('view.buttons.adjust'),
-        url: '/pricing',
-        target: '_blank',
-        icon: 'Pencil',
-        size: 'sm',
-      },
-    ];
-    if (currentSubscription.paymentUserId) {
-      buttons.push({
-        title: t('view.buttons.manage'),
-        url: `/settings/billing/retrieve?subscription_no=${currentSubscription.subscriptionNo}`,
-        target: '_blank',
-        icon: 'Settings',
-        size: 'sm',
-        variant: 'outline',
-      });
-    }
-  } else {
-    buttons = [
-      {
-        title: t('view.buttons.subscribe'),
-        url: '/pricing',
-        target: '_blank',
-        icon: 'ArrowUpRight',
-        size: 'sm',
-      },
-    ];
-  }
-
   return (
     <div className="space-y-8">
-      <PanelCard
-        label={currentSubscription?.status}
-        title={t('view.title')}
-        buttons={buttons}
-        className="max-w-md"
+      {/* Billing banner */}
+      <div
+        className="rounded-2xl p-6 text-white"
+        style={{ background: 'linear-gradient(135deg, #6366F1 0%, #818CF8 100%)' }}
       >
-        <div className="text-primary text-3xl font-bold">
-          {currentSubscription?.planName || t('view.no_subscription')}
-        </div>
-        {currentSubscription ? (
-          <>
-            {currentSubscription?.status === SubscriptionStatus.ACTIVE ||
-            currentSubscription?.status === SubscriptionStatus.TRIALING ? (
-              <div className="text-muted-foreground mt-4 text-sm font-normal">
-                {t('view.tip', {
-                  date: moment(currentSubscription?.currentPeriodEnd).format(
-                    'YYYY-MM-DD'
-                  ),
-                })}
+        <div className="flex flex-wrap items-center justify-between gap-6">
+          {/* Left: icon + plan info */}
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-white/20">
+              <CreditCard className="w-6 h-6 text-white" />
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <p className="text-sm text-white/75">{t('view.title')}</p>
+                {currentSubscription?.status && (
+                  <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-white/20">
+                    {currentSubscription.status}
+                  </span>
+                )}
               </div>
+              <p className="text-3xl font-bold mt-0.5 leading-tight">
+                {currentSubscription?.planName || t('view.no_subscription')}
+              </p>
+              {currentSubscription && (
+                <p className={`text-sm mt-1 ${
+                  currentSubscription.status === SubscriptionStatus.ACTIVE ||
+                  currentSubscription.status === SubscriptionStatus.TRIALING
+                    ? 'text-white/75'
+                    : 'text-red-200'
+                }`}>
+                  {currentSubscription.status === SubscriptionStatus.ACTIVE ||
+                  currentSubscription.status === SubscriptionStatus.TRIALING
+                    ? t('view.tip', {
+                        date: moment(currentSubscription.currentPeriodEnd).format('YYYY-MM-DD'),
+                      })
+                    : t('view.end_tip', {
+                        date: moment(currentSubscription.canceledEndAt).format('YYYY-MM-DD'),
+                      })}
+                </p>
+              )}
+            </div>
+          </div>
+
+          {/* Right: action buttons */}
+          <div className="flex flex-wrap items-center gap-3">
+            {currentSubscription ? (
+              <>
+                <Link
+                  href="/pricing"
+                  target="_blank"
+                  className="px-4 py-2 rounded-lg bg-white text-[#6366F1] text-sm font-semibold hover:bg-white/90 transition-colors"
+                >
+                  {t('view.buttons.adjust')}
+                </Link>
+                {currentSubscription.paymentUserId && (
+                  <Link
+                    href={`/settings/billing/retrieve?subscription_no=${currentSubscription.subscriptionNo}`}
+                    target="_blank"
+                    className="px-4 py-2 rounded-lg bg-white/15 text-white text-sm font-semibold hover:bg-white/25 transition-colors border border-white/30"
+                  >
+                    {t('view.buttons.manage')}
+                  </Link>
+                )}
+              </>
             ) : (
-              <div className="text-destructive mt-4 text-sm font-normal">
-                {t('view.end_tip', {
-                  date: moment(currentSubscription?.canceledEndAt).format(
-                    'YYYY-MM-DD'
-                  ),
-                })}
-              </div>
+              <Link
+                href="/pricing"
+                target="_blank"
+                className="px-4 py-2 rounded-lg bg-white text-[#6366F1] text-sm font-semibold hover:bg-white/90 transition-colors"
+              >
+                {t('view.buttons.subscribe')}
+              </Link>
             )}
-          </>
-        ) : null}
-      </PanelCard>
+          </div>
+        </div>
+      </div>
+
       <TableCard title={t('list.title')} tabs={tabs} table={table} />
     </div>
   );

@@ -1,0 +1,47 @@
+{
+  "fields": {
+    "title": "العنوان",
+    "key": "المفتاح",
+    "created_at": "تاريخ الإنشاء",
+    "action": "إجراء"
+  },
+  "list": {
+    "title": "مفاتيح API",
+    "empty_message": "لا توجد مفاتيح API",
+    "buttons": {
+      "add": "إنشاء مفتاح API",
+      "edit": "تعديل",
+      "delete": "حذف"
+    }
+  },
+  "add": {
+    "title": "إنشاء مفتاح API",
+    "crumbs": {
+      "apikeys": "مفاتيح API",
+      "add": "إنشاء مفتاح API"
+    },
+    "buttons": {
+      "submit": "إنشاء"
+    }
+  },
+  "edit": {
+    "title": "تعديل مفتاح API",
+    "crumbs": {
+      "apikeys": "مفاتيح API",
+      "edit": "تعديل مفتاح API"
+    },
+    "buttons": {
+      "submit": "تحديث"
+    }
+  },
+  "delete": {
+    "title": "حذف مفتاح API",
+    "crumbs": {
+      "apikeys": "مفاتيح API",
+      "delete": "حذف مفتاح API"
+    },
+    "buttons": {
+      "submit": "تأكيد الحذف"
+    }
+  }
+}

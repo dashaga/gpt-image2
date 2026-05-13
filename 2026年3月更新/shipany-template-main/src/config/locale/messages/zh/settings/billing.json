@@ -27,11 +27,11 @@
     "title": "订阅记录",
     "tabs": {
       "all": "全部",
-      "active": "活跃",
-      "pending_cancel": "待取消",
+      "active": "生效中",
+      "pending_cancel": "到期取消",
       "canceled": "已取消",
       "trialing": "试用中",
-      "paused": "暂停中",
+      "paused": "已暂停",
       "expired": "已过期"
     }
   },

@@ -1,4 +1,11 @@
-import { R2Provider, S3Provider, StorageManager } from '@/extensions/storage';
+import { join } from 'node:path';
+
+import {
+  LocalProvider,
+  R2Provider,
+  S3Provider,
+  StorageManager,
+} from '@/extensions/storage';
 import { Configs, getAllConfigs } from '@/shared/models/config';
 
 /**
@@ -43,6 +50,20 @@ export function getStorageServiceWithConfigs(configs: Configs) {
         bucket: configs.s3_bucket,
         publicDomain: configs.s3_domain,
       })
+    );
+  }
+
+  // Fallback: local filesystem storage for dev environments without cloud storage
+  if (storageManager.getProviderNames().length === 0) {
+    const uploadDir = join(process.cwd(), 'public', 'uploads');
+    const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
+    storageManager.addProvider(
+      new LocalProvider({
+        uploadDir,
+        publicPrefix: '/uploads',
+        publicOrigin: appUrl,
+      }),
+      true
     );
   }
 

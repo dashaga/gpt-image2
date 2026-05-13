@@ -1,0 +1,28 @@
+{
+  "fields": {
+    "transaction_no": "N° de transação",
+    "description": "Descrição",
+    "type": "Tipo",
+    "scene": "Cena",
+    "credits": "Créditos",
+    "expires_at": "Expira em",
+    "created_at": "Criado em",
+    "action": "Ação"
+  },
+  "list": {
+    "title": "Histórico de créditos",
+    "tabs": {
+      "all": "Todos",
+      "grant": "Concedido",
+      "consume": "Consumido"
+    }
+  },
+  "view": {
+    "title": "Saldo de créditos",
+    "banner_label": "Saldo de créditos atual",
+    "hint": "Os créditos não expiram e funcionam com todos os modelos",
+    "buttons": {
+      "purchase": "Comprar créditos"
+    }
+  }
+}
