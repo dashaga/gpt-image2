@@ -61,7 +61,7 @@ const nextConfig = {
       // },
     },
   },
-  serverExternalPackages: ['formidable', 'superagent'],
+  serverExternalPackages: ['formidable', 'superagent', 'wechatpay-node-v3'],
   experimental: {
     turbopackFileSystemCacheForDev: true,
     // Disable mdxRs for Vercel deployment compatibility with fumadocs-mdx
