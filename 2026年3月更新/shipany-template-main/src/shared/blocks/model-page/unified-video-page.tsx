@@ -200,6 +200,13 @@ export function UnifiedVideoPage({ slug }: { slug: string }) {
   const [grokMode,   setGrokMode]   = useState<GrokMode>('normal');
   const [hailuoDur,  setHailuoDur]  = useState(6);
 
+  // Pre-fill prompt from ?prompt= URL param (e.g. coming from Showcase "Try this example")
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const urlPrompt = params.get('prompt');
+    if (urlPrompt) setPrompt(urlPrompt);
+  }, []);
+
   // Reset model-specific form values on slug change
   useEffect(() => {
     const ratios = MODEL_ASPECT_RATIOS[selectedSlug] ?? [];

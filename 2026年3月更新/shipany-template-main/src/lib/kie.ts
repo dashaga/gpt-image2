@@ -196,6 +196,8 @@ export async function createImageTask(params: CreateImageTaskParams): Promise<st
       throw new Error(`Unknown model slug: ${modelSlug}`);
   }
 
+  console.log('[createImageTask] REQUEST:', JSON.stringify({ model: kieModel, input }, null, 2));
+
   const res = await kieRequest<CreateTaskResponse>(
     '/api/v1/jobs/createTask',
     { method: 'POST', body: JSON.stringify({ model: kieModel, input }) }
@@ -248,10 +250,34 @@ export async function createImageUpscaleTask(params: CreateImageUpscaleParams): 
     upscale_factor: params.upscaleFactor ?? '2',
   };
 
-  const res = await kieRequest<CreateTaskResponse>(
-    '/api/v1/jobs/createTask',
-    { method: 'POST', body: JSON.stringify({ model: 'topaz/image-upscale', input }) }
-  );
+  const requestBody = { model: 'topaz/image-upscale', input };
+  console.log('[upscale] REQUEST body:', JSON.stringify(requestBody, null, 2));
+  console.log('[upscale] API_KEY prefix:', API_KEY.slice(0, 8) + '...');
+
+  let rawRes: Response;
+  try {
+    rawRes = await fetch(`${BASE_URL}/api/v1/jobs/createTask`, {
+      method:  'POST',
+      headers: {
+        'Authorization': `Bearer ${API_KEY}`,
+        'Content-Type':  'application/json',
+      },
+      body: JSON.stringify(requestBody),
+    });
+  } catch (e) {
+    console.error('[upscale] fetch error:', e);
+    throw e;
+  }
+
+  const responseText = await rawRes.text();
+  console.log('[upscale] RESPONSE status:', rawRes.status);
+  console.log('[upscale] RESPONSE body:', responseText);
+
+  if (!rawRes.ok) {
+    throw new Error(`kie.ai topaz/image-upscale failed (${rawRes.status}): ${responseText.slice(0, 500)}`);
+  }
+
+  const res = JSON.parse(responseText) as CreateTaskResponse;
   if (!res.data?.taskId) throw new Error('kie.ai did not return a taskId');
   return res.data.taskId;
 }
@@ -376,6 +402,8 @@ export async function getTaskStatus(taskId: string): Promise<TaskResult> {
   const res = await kieRequest<TaskStatusResponse>(
     `/api/v1/jobs/recordInfo?taskId=${encodeURIComponent(taskId)}`
   );
+
+  console.log('[getTaskStatus] taskId:', taskId, '| state:', res.data?.state, '| failMsg:', res.data?.failMsg, '| resultJson:', res.data?.resultJson?.slice(0, 200));
 
   const d = res.data;
   let resultUrls: string[] = [];
