@@ -4,7 +4,7 @@ import { createVideoTask, VideoModelSlug } from '@/lib/kie';
 import { getUuid } from '@/shared/lib/hash';
 import { respData, respErr } from '@/shared/lib/resp';
 import { createAITask } from '@/shared/models/ai_task';
-import { consumeCredits, getRemainingCredits } from '@/shared/models/credit';
+import { getRemainingCredits } from '@/shared/models/credit';
 import { getUserInfo } from '@/shared/models/user';
 
 const VIDEO_CREDIT_COSTS: Record<string, number> = {
@@ -74,15 +74,6 @@ export async function POST(req: NextRequest) {
       taskInfo:    null,
       taskResult:  null,
     });
-
-    if (costCredits > 0) {
-      await consumeCredits({
-        userId:      user.id,
-        credits:     costCredits,
-        scene:       'video-generation',
-        description: `${model} video generation`,
-      });
-    }
 
     return respData({ taskId: kieTaskId });
   } catch (e: any) {

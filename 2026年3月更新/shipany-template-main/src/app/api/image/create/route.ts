@@ -4,7 +4,7 @@ import { createImageTask, ImageModelSlug } from '@/lib/kie';
 import { getUuid } from '@/shared/lib/hash';
 import { respData, respErr } from '@/shared/lib/resp';
 import { createAITask } from '@/shared/models/ai_task';
-import { consumeCredits, getRemainingCredits } from '@/shared/models/credit';
+import { getRemainingCredits } from '@/shared/models/credit';
 import { getUserInfo } from '@/shared/models/user';
 
 // Credits consumed per generation (0 = free)
@@ -78,15 +78,6 @@ export async function POST(req: NextRequest) {
       taskInfo:    null,
       taskResult:  null,
     });
-
-    if (costCredits > 0) {
-      await consumeCredits({
-        userId:      user.id,
-        credits:     costCredits,
-        scene:       'image-generation',
-        description: `${model as string} image generation`,
-      });
-    }
 
     return respData({ taskId: kieTaskId });
   } catch (e: any) {

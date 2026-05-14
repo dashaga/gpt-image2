@@ -4,7 +4,7 @@ import { createSeedream5Task } from '@/lib/kie';
 import { getUuid } from '@/shared/lib/hash';
 import { respData, respErr } from '@/shared/lib/resp';
 import { createAITask } from '@/shared/models/ai_task';
-import { consumeCredits, getRemainingCredits } from '@/shared/models/credit';
+import { getRemainingCredits } from '@/shared/models/credit';
 import { getUserInfo } from '@/shared/models/user';
 
 const COST_CREDITS = 3;
@@ -62,13 +62,6 @@ export async function POST(req: NextRequest) {
       taskId:      kieTaskId,
       taskInfo:    null,
       taskResult:  null,
-    });
-
-    await consumeCredits({
-      userId:      user.id,
-      credits:     COST_CREDITS,
-      scene:       'image-generation',
-      description: 'Seedream 5 image generation',
     });
 
     return respData({ taskId: kieTaskId });
